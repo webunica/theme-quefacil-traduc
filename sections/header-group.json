@@ -27,8 +27,8 @@
       ],
       "settings": {
         "layout_type": "container-fluid",
-        "topbar_bg": "#f0f3f2",
-        "topbar_text_color": "#5c6c75",
+        "topbar_bg": "#f94713",
+        "topbar_text_color": "#ffffff",
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
