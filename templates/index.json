@@ -23,6 +23,7 @@
         "banner_7naHRF": {
           "type": "banner",
           "settings": {
+            "image": "shopify://shop_images/slideshow2-2-880x430_780x480_c3d01580-7147-445d-9941-52677e033687.webp",
             "image_alt": "Placeholder Image",
             "img_width": "424",
             "img_height": "268",
@@ -32,7 +33,7 @@
             "pretitle_font_size": "h5",
             "pretitle_font_weight": "500",
             "pretitle_lineheight": "1.5",
-            "heading": "10% cashback on </br>personal care",
+            "heading": "10% cashback on personal care",
             "heading_color": "#001e2b",
             "heading_txt_style": "none",
             "heading_font_size": "h3",
@@ -46,7 +47,7 @@
             "posttitle_font_weight": "500",
             "posttitle_lineheight": "1.5",
             "posttitle_margin": "0px 0px 0px 0px",
-            "description": "Max cashback: $12  </br>Code: <strong>CARE12</strong>",
+            "description": "Max cashback: $12  Code: <strong>CARE12</strong>",
             "desc_color": "#5c6c75",
             "desc_txt_style": "none",
             "desc_font_size": "h5",
@@ -72,6 +73,7 @@
         "banner_CXXFTL": {
           "type": "banner",
           "settings": {
+            "image": "shopify://shop_images/slideshow2-3-880x430_780x480_943ce07b-52a7-4e71-bbc1-73bad70d46b5.webp",
             "image_alt": "Placeholder Image",
             "img_width": "424",
             "img_height": "268",
@@ -81,7 +83,7 @@
             "pretitle_font_size": "h5",
             "pretitle_font_weight": "500",
             "pretitle_lineheight": "1.5",
-            "heading": "Say yes to </br>season’s fresh",
+            "heading": "Say yes to season’s fresh",
             "heading_color": "#001e2b",
             "heading_txt_style": "none",
             "heading_font_size": "h3",
@@ -95,7 +97,7 @@
             "posttitle_font_weight": "500",
             "posttitle_lineheight": "1.5",
             "posttitle_margin": "0px 0px 0px 0px",
-            "description": "Refresh your day </br> the fruity way",
+            "description": "Refresh your day  the fruity way",
             "desc_color": "#5c6c75",
             "desc_txt_style": "none",
             "desc_font_size": "h5",
