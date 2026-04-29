@@ -128,10 +128,10 @@
       "settings": {
         "layout_style": "container",
         "image": "shopify://shop_images/slideshow2-1-880x430_780x480_47a7ff3c-23b1-4db7-91e0-9f53f65b820c.webp",
-        "image_alt": "Audio",
+        "image_alt": "Audio embolbente",
         "img_width": "850",
         "img_height": "560",
-        "pretitle": "AUDIO",
+        "pretitle": "AUDIO EMBOLVENTE",
         "pretitle_color": "#016daa",
         "pretitle_txt_style": "none",
         "pretitle_font_size": "h6",
