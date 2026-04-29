@@ -55,7 +55,7 @@
             "desc_lineheight": "1.5",
             "desc_margin": "16px 0px 20px 0px",
             "button_text": "Compro ahora",
-            "button_url": "https://freshcart77.myshopify.com/collections/shop",
+            "button_url": "shopify://collections/fotografias",
             "btn_color": "#ffffff",
             "btn_hover_color": "#ffffff",
             "btn_bg_color": "#001e2b",
