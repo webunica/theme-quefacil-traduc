@@ -126,7 +126,7 @@
         "banner_CXXFTL"
       ],
       "settings": {
-        "layout_style": "container",
+        "layout_style": "container-fluid",
         "image": "shopify://shop_images/slideshow2-1-880x430_780x480_47a7ff3c-23b1-4db7-91e0-9f53f65b820c.webp",
         "image_alt": "Audio embolbente",
         "img_width": "850",
