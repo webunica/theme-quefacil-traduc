@@ -17,7 +17,7 @@
         "announcement_4LFNFD": {
           "type": "announcement",
           "settings": {
-            "text": "Super Value Deals – Save more with coupons",
+            "text": "Ofertas de gran valor: ahorra más con cupones.",
             "link": ""
           }
         }
@@ -31,7 +31,7 @@
         "topbar_text_color": "#5c6c75",
         "show_social": false,
         "enable_country_selector": false,
-        "enable_language_selector": true
+        "enable_language_selector": false
       }
     },
     "header": {
