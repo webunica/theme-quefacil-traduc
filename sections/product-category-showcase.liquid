@@ -1,0 +1,437 @@
+{% render 'grid-styles' %}
+{% render 'section-boundaries', section_id: section.id, section_settings: section.settings %}
+{%- style -%}
+  .section#shopify-section-{{ section.id }} .section-header-wrapper {
+    justify-content: space-between;
+    align-items: center;
+  }
+{%- endstyle -%}
+
+<div class="product-category-showcase {{ section.settings.layout_style }} section-{{ section.id }}">
+  <div
+    class="product-category-showcase-grid grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+    style="gap: {{ section.settings.space_between }}px;"
+  >
+    {%- for block in section.blocks -%}
+      <div
+        class="freshcart-grid__item"
+        style=" border-radius: {{ section.settings.border_radius }}px; overflow: hidden; position: relative; transition: transform 0.4s ease-in-out"
+      >
+        <style>
+          .section#shopify-section-{{ section.id }} .product-category-showcase-grid a:after {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              pointer-events: auto;
+              content: "";
+              background-color: rgba(0, 0, 0, 0);
+          }
+
+          .section#shopify-section-{{ section.id }} .product-category-showcase-grid a {
+             position: static;
+            width: 100%;
+          }
+        </style>
+        <div
+          class="freshcart-grid__item--inner multi-column"
+          style="
+              background-color: {{ section.settings.bg_color }};
+              background-size: {{ section.settings.background_size }};
+              min-height: {{ section.settings.banner_height }}px;
+              {% if block.settings.column_image %}
+                background-image: url('{{ block.settings.column_image | image_url }}');
+              {% else %}
+                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23e0e0e0%22/></svg>');
+              {% endif %}
+            transition: transform 0.4s ease-in-out;
+            display:flex;
+            align-items:{{ section.settings.content_align }};
+          "
+        >
+          <a href="{{ block.settings.img_url }}" class="stretched-link">
+            <div
+              class="product-category-showcase-block"
+              style="height:100%;"
+            >
+              {% if block.settings.title != blank %}
+                <{{ block.settings.heading_font_size }}
+                  class="product-category-showcase-name"
+                  style="
+                    background-color: {{ block.settings.heading_bg_color }};
+                    color: {{ block.settings.heading_color }};
+                    font-weight: {{ block.settings.heading_font_weight }};
+                    line-height: {{ block.settings.heading_lineheight }};
+                    margin: {{ block.settings.heading_margin }};
+                    text-transform: {{ block.settings.heading_txt_style }};
+                    border-radius: {{ block.settings.heading_border_radius }};
+                    padding:{{ block.settings.heading_padding }};
+                    width:100%;
+                  "
+                >
+                  {{ block.settings.title }}
+                </{{ block.settings.heading_font_size }}>
+                <style>
+                  @media(max-width:767px){
+                    .section#shopify-section-{{ section.id }} .product-category-showcase-name {
+                       font-size:{{ block.settings.heading_mob_size_text }}px;
+                     }
+                  }
+                </style>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "t:sections.product-category-showcase.name",
+    "class": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "layout_style",
+            "label": "t:sections.product-category-showcase.settings.layout_style.label",
+            "default": "container",
+            "options": [
+                {
+                    "value": "container",
+                    "label": "t:sections.product-category-showcase.settings.layout_style.options__1.label"
+                },
+                {
+                    "value": "container-fluid",
+                    "label": "t:sections.product-category-showcase.settings.layout_style.options__2.label"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "columns_desktop",
+            "label": "t:sections.product-category-showcase.settings.columns_desktop.label",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "select",
+            "id": "columns_mobile",
+            "default": "1",
+            "label": "t:sections.product-category-showcase.settings.columns_mobile.label",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "1"
+                },
+                {
+                    "value": "2",
+                    "label": "2"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "space_between",
+            "label": "t:sections.product-category-showcase.settings.space_between.label",
+            "min": 1,
+            "max": 40,
+            "unit": "px",
+            "default": 24
+        },
+        {
+            "type": "text",
+            "id": "height_section_mobile",
+            "label": "t:sections.product-category-showcase.settings.height_section_mobile.label",
+            "default": "350"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.product-category-showcase.settings.header.content"
+        },
+        {
+            "type": "text",
+            "id": "section_padding_all_sides",
+            "label": "t:sections.product-category-showcase.settings.section_padding_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_margin_all_sides",
+            "label": "t:sections.product-category-showcase.settings.section_margin_all_sides.label",
+            "default": "32px 0px 0px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_padding_mobile_all_sides",
+            "label": "t:sections.product-category-showcase.settings.section_padding_mobile_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_margin_mobile_all_sides",
+            "label": "t:sections.product-category-showcase.settings.section_margin_mobile_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.product-category-showcase.settings.block_setting.content"
+        },
+        {
+            "type": "range",
+            "id": "border_radius",
+            "min": 0,
+            "max": 40,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.product-category-showcase.settings.border_radius.label",
+            "default": 8
+        },
+        {
+            "type": "select",
+            "id": "background_size",
+            "label": "t:sections.product-category-showcase.settings.background_size.label",
+            "info": "t:sections.product-category-showcase.settings.background_size.info",
+            "default": "cover",
+            "options": [
+                {
+                    "label": "t:sections.product-category-showcase.settings.background_size.options__1.label",
+                    "value": "cover"
+                },
+                {
+                    "label": "t:sections.product-category-showcase.settings.background_size.options__2.label",
+                    "value": "contain"
+                },
+                {
+                    "label": "t:sections.product-category-showcase.settings.background_size.options__3.label",
+                    "value": "auto"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "content_align",
+            "label": "t:sections.product-category-showcase.settings.content_align.label",
+            "default": "flex-end",
+            "options": [
+                {
+                    "label": "t:sections.product-category-showcase.settings.content_align.options__1.label",
+                    "value": "flex-start"
+                },
+                {
+                    "label": "t:sections.product-category-showcase.settings.content_align.options__2.label",
+                    "value": "center"
+                },
+                {
+                    "label": "t:sections.product-category-showcase.settings.content_align.options__3.label",
+                    "value": "flex-end"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "banner_height",
+            "label": "t:sections.product-category-showcase.settings.banner_height.label",
+            "default": "196"
+        },
+        {
+            "type": "text",
+            "id": "container_padding",
+            "label": "t:sections.product-category-showcase.settings.container_padding.label",
+            "default": "32px 32px 32px 32px",
+            "info": "Padding: Top Right Bottom Left"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "column",
+            "name": "t:sections.product-category-showcase.blocks.column.name",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "t:sections.product-category-showcase.blocks.column.settings.image_section.content"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "column_image",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.column_image.label",
+                    "info": "t:sections.product-category-showcase.blocks.column.settings.column_image.info"
+                },
+                {
+                    "type": "url",
+                    "id": "img_url",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.img_url.label"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.product-category-showcase.blocks.column.settings.heading_section.content"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "title",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.title.label",
+                    "default": "Offer"
+                },
+                {
+                    "type": "color",
+                    "id": "heading_color",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_color.label",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "heading_bg_color",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_bg_color.label",
+                    "default": "#5c6c75"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_txt_style",
+                    "default": "none",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_txt_style.options__1.label"
+                        },
+                        {
+                            "value": "uppercase",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_txt_style.options__2.label"
+                        },
+                        {
+                            "value": "lowercase",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_txt_style.options__3.label"
+                        }
+                    ],
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_txt_style.label"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_font_size",
+                    "default": "h6",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_font_weight",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.label",
+                    "default": "700",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.product-category-showcase.blocks.column.settings.heading_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "heading_lineheight",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_lineheight.label",
+                    "default": "1.2"
+                },
+                {
+                    "type": "text",
+                    "id": "heading_mob_size_text",
+                    "default": "14",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_mob_size_text.label"
+                },
+                {
+                    "type": "text",
+                    "id": "heading_margin",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_margin.label",
+                    "default": "0px 0px 0px 0px",
+                    "info": "Margin: Top Right Bottom Left"
+                },
+                {
+                    "type": "text",
+                    "id": "heading_padding",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_padding.label",
+                    "default": "12px 16px 12px 16px",
+                    "info": "Padding: Top Right Bottom Left"
+                },
+                {
+                    "type": "text",
+                    "id": "heading_border_radius",
+                    "label": "t:sections.product-category-showcase.blocks.column.settings.heading_border_radius.label",
+                    "default": "0px 0px 8px 8px"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "t:sections.product-category-showcase.presets.name",
+            "blocks": [
+                {
+                    "type": "column",
+                    "settings": {
+                        "title": "Offer"
+                    }
+                },
+                {
+                    "type": "column",
+                    "settings": {
+                        "title": "Fresh Food & Bakery"
+                    }
+                },
+                {
+                    "type": "column",
+                    "settings": {
+                        "title": "Mixed and Assorted Fruits"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+.button a {
+  font-size: var(--btn-size-text);
+  cursor: pointer;
+  color: var(--btn-color);
+  line-height: 1.2;
+  display: block;
+  transition: 0.3s ease-in-out;
+  position: static;
+  width: fit-content;
+}
+
+.button a:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+  display: block;
+}
+
+.button.btn-fill a {
+  background-color:var(--btn-background-color);
+  border: var(--btn-border) solid var(--btn-border-color);
+}
+
+.button.btn-fill a:hover,
+.button.btn-fill a:focus {
+  background-color: var(--btn-bg-hover-color);
+  color: var(--btn-hover-color);
+  border: var(--btn-border) solid var(--btn-border-hover-color);
+}
+
+.button.btn-outline a {
+  background-color: transparent;
+  border:  var(--btn-border) solid var(--btn-border-color );
+
+.button.btn-outline a:hover,
+.button.btn-outline a:focus {
+  border-color: var(--btn-border-hover-color);
+  color: var(--btn-hover-color);
+}
+
+.button.btn-link a {
+  text-decoration: underline;
+  background: transparent;
+}
+
+.button.btn-link a:hover,
+.button.btn-link a:focus {
+  color: var(--btn-hover-color);
+}

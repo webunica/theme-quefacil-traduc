@@ -1,0 +1,69 @@
+
+    .button__{{ block_id }} {
+      width: fit-content;
+    }
+
+    .button__{{ block_id }} a {
+      font-size: {{ block_settings.btn_size_text }};
+      cursor: pointer;
+      color: {{ block_settings.btn_color }};
+      line-height: 1.2;
+      display: block;
+      transition: 0.3s ease-in-out;
+      position: static;
+    }
+
+    .button__{{ block_id }} a:before {
+      position: absolute;
+      top: 0;
+      right:0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      content: "";
+      display: block;
+    }
+
+    {%- if block_settings.btn_style != 'btn-link' -%}
+      .button__{{ block_id }} a {
+        padding: {{ block_settings.btn_padding }};
+        margin: {{ block_settings.btn_margin }};
+        border: {{ block_settings.btn_border }}px solid {{ block_settings.btn_border_color }};
+        border-radius: {{ block_settings.btn_border_radius }};
+        text-decoration: none;
+      }
+    {%- endif -%}
+
+    {%- if block_settings.btn_style == 'btn-fill' -%}
+      .button__{{ block_id }} a {
+        background-color: {{ block_settings.btn_bg_color }};
+      }
+
+      .button__{{ block_id }} a:hover,
+      .button__{{ block_id }} a:focus {
+        background-color: {{ block_settings.btn_bg_hover_color }};
+        color: {{ block_settings.btn_hover_color }};
+        border: {{ block_settings.btn_border }}px solid {{ block_settings.btn_border_hover_color }};
+      }
+    {%- elsif block_settings.btn_style == 'btn-outline' -%}
+      .button__{{ block_id }} a {
+        background-color: transparent;
+      }
+
+      .button__{{ block_id }} a:hover,
+      .button__{{ block_id }} a:focus {
+        border: {{ block_settings.btn_border }}px solid {{ block_settings.btn_border_hover_color }};
+        color: {{ block_settings.btn_hover_color }};
+      }
+    {%- elsif block_settings.btn_style == 'btn-link' -%}
+      .button__{{ block_id }} a {
+        text-decoration: underline;
+        background: transparent;
+      }
+
+      .button__{{ block_id }} a:hover,
+      .button__{{ block_id }} a:focus {
+        color: {{ block_settings.btn_hover_color }};
+      }
+    {%- endif -%}
+

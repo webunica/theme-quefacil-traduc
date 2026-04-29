@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "product-collection-grid",
+      "settings": {
+        "banner_bg": "#f0f3f2",
+        "banner_text_color": "#5c6c75",
+        "section_padding": "40px 40px 40px 40px",
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "enable_viewcolumn": true,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "first_group": false,
+        "open_group": true,
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

@@ -1,0 +1,169 @@
+.blog-articles {
+  display: grid;
+  grid-gap: 1rem;
+  column-gap: var(--grid-mobile-horizontal-spacing);
+  row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+.blog-articles .card-wrapper {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  /* .blog-articles {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 32px;
+  } */
+
+  .blog-articles--collage > *:nth-child(3n + 1),
+  .blog-articles--collage > *:nth-child(3n + 2):last-child {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .card,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .card {
+    text-align: center;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--small .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--small .ratio::before {
+    padding-bottom: 22rem;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--medium .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--medium .ratio::before {
+    padding-bottom: 44rem;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--large .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--large .ratio::before {
+    padding-bottom: 66rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--small .ratio .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--small .ratio .ratio::before {
+    padding-bottom: 27.5rem;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--medium .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--medium .ratio::before {
+    padding-bottom: 55rem;
+  }
+
+  .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--large .ratio::before,
+  .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--large .ratio::before {
+    padding-bottom: 82.5rem;
+  }
+}
+
+.blog__title {
+    margin-top: 18px;
+    font-weight: 700;
+   font-size: 35px;
+   line-height: 42px;
+}
+
+@media(min-width: 768px) {
+  .blog-list-view .article-card {
+    display: flex;
+   flex-direction: row !important;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .blog-list-view .article-card .card__inner {
+    flex-basis: 50%;
+    height: 410px;
+  }
+  
+  .blog-list-view .article-card .card__content {
+    flex-basis: 50%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .blog-list-view .article-card .card__content .card__information {
+    padding-left: 44px;
+  }
+
+  .blog-list-view .article-card .card__inner {
+    flex-basis: 66.66666667%;
+  }
+  
+  .blog-list-view .article-card .card__content {
+    flex-basis: 33.33333333%;
+  }
+}
+
+.blog-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blog-list-view .card__heading a {
+  font-weight: 700;
+  letter-spacing: -.03rem;
+  line-height: 30px;
+   color: rgb(var(--color-secondary-text ));
+  text-decoration: none;
+}
+
+.blog-list-view .card__content {
+  margin-top: 23px;
+}
+
+
+@media(min-width: 768px) {
+  .blog-list-view .card__heading a {
+    line-height: 42px;
+  }
+
+  .blog-list-view .card__content {
+    margin-top: 0;
+  }
+
+}
+
+.blog-list-view .card__heading a:hover,
+.blog-list-view .card__heading a:focus {
+  color: rgb(var(--color-primary ));
+}
+
+.blog-list-view .article-card__footer {
+  display: none;
+}
+
+.blog-list-view .grid__item {
+  width: 100%;
+  max-width: 100%;
+}
+
+.card__content .article-tag {
+  line-height: 21px;
+  text-decoration: none;
+}
+.card__content .article-tag:hover {
+  text-decoration: none;
+}
+
+.card__content .article-tag + .article-tag:before {
+  content: ",";
+  display: inline-block;
+  margin: 0 2px 0 -3px;
+}
+
+.blog-articles .card-wrapper .article-card__footer {
+  display: none;
+}
+
+.article-card__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

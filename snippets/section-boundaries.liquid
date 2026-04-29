@@ -1,0 +1,14 @@
+<style>
+  .section#shopify-section-{{ section_id }} {
+    padding: {{ section_settings.section_padding_all_sides }};
+    margin:{{ section_settings.section_margin_all_sides }};
+  }
+
+  @media(max-width: 767px) {
+    .section#shopify-section-{{ section_id }} {
+       padding: {{ section_settings.section_padding_mobile_all_sides }} !important;
+       margin: {{ section_settings.section_margin_mobile_all_sides }} !important;
+       min-height: {{ section_settings.height_section_mobile }}px !important;
+    }
+  }
+</style>

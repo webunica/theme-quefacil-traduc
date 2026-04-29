@@ -1,0 +1,729 @@
+{% render 'grid-styles' %}
+{% render 'section-boundaries', section_id: section.id, section_settings: section.settings %}
+<style>
+  .grid-bottom-line a{
+    color: rgb(var(--color-primary ) );
+    text-decoration: none;
+  }
+</style>
+<div class="gridded-adv {{ section.settings.layout_style }} section-{{ section.id }}">
+  <{{ section.settings.heading_size }} style="color: {{ section.settings.heading_color }}; text-align: {{ section.settings.heading_align }};font-weight: {{ section.settings.heading_font_weight }};">
+    {{ section.settings.heading }}
+  </{{ section.settings.heading_size }}>
+  <div
+    class="grid-adv grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down text-{{ section.settings.text_align }}"
+    style="gap: {{ section.settings.space_between }}px;"
+  >
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign btn_size_text = block.settings.btn_size_text
+        assign btn_color = block.settings.btn_color
+        assign btn_hover_color = block.settings.btn_hover_color
+        assign btn_bg_color = block.settings.btn_bg_color
+        assign btn_bg_hover_color = block.settings.btn_bg_hover_color
+        assign btn_color = block.settings.btn_color
+        assign btn_border = block.settings.btn_border
+        assign btn_border_color = block.settings.btn_border_color
+        assign btn_border_hover_color = block.settings.btn_border_hover_color
+      -%}
+      <div
+        class="freshcart-grid__item grid_item"
+        style="background-color: {{ section.settings.section_background_color }}; text-align: {{ section.settings.text_align }}; border-radius: {{ section.settings.border_radius }}; margin: {{ section.settings.content_margin }}; padding: {{ section.settings.content_padding }};"
+      >
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: block.settings.image_width, height: block.settings.image_height }}"
+            alt="{{ block.settings.image }}"
+            class="grid-adv-image"
+            width="{{ block.settings.image_width }}"
+            height="{{ block.settings.image_height }}"
+            loading="lazy"
+          >
+        {% else %}
+          {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+          <span style="width: {{ block.settings.image_width }}px; height: {{ block.settings.image_height }}px; display: inline-block;">
+            {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </span>
+        {% endif %}
+
+        {% if block.settings.block_heading != blank %}
+          <{{ block.settings.block_heading_font_size }} style="color: {{ block.settings.block_heading_color }}; font-weight: {{ block.settings.block_heading_font_weight }}; line-height: {{ block.settings.block_heading_lineheight }};">
+            {{ block.settings.block_heading }}
+          </{{ block.settings.block_heading_font_size }}>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <p style="color: {{ block.settings.des_color }}; font-size: {{ block.settings.des_font_size }}; font-weight: {{ block.settings.des_font_weight }}; line-height: {{ block.settings.des_lineheight }};">
+            {{ block.settings.description }}
+          </p>
+        {% endif %}
+
+        {% if block.settings.button_text != blank %}
+          <div class="grid_adv_button {{ block.settings.btn_style }} button__{{ block.id }}">
+            <style>
+              .grid_adv_button {
+                max-width: fit-content;
+                display: inline-block;
+                width: 100%;
+               }
+              .button__{{ block.id }} {
+                width: fit-content;
+              }
+
+              .button__{{ block.id }} a {
+                font-size: {{ btn_size_text }};
+                cursor: pointer;
+                color: {{ btn_color }};
+                line-height: 1.2;
+                display: block;
+                transition: 0.3s ease-in-out;
+                position: static;
+                width: fit-content;
+              }
+
+              .button__{{ block.id }} a:before {
+                position: absolute;
+                top: 0;
+                right:0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                content: "";
+                display: block;
+              }
+
+              {%- if block.settings.btn_style != 'btn-link' -%}
+                .button__{{ block.id }} a {
+                  padding: {{ block.settings.btn_padding }};
+                  margin: {{ block.settings.btn_margin }};
+                  border: {{ btn_border }}px solid {{ btn_border_color }};
+                  border-radius: {{ block.settings.btn_border_radius }};
+                  text-decoration: none;
+                }
+              {%- endif -%}
+
+              {%- if block.settings.btn_style == 'btn-fill' -%}
+                .button__{{ block.id }} a {
+                  background-color: {{ btn_bg_color }};
+                  border: {{ btn_border }}px solid {{ btn_border_color }};
+                }
+
+                .button__{{ block.id }} a:hover,
+                .button__{{ block.id }} a:focus {
+                  background-color: {{ btn_bg_hover_color }};
+                  color: {{ btn_hover_color }};
+                  border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                }
+              {%- elsif block.settings.btn_style == 'btn-outline' -%}
+                .button__{{ block.id }} a {
+                  background-color: transparent;
+                }
+
+                .button__{{ block.id }} a:hover,
+                .button__{{ block.id }} a:focus {
+                  border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                  color: {{ btn_hover_color }};
+                }
+              {%- elsif block.settings.btn_style == 'btn-link' -%}
+                .button__{{ block.id }} a {
+                  text-decoration: underline;
+                  background: transparent;
+                }
+
+                .button__{{ block.id }} a:hover,
+                .button__{{ block.id }} a:focus {
+                  color: {{ btn_hover_color }};
+                }
+              {%- endif -%}
+            </style>
+            <a
+              class="button__link"
+              href="{{ block.settings.button_url }}"
+            >
+              {{ block.settings.button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <p
+    class="grid-bottom-line"
+    style="color: {{ section.settings.bottom_line_color }}; font-size: {{ section.settings.bottom_line_size }}px;text-align: {{ section.settings.bottom_line_align }};"
+  >
+    {{ section.settings.bottom_line_text }}
+  </p>
+</div>
+
+{% schema %}
+{
+    "name": "t:sections.gridded-advertisement.name",
+    "class": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.grid_heading.content"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.gridded-advertisement.settings.heading.label",
+            "default": "Ready to get started?"
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "t:sections.gridded-advertisement.settings.heading_color.label",
+            "default": "#001e2b"
+        },
+        {
+            "type": "select",
+            "id": "heading_size",
+            "default": "h2",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__1.label"
+                },
+                {
+                    "value": "h2",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__2.label"
+                },
+                {
+                    "value": "h3",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__3.label"
+                },
+                {
+                    "value": "h4",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__4.label"
+                },
+                {
+                    "value": "h5",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__5.label"
+                },
+                {
+                    "value": "h6",
+                    "label": "t:sections.gridded-advertisement.settings.heading_size.options__6.label"
+                }
+            ],
+            "label": "t:sections.gridded-advertisement.settings.heading_size.label"
+        },
+        {
+            "type": "select",
+            "id": "heading_font_weight",
+            "label": "t:sections.gridded-advertisement.settings.heading_font_weight.label",
+            "default": "600",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "t:sections.gridded-advertisement.settings.heading_font_weight.options__1.label"
+                },
+                {
+                    "value": "400",
+                    "label": "t:sections.gridded-advertisement.settings.heading_font_weight.options__2.label"
+                },
+                {
+                    "value": "500",
+                    "label": "t:sections.gridded-advertisement.settings.heading_font_weight.options__3.label"
+                },
+                {
+                    "value": "600",
+                    "label": "t:sections.gridded-advertisement.settings.heading_font_weight.options__4.label"
+                },
+                {
+                    "value": "700",
+                    "label": "t:sections.gridded-advertisement.settings.heading_font_weight.options__5.label"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "heading_align",
+            "label": "t:sections.gridded-advertisement.settings.heading_align.label",
+            "default": "left",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.gridded-advertisement.settings.heading_align.options__1.label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.gridded-advertisement.settings.heading_align.options__2.label"
+                },
+                {
+                    "value": "right",
+                    "label": "t:sections.gridded-advertisement.settings.heading_align.options__3.label"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.container_setting.content"
+        },
+        {
+            "type": "select",
+            "id": "layout_style",
+            "label": "t:sections.gridded-advertisement.settings.layout_style.label",
+            "default": "container",
+            "options": [
+                {
+                    "value": "container",
+                    "label": "t:sections.gridded-advertisement.settings.layout_style.options__1.label"
+                },
+                {
+                    "value": "container-fluid",
+                    "label": "t:sections.gridded-advertisement.settings.layout_style.options__2.label"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "columns_desktop",
+            "label": "t:sections.gridded-advertisement.settings.columns_desktop.label",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "select",
+            "id": "columns_mobile",
+            "default": "1",
+            "label": "t:sections.gridded-advertisement.settings.columns_mobile.label",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "1"
+                },
+                {
+                    "value": "2",
+                    "label": "2"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "space_between",
+            "label": "t:sections.gridded-advertisement.settings.space_between.label",
+            "min": 1,
+            "max": 40,
+            "unit": "px",
+            "default": 24
+        },
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.section_padding_heading.content"
+        },
+        {
+            "type": "text",
+            "id": "section_padding_all_sides",
+            "label": "t:sections.gridded-advertisement.settings.section_padding_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_padding_mobile_all_sides",
+            "label": "t:sections.gridded-advertisement.settings.section_padding_mobile_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.section_margin_heading.content"
+        },
+        {
+            "type": "text",
+            "id": "section_margin_all_sides",
+            "label": "t:sections.gridded-advertisement.settings.section_margin_all_sides.label",
+            "default": "80px 0px 80px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_margin_mobile_all_sides",
+            "label": "t:sections.gridded-advertisement.settings.section_margin_mobile_all_sides.label",
+            "default": "40px 0px 40px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.grid_block.content"
+        },
+        {
+            "type": "color",
+            "id": "section_background_color",
+            "label": "t:sections.gridded-advertisement.settings.section_background_color.label",
+            "default": "#f0f3f2"
+        },
+        {
+            "type": "text",
+            "id": "border_radius",
+            "label": "t:sections.gridded-advertisement.settings.border_radius.label",
+            "default": "8px"
+        },
+        {
+            "type": "text",
+            "id": "content_margin",
+            "label": "t:sections.gridded-advertisement.settings.content_margin.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "content_padding",
+            "label": "t:sections.gridded-advertisement.settings.content_padding.label",
+            "default": "32px 32px 32px 32px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "t:sections.gridded-advertisement.settings.text_align.label",
+            "default": "left",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.gridded-advertisement.settings.text_align.options__1.label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.gridded-advertisement.settings.text_align.options__2.label"
+                },
+                {
+                    "value": "right",
+                    "label": "t:sections.gridded-advertisement.settings.text_align.options__3.label"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "t:sections.gridded-advertisement.settings.bottom_setting.content"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "bottom_line_text",
+            "label": "t:sections.gridded-advertisement.settings.bottom_line_text.label",
+            "default": "For assistance using Freshcart services, please visit our Help Center"
+        },
+        {
+            "type": "color",
+            "id": "bottom_line_color",
+            "label": "t:sections.gridded-advertisement.settings.bottom_line_color.label",
+            "default": "#001e2b"
+        },
+        {
+            "type": "text",
+            "id": "bottom_line_size",
+            "default": "14",
+            "label": "t:sections.gridded-advertisement.settings.bottom_line_size.label"
+        },
+        {
+            "type": "select",
+            "id": "bottom_line_align",
+            "label": "t:sections.gridded-advertisement.settings.bottom_line_align.label",
+            "default": "left",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "t:sections.gridded-advertisement.settings.bottom_line_align.options__1.label"
+                },
+                {
+                    "value": "center",
+                    "label": "t:sections.gridded-advertisement.settings.bottom_line_align.options__2.label"
+                },
+                {
+                    "value": "right",
+                    "label": "t:sections.gridded-advertisement.settings.bottom_line_align.options__3.label"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "grid_ad",
+            "name": "t:sections.gridded-advertisement.blocks.grid_ad.name",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "t:sections.gridded-advertisement.blocks.grid_ad.settings.content_style.content"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.image.label"
+                },
+                {
+                    "type": "text",
+                    "id": "image_width",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.image_width.label",
+                    "info": "t:sections.gridded-advertisement.blocks.grid_ad.settings.image_width.info",
+                    "default": "120"
+                },
+                {
+                    "type": "text",
+                    "id": "image_height",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.image_height.label",
+                    "info": "t:sections.gridded-advertisement.blocks.grid_ad.settings.image_height.info",
+                    "default": "120"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.gridded-advertisement.blocks.grid_ad.settings.heading_section.content"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "block_heading",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading.label",
+                    "default": "John Smith"
+                },
+                {
+                    "type": "color",
+                    "id": "block_heading_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "select",
+                    "id": "block_heading_font_size",
+                    "default": "h4",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "block_heading_font_weight",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.label",
+                    "default": "600",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "block_heading_lineheight",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.block_heading_lineheight.label",
+                    "default": "1.2"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.gridded-advertisement.blocks.grid_ad.settings.desc_section.content"
+                },
+                {
+                    "type": "textarea",
+                    "id": "description",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.description.label",
+                    "default": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor."
+                },
+                {
+                    "type": "color",
+                    "id": "des_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_color.label",
+                    "default": "#5c6c75"
+                },
+                {
+                    "type": "text",
+                    "id": "des_font_size",
+                    "default": "14px",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "des_font_weight",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.label",
+                    "default": "500",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.des_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.button_text.label",
+                    "default": "Shop Now"
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.button_url.label"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_color.label",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_hover_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_hover_color.label",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_bg_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_bg_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_bg_hover_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_bg_hover_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_border_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_border_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_border_hover_color",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_border_hover_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_padding",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_padding.label",
+                    "default": "10px 17px 10px 17px",
+                    "info": "Padding: Top Right Bottom Left"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_border",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_border.label",
+                    "default": "2px Solid"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_border_radius",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_border_radius.label",
+                    "default": "6px"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_size_text",
+                    "default": "14px",
+                    "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_size_text.label"
+                },
+                {
+                    "type": "select",
+                    "id": "btn_style",
+                    "label": "Button Style",
+                    "default": "btn-fill",
+                    "options": [
+                        {
+                            "value": "btn-fill",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_style.options__1.label"
+                        },
+                        {
+                            "value": "btn-outline",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_style.options__2.label"
+                        },
+                        {
+                            "value": "btn-link",
+                            "label": "t:sections.gridded-advertisement.blocks.grid_ad.settings.btn_style.options__3.label"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "t:sections.gridded-advertisement.presets.name",
+            "blocks": [
+                {
+                    "type": "grid_ad",
+                    "settings": {
+                        "block_heading": "Grow my business with Freshcart",
+                        "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+                        "button_text": "Learn More"
+                    }
+                },
+                {
+                    "type": "grid_ad",
+                    "settings": {
+                        "block_heading": "Advertise my brand on Freshcart",
+                        "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+                        "button_text": "Learn More"
+                    }
+                },
+                {
+                    "type": "grid_ad",
+                    "settings": {
+                        "block_heading": "Learn more about Freshcart",
+                        "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+                        "button_text": "Learn More"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

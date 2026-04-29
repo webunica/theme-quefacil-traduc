@@ -1,0 +1,386 @@
+{% render 'grid-styles' %}
+{% render 'section-boundaries', section_id: section.id, section_settings: section.settings %}
+<style>
+  .section#shopify-section-{{ section.id }} .about-hero img{
+    object-fit:cover;
+     width: 100%;
+  }
+</style>
+
+<div class="freshcart-about-hero {{ section.settings.layout_style }} section-{{ section.id }}">
+  <div
+    class="about-hero grid grid--2-col-desktop grid--1-col-tablet-down"
+    style="gap: {{ section.settings.space_between }}px; max-width: {{ section.settings.max_width }}px; margin: 0 auto;"
+  >
+    <div class="about-hero-content freshcart-grid__item" style="align-self: {{ section.settings.content_align }};">
+      {%- for block in section.blocks -%}
+        {% if block.settings.title != blank %}
+          <{{ block.settings.heading_des_size_text }}
+            class="about-hero__heading"
+            style="color: {{ block.settings.heading_color }}; font-weight: {{ block.settings.heading_font_weight }}; line-height: {{ block.settings.heading_lineheight }}; text-transform: {{ block.settings.heading_txt_style }};"
+          >
+            {{ block.settings.title }}
+          </{{ block.settings.heading_des_size_text }}>
+          <style>
+            @media(max-width: 1023px) {
+              .section#shopify-section-{{ section.id }} .about-hero__heading {
+                font-size: {{ block.settings.heading_mob_size_text }}px;
+              }
+            }
+          </style>
+        {% endif %}
+
+        {% if block.settings.description_text != blank %}
+          <{{ block.settings.des_size_text }}
+            class="about-hero__description"
+            style="color: {{ block.settings.des_color }}; font-weight: {{ block.settings.des_font_weight }}; line-height: {{ block.settings.des_lineheight }};"
+          >
+            {{ block.settings.description_text }}
+          </{{ block.settings.des_size_text }}>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+
+    <div class="about-hero-image-container about-hero freshcart-grid__item">
+      {% if section.settings.about_hero_image != blank %}
+        <img
+          src="{{ section.settings.about_hero_image | image_url: width: section.settings.image_width, height: section.settings.image_height }}"
+          alt="image"
+          style="border-radius: {{ section.settings.border_radius }};"
+          class="about-hero-image"
+          width="{{ section.settings.image_width }}"
+          height="{{ section.settings.image_height }}"
+          loading="lazy"
+        >
+      {% else %}
+        <span style="display: inline-block; width: 100%; height: 100%; border-radius: {{ section.settings.border_radius }};">
+          {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.about-hero.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "t:sections.about-hero.settings.layout_style.label",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "t:sections.about-hero.settings.layout_style.options__1.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.about-hero.settings.layout_style.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "t:sections.about-hero.settings.max_width.label",
+      "default": "976"
+    },
+    {
+      "type": "image_picker",
+      "id": "about_hero_image",
+      "label": "t:sections.about-hero.settings.about_hero_image.label"
+    },
+    {
+      "type": "text",
+      "id": "image_width",
+      "label": "t:sections.about-hero.settings.image_width.label",
+      "default": "540"
+    },
+    {
+      "type": "text",
+      "id": "image_height",
+      "label": "t:sections.about-hero.settings.image_height.label",
+      "default": "420"
+    },
+    {
+      "type": "text",
+      "id": "border_radius",
+      "label": "t:sections.about-hero.settings.border_radius.label",
+      "default": "8px"
+    },
+    {
+      "type": "range",
+      "id": "space_between",
+      "label": "t:sections.about-hero.settings.space_between.label",
+      "min": 1,
+      "max": 40,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "t:sections.about-hero.settings.content_align.label",
+      "default": "center",
+      "options": [
+        {
+          "label": "t:sections.about-hero.settings.content_align.options__1.label",
+          "value": "start"
+        },
+        {
+          "label": "t:sections.about-hero.settings.content_align.options__2.label",
+          "value": "center"
+        },
+        {
+          "label": "t:sections.about-hero.settings.content_align.options__3.label",
+          "value": "end"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.about-hero.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "section_padding_all_sides",
+      "label": "t:sections.about-hero.settings.section_padding_all_sides.label",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_all_sides",
+      "label": "t:sections.about-hero.settings.section_margin_all_sides.label",
+      "default": "80px 0px 80px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "section_padding_mobile_all_sides",
+      "label": "t:sections.about-hero.settings.section_padding_mobile_all_sides.label",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_mobile_all_sides",
+      "label": "t:sections.about-hero.settings.section_margin_mobile_all_sides.label",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.about-hero.blocks.heading.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "t:sections.about-hero.blocks.heading.settings.title.label",
+          "default": "The Future of Grocery Delivery:"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_color.label",
+          "default": "#001e2b"
+        },
+        {
+          "type": "select",
+          "id": "heading_txt_style",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_txt_style.options__1.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_txt_style.options__2.label"
+            },
+            {
+              "value": "lowercase",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_txt_style.options__3.label"
+            }
+          ],
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_txt_style.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_des_size_text",
+          "default": "h1",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.options__6.label"
+            }
+          ],
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_des_size_text.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_font_weight",
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.label",
+          "default": "600",
+          "options": [
+            {
+              "value": "300",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.options__1.label"
+            },
+            {
+              "value": "400",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.options__2.label"
+            },
+            {
+              "value": "500",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.options__3.label"
+            },
+            {
+              "value": "600",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.options__4.label"
+            },
+            {
+              "value": "700",
+              "label": "t:sections.about-hero.blocks.heading.settings.heading_font_weight.options__5.label"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "heading_lineheight",
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_lineheight.label",
+          "default": "1.2"
+        },
+        {
+          "type": "text",
+          "id": "heading_mob_size_text",
+          "default": "20",
+          "label": "t:sections.about-hero.blocks.heading.settings.heading_mob_size_text.label"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.about-hero.blocks.paragraph.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "description_text",
+          "label": "t:sections.about-hero.blocks.paragraph.settings.description_text.label",
+          "default": "By powering the future of grocery with our retail partners, we give everyone access to the food they love and more time to enjoy it together."
+        },
+        {
+          "type": "color",
+          "id": "des_color",
+          "label": "t:sections.about-hero.blocks.paragraph.settings.des_color.label",
+          "default": "#5c6c75"
+        },
+        {
+          "type": "select",
+          "id": "des_size_text",
+          "default": "h5",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.options__6.label"
+            }
+          ],
+          "label": "t:sections.about-hero.blocks.paragraph.settings.des_size_text.label"
+        },
+        {
+          "type": "select",
+          "id": "des_font_weight",
+          "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.label",
+          "default": "500",
+          "options": [
+            {
+              "value": "300",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.options__1.label"
+            },
+            {
+              "value": "400",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.options__2.label"
+            },
+            {
+              "value": "500",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.options__3.label"
+            },
+            {
+              "value": "600",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.options__4.label"
+            },
+            {
+              "value": "700",
+              "label": "t:sections.about-hero.blocks.paragraph.settings.des_font_weight.options__5.label"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "des_lineheight",
+          "label": "t:sections.about-hero.blocks.paragraph.settings.des_lineheight.label",
+          "default": "1.5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.about-hero.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "paragraph"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

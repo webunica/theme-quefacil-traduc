@@ -1,0 +1,25 @@
+<!-- snippets/icon-media.liquid -->
+<div class="icon-media">
+  {% if block.settings.icon_type == 'image' and block.settings.icon_image %}
+    <!-- Display the uploaded image icon -->
+    <img
+      src="{{ block.settings.icon_image | image_url }}"
+      alt="Icon image"
+      width="40"
+      height="40"
+      loading="lazy"
+    >
+  {% elsif block.settings.icon_type == 'svg' %}
+    <!-- Display custom SVG or default SVG -->
+    <div class="icon-svg inline-flex">
+      {% if block.settings.icon_svg %}
+        {{ block.settings.icon_svg }}
+      {% endif %}
+    </div>
+    <style>
+      .icon-svg svg {
+        stroke: {{ block.settings.icon_color }};
+      }
+    </style>
+  {% endif %}
+</div>

@@ -1,0 +1,206 @@
+<style>
+   .section#shopify-section-{{ section.id }} .tabs-nav .tab-link {
+      color:{{ section.settings.title_color }};
+  }
+
+  .section#shopify-section-{{ section.id }} .tabs-nav .tab-link.active {
+      color: {{ section.settings.active_title_color | default: 'rgb(var(--color-primary))' }};
+      border-bottom: 2px solid {{ section.settings.active_border_color | default: 'rgb(var(--color-primary))' }};
+  }
+</style>
+
+<div
+  class="tabs container"
+  style="margin-top: {{ section.settings.section_margin_top }}px; margin-bottom: {{ section.settings.section_margin_bottom }}px;"
+>
+  <ul class="tabs-nav">
+    <!-- Display the first tab as 'Product Info' with the product description -->
+    <li>
+      <a href="#tab1" class="tab-link active" data-tab="tab1">Description</a>
+    </li>
+
+    <!-- Display dynamic tabs -->
+    {% for block in section.blocks %}
+      <li>
+        <a href="#{{ block.id }}" class="tab-link" data-tab="{{ block.id }}">
+          {{ block.settings.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="tabs-content">
+    <!-- First tab content: always the product description -->
+    <div id="tab1" class="tab-content active" style="color:{{ section.settings.desc_color }};">
+      {{ product.description }}
+    </div>
+
+    <!-- Dynamic content for the rest of the tabs -->
+    {% for block in section.blocks %}
+      <div id="{{ block.id }}" class="tab-content" style="color:{{ section.settings.desc_color }};">
+        <p>
+          {{
+            block.settings.content
+            | default: product.metafields.custom.more_information
+            | default: 'No content available'
+          }}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "t:sections.products-tab.name",
+    "class": "section",
+    "settings": [
+        {
+            "type": "range",
+            "id": "section_margin_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.products-tab.settings.section_margin_top.label",
+            "default": 96
+        },
+        {
+            "type": "range",
+            "id": "section_margin_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.products-tab.settings.section_margin_bottom.label",
+            "default": 60
+        },
+        {
+            "type": "header",
+            "content": "t:sections.products-tab.settings.tab_content.content"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "t:sections.products-tab.settings.title_color.label",
+            "default": "#5c6c75"
+        },
+        {
+            "type": "color",
+            "id": "active_title_color",
+            "label": "t:sections.products-tab.settings.active_title_color.label"
+        },
+        {
+            "type": "color",
+            "id": "active_border_color",
+            "label": "t:sections.products-tab.settings.active_border_color.label"
+        },
+        {
+            "type": "color",
+            "id": "desc_color",
+            "label": "t:sections.products-tab.settings.desc_color.label",
+            "default": "#5c6c75"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tab",
+            "name": "t:sections.products-tab.blocks.tab.name",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "t:sections.products-tab.blocks.tab.settings.title.label",
+                    "default": "Additional Info"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "t:sections.products-tab.blocks.tab.settings.content.label",
+                    "default": "Default content for additional information."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Tabs"
+        }
+    ]
+}
+{% endschema %}
+
+<style>
+  .tabs {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .tabs-nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(var(--color-gray-200) );
+     gap: 32px;
+  }
+
+  /* .tabs-nav li {
+    margin-right: 15px;
+  } */
+
+  .tab-link {
+    text-decoration: none;
+    padding-bottom: 16px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .tab-link.active {
+    display: inline-block;
+    margin-bottom: -1px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .tabs-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+</style>
+
+<script>
+       document.addEventListener('DOMContentLoaded', function () {
+    // Get all the tabs and tab content containers
+    const tabs = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Iterate through all the tabs and set up the click event listeners
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function (event) {
+        // Prevent default link behavior (so the page doesn't jump)
+        event.preventDefault();
+
+        // Remove the 'active' class from all tabs and all tab content
+        tabs.forEach(function (t) {
+          t.classList.remove('active');
+        });
+        tabContents.forEach(function (content) {
+          content.classList.remove('active');
+        });
+
+        // Add the 'active' class to the clicked tab and the corresponding tab content
+        tab.classList.add('active');
+        const tabId = tab.getAttribute('data-tab'); // Get the target tab ID
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  });
+</script>

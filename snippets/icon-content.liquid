@@ -1,0 +1,22 @@
+<!-- snippets/icon-content.liquid -->
+<div class="icon-content">
+  <{{ block.settings.heading_size }}
+    style="
+      color: {{ block.settings.heading_color }};
+      line-height: {{ block.settings.heading_lineheight }};
+      text-transform: {{ block.settings.heading_text_transform }};
+      letter-spacing: {{ block.settings.heading_letter_spacing }}px;
+      font-weight: {{ block.settings.heading_font_weight }};
+      padding: {{ block.settings.heading_padding }};
+      margin: {{ block.settings.heading_margin }};
+    "
+  >
+    {{ block.settings.heading_text }}
+  </{{ block.settings.heading_size }}>
+
+  {% if block.settings.description_text %}
+    <p style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size }}px; padding: {{ block.settings.des_padding }}; margin: {{ block.settings.des_margin }};line-height: 1.5; ">
+      {{ block.settings.description_text }}
+    </p>
+  {% endif %}
+</div>

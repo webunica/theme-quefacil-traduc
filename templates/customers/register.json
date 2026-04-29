@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "enable_image": true,
+        "image": "shopify://shop_images/signin.png",
+        "image_width": "381.66px",
+        "image_height": "465px",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

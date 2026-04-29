@@ -1,0 +1,504 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "about_hero_QYXdfQ": {
+      "type": "about-hero",
+      "blocks": {
+        "heading_rabARD": {
+          "type": "heading",
+          "settings": {
+            "title": "The Future of Grocery Delivery:",
+            "heading_color": "#001e2b",
+            "heading_txt_style": "none",
+            "heading_des_size_text": "h1",
+            "heading_font_weight": "600",
+            "heading_lineheight": "1.2",
+            "heading_mob_size_text": "30"
+          }
+        },
+        "paragraph_C6jYwC": {
+          "type": "paragraph",
+          "settings": {
+            "description_text": "By powering the future of grocery with our retail partners, we give everyone access to the food they love and more time to enjoy it together.",
+            "des_color": "#5c6c75",
+            "des_size_text": "h5",
+            "des_font_weight": "500",
+            "des_lineheight": "1.5"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rabARD",
+        "paragraph_C6jYwC"
+      ],
+      "settings": {
+        "layout_style": "container",
+        "max_width": "976",
+        "about_hero_image": "shopify://shop_images/about-img.jpg",
+        "image_width": "540",
+        "image_height": "420",
+        "border_radius": "8px",
+        "space_between": 24,
+        "content_align": "center",
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "80px 0px 80px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "testimonial_FwGCjU": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_block_MJcjbj": {
+          "type": "testimonial_block",
+          "settings": {
+            "customer_image": "shopify://shop_images/avatar-15.jpg",
+            "image_width": "40",
+            "image_height": "40",
+            "customer_name": "Mette Hay",
+            "name_color": "#ffffff",
+            "name_txt_style": "none",
+            "name_size": "h5",
+            "name_mob_size": "20",
+            "name_font_weight": "300",
+            "name_lineheight": "1.2",
+            "name_margin": "0px 0px 0px 0px",
+            "comment_text": "Consectetur adipisicing elit dolor, sit amet Illo recusandae ipsum itaque tempora labore voluptate.",
+            "comment_color": "#ffffff",
+            "comment_size": "32",
+            "comment_mob_size": "20",
+            "comment_font_weight": "300",
+            "comment_lineheight": "1.2"
+          }
+        },
+        "testimonial_block_XUybMY": {
+          "type": "testimonial_block",
+          "settings": {
+            "customer_image": "shopify://shop_images/avatar-14.jpg",
+            "image_width": "40",
+            "image_height": "40",
+            "customer_name": "Mette Hay",
+            "name_color": "#ffffff",
+            "name_txt_style": "none",
+            "name_size": "h5",
+            "name_mob_size": "20",
+            "name_font_weight": "300",
+            "name_lineheight": "1.2",
+            "name_margin": "0px 0px 0px 0px",
+            "comment_text": "Consectetur adipisicing elit dolor, sit amet Illo recusandae ipsum itaque tempora labore voluptate.",
+            "comment_color": "#ffffff",
+            "comment_size": "32",
+            "comment_mob_size": "20",
+            "comment_font_weight": "300",
+            "comment_lineheight": "1.2"
+          }
+        },
+        "testimonial_block_jPgnwj": {
+          "type": "testimonial_block",
+          "settings": {
+            "customer_image": "shopify://shop_images/avatar-13.jpg",
+            "image_width": "40",
+            "image_height": "40",
+            "customer_name": "Mette Hay",
+            "name_color": "#ffffff",
+            "name_txt_style": "none",
+            "name_size": "h5",
+            "name_mob_size": "20",
+            "name_font_weight": "300",
+            "name_lineheight": "1.2",
+            "name_margin": "0px 0px 0px 0px",
+            "comment_text": "Consectetur adipisicing elit dolor, sit amet Illo recusandae ipsum itaque tempora labore voluptate.",
+            "comment_color": "#ffffff",
+            "comment_size": "32",
+            "comment_mob_size": "20",
+            "comment_font_weight": "300",
+            "comment_lineheight": "1.2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_MJcjbj",
+        "testimonial_block_XUybMY",
+        "testimonial_block_jPgnwj"
+      ],
+      "settings": {
+        "heading_text": "",
+        "heading_color": "#001e2b",
+        "heading_style": "none",
+        "heading_font_size": "h3",
+        "heading_mob_size": "30",
+        "heading_font_weight": "700",
+        "heading_lineheight": "1.2",
+        "heading_margin": "0px 0px 0px 0px",
+        "layout_style": "container-fluid",
+        "bgcolor": "#001e2b",
+        "border_radius": 0,
+        "height_section": "420",
+        "height_section_mobile": "350",
+        "content_align": "center",
+        "paddingsection": "70px 0px 50px 0px",
+        "marginsection": "0px -0px 0px 0px",
+        "paddingmobile": "50px 15px 0px 15px",
+        "marginmobile": "0px -15px 0px -15px",
+        "container_padding": "14px 14px 14px 14px"
+      }
+    },
+    "gridded_advertisement_VLrJJz": {
+      "type": "gridded-advertisement",
+      "blocks": {
+        "grid_ad_KGaQTP": {
+          "type": "grid_ad",
+          "settings": {
+            "image": "shopify://shop_images/about-icons-1.svg",
+            "image_width": "120",
+            "image_height": "120",
+            "block_heading": "Grow my business with </br>Freshcart",
+            "block_heading_color": "#001e2b",
+            "block_heading_font_size": "h4",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+            "des_color": "#5c6c75",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "button_text": "Learn More",
+            "button_url": "",
+            "btn_color": "#ffffff",
+            "btn_hover_color": "#ffffff",
+            "btn_bg_color": "#001e2b",
+            "btn_bg_hover_color": "#001e2b",
+            "btn_border_color": "#001e2b",
+            "btn_border_hover_color": "#001e2b",
+            "btn_padding": "10px 17px 10px 17px",
+            "btn_border": "2px Solid",
+            "btn_border_radius": "6px",
+            "btn_size_text": "14px",
+            "btn_style": "btn-fill"
+          }
+        },
+        "grid_ad_8hW9gK": {
+          "type": "grid_ad",
+          "settings": {
+            "image": "shopify://shop_images/about-icons-2.svg",
+            "image_width": "120",
+            "image_height": "120",
+            "block_heading": "Advertise my brand on </br>Freshcart",
+            "block_heading_color": "#001e2b",
+            "block_heading_font_size": "h4",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+            "des_color": "#5c6c75",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "button_text": "Learn More",
+            "button_url": "",
+            "btn_color": "#ffffff",
+            "btn_hover_color": "#ffffff",
+            "btn_bg_color": "#001e2b",
+            "btn_bg_hover_color": "#001e2b",
+            "btn_border_color": "#001e2b",
+            "btn_border_hover_color": "#001e2b",
+            "btn_padding": "10px 17px 10px 17px",
+            "btn_border": "2px Solid",
+            "btn_border_radius": "6px",
+            "btn_size_text": "14px",
+            "btn_style": "btn-fill"
+          }
+        },
+        "grid_ad_9HWaAT": {
+          "type": "grid_ad",
+          "settings": {
+            "image": "shopify://shop_images/about-icons-3.svg",
+            "image_width": "120",
+            "image_height": "120",
+            "block_heading": "Learn more about  Freshcart",
+            "block_heading_color": "#001e2b",
+            "block_heading_font_size": "h4",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "description": "Duis placerat, urna ut dictum lobortis, erat libero feugiat nulla, ullamcorper fermentum lectus dolor ut tortor.",
+            "des_color": "#5c6c75",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "button_text": "Learn More",
+            "button_url": "",
+            "btn_color": "#ffffff",
+            "btn_hover_color": "#ffffff",
+            "btn_bg_color": "#001e2b",
+            "btn_bg_hover_color": "#001e2b",
+            "btn_border_color": "#001e2b",
+            "btn_border_hover_color": "#001e2b",
+            "btn_padding": "10px 17px 10px 17px",
+            "btn_border": "2px Solid",
+            "btn_border_radius": "6px",
+            "btn_size_text": "14px",
+            "btn_style": "btn-fill"
+          }
+        }
+      },
+      "block_order": [
+        "grid_ad_KGaQTP",
+        "grid_ad_8hW9gK",
+        "grid_ad_9HWaAT"
+      ],
+      "settings": {
+        "heading": "Ready to get started?",
+        "heading_color": "#001e2b",
+        "heading_size": "h2",
+        "heading_font_weight": "600",
+        "heading_align": "left",
+        "layout_style": "container",
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "space_between": 24,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "80px 0px 80px 0px",
+        "marginmobile": "40px 0px 40px 0px",
+        "bg_color": "#f0f3f2",
+        "border_radius": "8px",
+        "content_margin": "0px 0px 0px 0px",
+        "content_padding": "32px 32px 32px 32px",
+        "text_align": "left",
+        "bottom_line_text": "For assistance using Freshcart services, please visit our Help Center",
+        "bottom_line_color": "#001e2b",
+        "bottom_line_size": "14",
+        "bottom_line_align": "left"
+      }
+    },
+    "stats_block_8xYGDi": {
+      "type": "stats-block",
+      "blocks": {
+        "stats_nmyMce": {
+          "type": "stats",
+          "settings": {
+            "block_heading": "500k",
+            "block_heading_color": "#ffffff",
+            "block_heading_font_size": "h0",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "block_heading_margin": "0px 0px 0px 0px",
+            "description": "Shoppers",
+            "des_color": "#ffffff",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "des_lineheight": "1.5",
+            "block_des_margin": "0px 0px 0px 0px"
+          }
+        },
+        "stats_mcGahy": {
+          "type": "stats",
+          "settings": {
+            "block_heading": "4,500+",
+            "block_heading_color": "#ffffff",
+            "block_heading_font_size": "h0",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "block_heading_margin": "0px 0px 0px 0px",
+            "description": "Cities",
+            "des_color": "#ffffff",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "des_lineheight": "1.5",
+            "block_des_margin": "0px 0px 0px 0px"
+          }
+        },
+        "stats_kMqgUX": {
+          "type": "stats",
+          "settings": {
+            "block_heading": "40k+",
+            "block_heading_color": "#ffffff",
+            "block_heading_font_size": "h0",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "block_heading_margin": "0px 0px 0px 0px",
+            "description": "Stores",
+            "des_color": "#ffffff",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "des_lineheight": "1.5",
+            "block_des_margin": "0px 0px 0px 0px"
+          }
+        },
+        "stats_C4hpMf": {
+          "type": "stats",
+          "settings": {
+            "block_heading": "650+",
+            "block_heading_color": "#ffffff",
+            "block_heading_font_size": "h0",
+            "block_heading_font_weight": "600",
+            "block_heading_lineheight": "1.2",
+            "block_heading_margin": "0px 0px 0px 0px",
+            "description": "Retail Brands",
+            "des_color": "#ffffff",
+            "des_font_size": "14px",
+            "des_font_weight": "500",
+            "des_lineheight": "1.5",
+            "block_des_margin": "0px 0px 0px 0px"
+          }
+        }
+      },
+      "block_order": [
+        "stats_nmyMce",
+        "stats_mcGahy",
+        "stats_kMqgUX",
+        "stats_C4hpMf"
+      ],
+      "settings": {
+        "heading": "Trusted by retailers. </br>Loved by customers.",
+        "heading_color": "#ffffff",
+        "heading_size": "h2",
+        "heading_align": "left",
+        "heading_font_weight": "600",
+        "heading_lineheight": "1.2",
+        "heading_margin": "0px 0px 0px 0px",
+        "stats_des_text": "We give everyone access to the food they</br> love and more time to enjoy it together.",
+        "stats_des_color": "#ffffff",
+        "stats_des_size": "14px",
+        "stats_des_align": "left",
+        "stats_des_font_weight": "500",
+        "stats_des_lineheight": "1.5",
+        "stats_des_margin": "0px 0px 0px 0px",
+        "layout_style": "container-fluid",
+        "max_width": "1100",
+        "items_alignment": "left",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "space_between": 24,
+        "paddingsection": "80px 16px 80px 16px",
+        "paddingmobile": "50px 30px 50px 30px",
+        "marginsection": "80px -0px 80px -0px",
+        "marginmobile": "0px -15px 0px -15px",
+        "block_container_margin": "64px 0px 0px 0px",
+        "bg_color": "#198754"
+      }
+    },
+    "team_member_wb6Gjk": {
+      "type": "team-member",
+      "blocks": {
+        "member_XAcPPn": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team-1.png",
+            "image_width": "313",
+            "image_height": "330",
+            "name": "Chris Rogers",
+            "name_color": "#001e2b",
+            "name_size_text": "14px",
+            "name_font_weight_body": "600",
+            "position": "Vice President, Retail",
+            "pos_color": "#5c6c75",
+            "pos_size_text": "12.25px",
+            "pos_font_weight_body": "500"
+          }
+        },
+        "member_MVm3fV": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team-2.png",
+            "image_width": "313",
+            "image_height": "330",
+            "name": "Donna J. Shelton",
+            "name_color": "#001e2b",
+            "name_size_text": "14px",
+            "name_font_weight_body": "600",
+            "position": "Chief Financial Officer",
+            "pos_color": "#5c6c75",
+            "pos_size_text": "12.25px",
+            "pos_font_weight_body": "500"
+          }
+        },
+        "member_DyjDm7": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team-3.png",
+            "image_width": "313",
+            "image_height": "330",
+            "name": "Daniel Leedom",
+            "name_color": "#001e2b",
+            "name_size_text": "14px",
+            "name_font_weight_body": "600",
+            "position": "Chief Communications Officer",
+            "pos_color": "#5c6c75",
+            "pos_size_text": "12.25px",
+            "pos_font_weight_body": "500"
+          }
+        },
+        "member_4tfkEH": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team-4.png",
+            "image_width": "313",
+            "image_height": "330",
+            "name": "Martha White",
+            "name_color": "#001e2b",
+            "name_size_text": "14px",
+            "name_font_weight_body": "600",
+            "position": "Chief Technology Officer",
+            "pos_color": "#5c6c75",
+            "pos_size_text": "12.25px",
+            "pos_font_weight_body": "500"
+          }
+        },
+        "member_VNBxqe": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team-5.png",
+            "image_width": "313",
+            "image_height": "330",
+            "name": "Victor Pugliese",
+            "name_color": "#001e2b",
+            "name_size_text": "14px",
+            "name_font_weight_body": "600",
+            "position": "Chief Human Resources Officer",
+            "pos_color": "#5c6c75",
+            "pos_size_text": "12.25px",
+            "pos_font_weight_body": "500"
+          }
+        }
+      },
+      "block_order": [
+        "member_XAcPPn",
+        "member_MVm3fV",
+        "member_DyjDm7",
+        "member_4tfkEH",
+        "member_VNBxqe"
+      ],
+      "settings": {
+        "title": "Our Leadership",
+        "heading_color": "#001e2b",
+        "heading_size_text": "h2",
+        "heading_align": "left",
+        "layout_style": "container-fluid",
+        "columns_desktop": 5,
+        "columns_mobile": "1",
+        "space_between": 16,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "80px -0px 80px -0px",
+        "marginmobile": "50px 0px 50px 0px",
+        "bg_color": "#f0f3f2",
+        "border_radius": "8",
+        "content_margin": "0px 0px 0px 0px",
+        "content_padding": "24px 24px 24px 24px",
+        "text_align": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_hero_QYXdfQ",
+    "testimonial_FwGCjU",
+    "gridded_advertisement_VLrJJz",
+    "stats_block_8xYGDi",
+    "team_member_wb6Gjk"
+  ]
+}

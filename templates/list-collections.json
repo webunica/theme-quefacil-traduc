@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "collections-list",
+      "settings": {
+        "heading": "Our Collections",
+        "heading_size": "h3",
+        "title_font_weight": "600",
+        "heading_color": "#001e2b",
+        "heading_alignment": "left",
+        "header_margin": "0px 0px 24px 0px",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "space_between": 12,
+        "show_border": true,
+        "border_thickness": 1,
+        "border_color": "#dfe2e1",
+        "border_hover_color": "#0aad0a",
+        "border_radius": 6,
+        "columns_mobile": "2",
+        "paddingsection": "20px 20px 20px 20px",
+        "marginsection": "40px 0px 40px 0px"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

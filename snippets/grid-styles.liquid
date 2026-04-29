@@ -1,0 +1,54 @@
+<style>
+  .section-{{ section.id }} {
+      --spacing_grid_horizontal: {{ section.settings.space_between }}px;
+   }
+   @media screen and (min-width: 990px) {
+
+     .section-{{ section.id }} .grid--8-col-desktop .freshcart-grid__item {
+        width: 149.382px;
+        max-width: 149.382px;
+    }
+
+    .section-{{ section.id }} .grid--6-col-desktop .freshcart-grid__item {
+      width: calc(16.66% - var(--spacing_grid_horizontal) * 5 / 6);
+      max-width: calc(16.66% - var(--spacing_grid_horizontal) * 5 / 6);
+    }
+
+    .section-{{ section.id }} .grid--5-col-desktop .freshcart-grid__item {
+      width: calc(20% - var(--spacing_grid_horizontal) * 4 / 5);
+      max-width: calc(20% - var(--spacing_grid_horizontal) * 4 / 5);
+    }
+
+    .section-{{ section.id }} .grid--4-col-desktop .freshcart-grid__item {
+      width: calc(25% - var(--spacing_grid_horizontal) * 3 / 4);
+      max-width: calc(25% - var(--spacing_grid_horizontal) * 3 / 4);
+    }
+
+    .section-{{ section.id }} .grid--3-col-desktop .freshcart-grid__item {
+      width: calc(33.33% - var(--spacing_grid_horizontal) * 2 / 3);
+      max-width: calc(33.33% - var(--spacing_grid_horizontal) * 2 / 3);
+    }
+
+    .section-{{ section.id }} .grid--2-col-desktop .freshcart-grid__item {
+      width: calc(50% - var(--spacing_grid_horizontal) / 2);
+      max-width: calc(50% - var(--spacing_grid_horizontal) / 2);
+    }
+
+     .section-{{ section.id }} .grid--1-col-desktop .freshcart-grid__item {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 989px) {
+
+    .section-{{ section.id }} .grid--2-col-tablet-down .freshcart-grid__item {
+      width: calc(50% - var(--spacing_grid_horizontal) / 2);
+    }
+
+    .section-{{ section.id }} .grid--1-col-tablet-down.grid--peek .freshcart-grid__item,
+    .section-{{ section.id }} .grid--1-col-tablet-down .freshcart-grid__item  {
+      width: 100%;
+    }
+  }
+</style>

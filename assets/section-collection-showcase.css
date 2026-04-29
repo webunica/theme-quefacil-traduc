@@ -1,0 +1,19 @@
+.collection-item {
+  text-decoration: none;
+}
+
+.collection-card-placeholder-svg {
+  width: 120px;
+  height: 120px;
+}
+
+.collection-placeholder-svg {
+  width: 112px;
+  height: 112px;
+}
+
+.collection-title {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+

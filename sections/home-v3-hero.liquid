@@ -1,0 +1,1578 @@
+<link
+  rel="stylesheet"
+  href="{{ 'home-v3-hero.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="home-v3-hero {{ section.settings.layout_style }}"
+  style="margin: {{ section.settings.section_margin_all_sides }}; padding: {{ section.settings.section_padding_all_sides }};"
+>
+  <div class="page-width">
+    <div class="section-2-column-banner__columns hero-column {{ section.type }}">
+      <!-- First Column: Single Banner -->
+      <div
+        class="section-2-column-banner__column first-column stretched-link"
+        style="min-height:{{ section.settings.img_height }}px"
+      >
+        {% if section.settings.image %}
+          <img
+            src="{{ section.settings.image | image_url: width: section.settings.img_width, height: section.settings.img_height }}"
+            width="{{ section.settings.img_width }}"
+            height="{{ section.settings.img_height }}"
+            alt="{{ section.settings.image_alt | escape }}"
+            class="section-2-column-banner__column-image"
+            loading="lazy"
+          >
+        {% else %}
+          <p style="width: 100%; height: {{ section.settings.img_height }}px; margin: 0;">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </p>
+        {% endif %}
+        <div class="section-2-column-banner__column-content">
+          {% if section.settings.pretitle %}
+            <{{ section.settings.pretitle_font_size }}
+              class="pretitle"
+              style="
+                color: {{ section.settings.pretitle_color }};
+                font-weight: {{ section.settings.pretitle_font_weight }};
+                line-height: {{ section.settings.pretitle_lineheight }};
+                text-transform: {{ section.settings.pretitle_txt_style }};
+              "
+            >
+              {{ section.settings.pretitle | default: 'Default Pretitle' }}
+            </{{ section.settings.pretitle_font_size }}>
+          {% endif %}
+
+          {% if section.settings.heading %}
+            <h1
+              class="section-heading {{ section.settings.heading_font_size }}"
+              style="
+                color: {{ section.settings.heading_color }};
+                font-weight: {{ section.settings.heading_font_weight }};
+                line-height: {{ section.settings.heading_lineheight }};
+                margin: {{ section.settings.heading_margin }};
+                text-transform: {{ section.settings.heading_txt_style }};
+                letter-spacing: -.03rem;
+              "
+            >
+              {{ section.settings.heading | default: 'Default Heading' }}
+            </h1>
+          {% endif %}
+          {% if section.settings.posttitle %}
+            <{{ section.settings.posttitle_font_size }}
+              style="
+                color: {{ section.settings.posttitle_color }};
+                font-weight: {{ section.settings.posttitle_font_weight }};
+                line-height: {{ section.settings.posttitle_lineheight }};
+                margin: {{ section.settings.posttitle_margin }};
+                text-transform: {{ section.settings.posttitle_txt_style }};
+              "
+            >
+              {{ section.settings.posttitle | default: 'Default Subtitle' }}
+            </{{ section.settings.posttitle_font_size }}>
+          {% endif %}
+          {% if section.settings.description %}
+            <{{ section.settings.desc_font_size }}
+              style="
+                color: {{ section.settings.desc_color }};
+                font-weight: {{ section.settings.desc_font_weight }};
+                line-height: {{ section.settings.desc_lineheight }};
+                margin: {{ section.settings.desc_margin }};
+                text-transform: {{ section.settings.desc_txt_style }};
+              "
+            >
+              {{ section.settings.description | default: 'Default description text.' }}
+            </{{ section.settings.desc_font_size }}>
+          {% endif %}
+
+          {%- liquid
+            assign btn_size_text = section.settings.btn_size_text
+            assign btn_color = section.settings.btn_color
+            assign btn_hover_color = section.settings.btn_hover_color
+            assign btn_bg_color = section.settings.btn_bg_color
+            assign btn_bg_hover_color = section.settings.btn_bg_hover_color
+            assign btn_color = section.settings.btn_color
+            assign btn_border = section.settings.btn_border
+            assign btn_border_color = section.settings.btn_border_color
+            assign btn_border_hover_color = section.settings.btn_border_hover_color
+          -%}
+
+          {% if section.settings.button_text %}
+            <div class="freshcart-home-v3-column-1-button {{ section.settings.btn_style }} button">
+              <style>
+                .button.freshcart-home-v3-column-1-button {
+                  width: fit-content;
+                }
+
+                .button.freshcart-home-v3-column-1-button a {
+                  font-size: {{ btn_size_text }};
+                  cursor: pointer;
+                  color: {{ btn_color }};
+                  line-height: 1.2;
+                  display: block;
+                  transition: 0.3s ease-in-out;
+                  position: static;
+                  width: fit-content;
+                }
+
+                .button.freshcart-home-v3-column-1-button a:before {
+                  position: absolute;
+                  top: 0;
+                  right:0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  content: "";
+                  display: block;
+                }
+
+                {%- if section.settings.btn_style != 'btn-link' -%}
+                  .button.freshcart-home-v3-column-1-button a {
+                    padding: {{ section.settings.btn_padding }};
+                    margin: {{ section.settings.btn_margin }};
+                    border: {{ btn_border }}px solid {{ btn_border_color }};
+                    border-radius: {{ section.settings.btn_border_radius }};
+                    text-decoration: none;
+                  }
+                {%- endif -%}
+
+                {%- if section.settings.btn_style == 'btn-fill' -%}
+                  .button.freshcart-home-v3-column-1-button.btn-fill a {
+                    background-color: {{ btn_bg_color }};
+                     border: {{ btn_border }}px solid {{ btn_border_color }};
+                  }
+
+                  .button.freshcart-home-v3-column-1-button.btn-fill a:hover,
+                  .button.freshcart-home-v3-column-1-button.btn-fill a:focus {
+                    background-color: {{ btn_bg_hover_color }};
+                    color: {{ btn_hover_color }};
+                    border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                  }
+                {%- elsif section.settings.btn_style == 'btn-outline' -%}
+                  .button.freshcart-home-v3-column-1-button a {
+                    background-color: transparent;
+                  }
+
+                  .button.freshcart-home-v3-column-1-button a:hover,
+                  .button.freshcart-home-v3-column-1-button a:focus {
+                    border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                    color: {{ btn_hover_color }};
+                  }
+                {%- elsif section.settings.btn_style == 'btn-link' -%}
+                  .button.freshcart-home-v3-column-1-button a {
+                    text-decoration: underline;
+                    background: transparent;
+                  }
+
+                  .button.freshcart-home-v3-column-1-button a:hover,
+                  .button.freshcart-home-v3-column-1-button a:focus {
+                    color: {{ btn_hover_color }};
+                  }
+                {%- endif -%}
+              </style>
+              <a
+                class="button__link"
+                href="{{ section.settings.button_url }}"
+              >
+                {{ section.settings.button_text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Second Column: Multiple Banners -->
+      <div class="section-2-column-banner__column second-column stretched-link">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign btn_size_text = block.settings.btn_size_text
+            assign btn_color = block.settings.btn_color
+            assign btn_hover_color = block.settings.btn_hover_color
+            assign btn_bg_color = block.settings.btn_bg_color
+            assign btn_bg_hover_color = block.settings.btn_bg_hover_color
+            assign btn_color = block.settings.btn_color
+            assign btn_border = block.settings.btn_border
+            assign btn_border_color = block.settings.btn_border_color
+            assign btn_border_hover_color = block.settings.btn_border_hover_color
+          -%}
+          {% if block.type == 'banner' %}
+            <div class="second-column-inner" style="min-height:{{ block.settings.img_height }}px">
+              {% if block.settings.image %}
+                <img
+                  src="{{ block.settings.image | image_url: width: block.settings.img_width, height: block.settings.img_height }}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  class="section-2-column-banner__column-image"
+                  width="{{ block.settings.img_width }}"
+                  height="{{ block.settings.img_height }}"
+                  loading="lazy"
+                >
+              {% else %}
+                <p style="width: 100%; height: {{ block.settings.img_height }}px; margin: 0;">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                </p>
+              {% endif %}
+              <div class="section-2-column-banner__column-content">
+                {% if block.settings.pretitle %}
+                  <{{ block.settings.pretitle_font_size }}
+                    class="pretitle"
+                    style="
+                      color: {{ block.settings.pretitle_color }};
+                      font-weight: {{ block.settings.pretitle_font_weight }};
+                      line-height: {{ block.settings.pretitle_lineheight }};
+                      text-transform: {{ block.settings.pretitle_txt_style }};
+                    "
+                  >
+                    {{ block.settings.pretitle }}
+                  </{{ block.settings.pretitle_font_size }}>
+                {% endif %}
+
+                {% if block.settings.heading %}
+                  <h1
+                    class="heading {{ block.settings.heading_font_size }}"
+                    style="
+                      color: {{ block.settings.heading_color }}; font-weight:
+                      {{ block.settings.heading_font_weight }}; line-height: {{ block.settings.heading_lineheight }};
+                      margin: {{ block.settings.heading_margin }}; text-transform: {{ block.settings.heading_txt_style }};
+                    "
+                  >
+                    {{ block.settings.heading | default: 'Default Heading' | newline_to_br }}
+                  </h1>
+                {% endif %}
+                {% if block.settings.posttitle %}
+                  <{{ block.settings.posttitle_font_size }}
+                    class="banner_posttitle"
+                    style="
+                      color: {{ block.settings.posttitle_color }};
+                      font-weight: {{ block.settings.posttitle_font_weight }};
+                      line-height: {{ block.settings.posttitle_lineheight }};
+                      margin: {{ block.settings.posttitle_margin }};
+                      text-transform: {{ block.settings.posttitle_txt_style }};
+                    "
+                  >
+                    {{ block.settings.posttitle }}
+                  </{{ block.settings.posttitle_font_size }}>
+                {% endif %}
+                {% if block.settings.description %}
+                  <{{ block.settings.desc_font_size }}
+                    class="banner_desc"
+                    style="
+                      color: {{ block.settings.desc_color }};
+                      font-weight: {{ block.settings.desc_font_weight }};
+                      line-height: {{ block.settings.desc_lineheight }};
+                      margin: {{ block.settings.desc_margin }};
+                      text-transform: {{ block.settings.desc_txt_style }};
+                    "
+                  >
+                    {{ block.settings.description | default: 'Default description text.' }}
+                  </{{ block.settings.desc_font_size }}>
+                {% endif %}
+
+                {% if block.settings.button_text != blank %}
+                  <div class="freshcart-home-v3-column-2-button {{ block.settings.btn_style }} button__{{ block.id }}">
+                    <style>
+                      .freshcart-home-v3-column-2-button.button__{{ block.id }} {
+                        width: fit-content;
+                      }
+
+                      .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
+                        font-size: {{ btn_size_text }};
+                        cursor: pointer;
+                        color: {{ btn_color }};
+                        line-height: 1.2;
+                        display: block;
+                        transition: 0.3s ease-in-out;
+                        position: static;
+                        width: fit-content;
+                      }
+
+                      .freshcart-home-v3-column-2-button.button__{{ block.id }} a:before {
+                        position: absolute;
+                        top: 0;
+                        right:0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                        content: "";
+                        display: block;
+                      }
+
+                      {%- if block.settings.btn_style != 'btn-link' -%}
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
+                          padding: {{ block.settings.btn_padding }};
+                          margin: {{ block.settings.btn_margin }};
+                          border: {{ btn_border }}px solid {{ btn_border_color }};
+                          border-radius: {{ block.settings.btn_border_radius }};
+                          text-decoration: none;
+                        }
+                      {%- endif -%}
+
+                      {%- if block.settings.btn_style == 'btn-fill' -%}
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
+                          background-color: {{ btn_bg_color }};
+                          border: {{ btn_border }}px solid {{ btn_border_color }};
+                        }
+
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:hover,
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:focus {
+                          background-color: {{ btn_bg_hover_color }};
+                          color: {{ btn_hover_color }};
+                          border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                        }
+                      {%- elsif block.settings.btn_style == 'btn-outline' -%}
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
+                          background-color: transparent;
+                        }
+
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:hover,
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:focus {
+                          border: {{ btn_border }}px solid {{ btn_border_hover_color }};
+                          color: {{ btn_hover_color }};
+                        }
+                      {%- elsif block.settings.btn_style == 'btn-link' -%}
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
+                          text-decoration: underline;
+                          background: transparent;
+                        }
+
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:hover,
+                        .freshcart-home-v3-column-2-button.button__{{ block.id }} a:focus {
+                          color: {{ btn_hover_color }};
+                        }
+                      {%- endif -%}
+                    </style>
+                    <a
+                      class="button__link"
+                      href="{{ block.settings.button_url }}"
+                    >
+                      {{ block.settings.button_text }}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "t:sections.home-v3-hero.name",
+    "settings": [
+        {
+            "type": "select",
+            "id": "layout_style",
+            "label": "t:sections.home-v3-hero.settings.layout_style.label",
+            "default": "container",
+            "options": [
+                {
+                    "value": "container",
+                    "label": "t:sections.home-v3-hero.settings.layout_style.options__1.label"
+                },
+                {
+                    "value": "container-fluid",
+                    "label": "t:sections.home-v3-hero.settings.layout_style.options__2.label"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.hero_banner.content"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.home-v3-hero.settings.image.label",
+            "info": "t:sections.home-v3-hero.settings.image.info"
+        },
+        {
+            "type": "text",
+            "id": "image_alt",
+            "label": "t:sections.home-v3-hero.settings.image_alt.label",
+            "default": "Placeholder Image"
+        },
+        {
+            "type": "text",
+            "id": "img_width",
+            "label": "t:sections.home-v3-hero.settings.img_width.label",
+            "default": "850"
+        },
+        {
+            "type": "text",
+            "id": "img_height",
+            "label": "t:sections.home-v3-hero.settings.img_height.label",
+            "default": "560"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.pretitle_setting.content"
+        },
+        {
+            "type": "text",
+            "id": "pretitle",
+            "label": "t:sections.home-v3-hero.settings.pretitle.label",
+            "default": "Exclusive Offer 15%"
+        },
+        {
+            "type": "color",
+            "id": "pretitle_color",
+            "label": "t:sections.home-v3-hero.settings.pretitle_color.label",
+            "default": "#5c6c75"
+        },
+        {
+            "type": "select",
+            "id": "pretitle_txt_style",
+            "default": "none",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_txt_style.options__1.label"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_txt_style.options__2.label"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_txt_style.options__3.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.pretitle_txt_style.label"
+        },
+        {
+            "type": "select",
+            "id": "pretitle_font_size",
+            "default": "h6",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__1.label"
+                },
+                {
+                    "value": "h2",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__2.label"
+                },
+                {
+                    "value": "h3",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__3.label"
+                },
+                {
+                    "value": "h4",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__4.label"
+                },
+                {
+                    "value": "h5",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__5.label"
+                },
+                {
+                    "value": "h6",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_size.options__6.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.pretitle_font_size.label"
+        },
+        {
+            "type": "select",
+            "id": "pretitle_font_weight",
+            "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.label",
+            "default": "500",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.options__1.label"
+                },
+                {
+                    "value": "400",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.options__2.label"
+                },
+                {
+                    "value": "500",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.options__3.label"
+                },
+                {
+                    "value": "600",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.options__4.label"
+                },
+                {
+                    "value": "700",
+                    "label": "t:sections.home-v3-hero.settings.pretitle_font_weight.options__5.label"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "pretitle_lineheight",
+            "label": "t:sections.home-v3-hero.settings.pretitle_lineheight.label",
+            "default": "1.5"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.heading_setting.content"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "t:sections.home-v3-hero.settings.heading.label",
+            "default": "Best Online Deals, Free Stuff"
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "t:sections.home-v3-hero.settings.heading_color.label",
+            "default": "#001e2b"
+        },
+        {
+            "type": "select",
+            "id": "heading_txt_style",
+            "default": "none",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "t:sections.home-v3-hero.settings.heading_txt_style.options__1.label"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "t:sections.home-v3-hero.settings.heading_txt_style.options__2.label"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "t:sections.home-v3-hero.settings.heading_txt_style.options__3.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.heading_txt_style.label"
+        },
+        {
+            "type": "select",
+            "id": "heading_font_size",
+            "default": "h0",
+            "options": [
+                {
+                    "value": "h0",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__1.label"
+                },
+                {
+                    "value": "h1",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__2.label"
+                },
+                {
+                    "value": "h2",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__3.label"
+                },
+                {
+                    "value": "h3",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__4.label"
+                },
+                {
+                    "value": "h4",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__5.label"
+                },
+                {
+                    "value": "h5",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__6.label"
+                },
+                {
+                    "value": "h6",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_size.options__7.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.heading_font_size.label"
+        },
+        {
+            "type": "select",
+            "id": "heading_font_weight",
+            "label": "t:sections.home-v3-hero.settings.heading_font_weight.label",
+            "default": "700",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_weight.options__1.label"
+                },
+                {
+                    "value": "400",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_weight.options__2.label"
+                },
+                {
+                    "value": "500",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_weight.options__3.label"
+                },
+                {
+                    "value": "600",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_weight.options__4.label"
+                },
+                {
+                    "value": "700",
+                    "label": "t:sections.home-v3-hero.settings.heading_font_weight.options__5.label"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "heading_lineheight",
+            "label": "t:sections.home-v3-hero.settings.heading_lineheight.label",
+            "default": "1.2"
+        },
+        {
+            "type": "text",
+            "id": "heading_margin",
+            "label": "t:sections.home-v3-hero.settings.heading_margin.label",
+            "default": "15px 0px 0px 0px"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.posttitle_setting.content"
+        },
+        {
+            "type": "text",
+            "id": "posttitle",
+            "label": "t:sections.home-v3-hero.settings.posttitle.label",
+            "default": "Only on this week… Don’t miss"
+        },
+        {
+            "type": "color",
+            "id": "posttitle_color",
+            "label": "t:sections.home-v3-hero.settings.posttitle_color.label",
+            "default": "#001e2b"
+        },
+        {
+            "type": "select",
+            "id": "posttitle_txt_style",
+            "default": "none",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_txt_style.options__1.label"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_txt_style.options__2.label"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_txt_style.options__3.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.posttitle_txt_style.label"
+        },
+        {
+            "type": "select",
+            "id": "posttitle_font_size",
+            "default": "h5",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__1.label"
+                },
+                {
+                    "value": "h2",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__2.label"
+                },
+                {
+                    "value": "h3",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__3.label"
+                },
+                {
+                    "value": "h4",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__4.label"
+                },
+                {
+                    "value": "h5",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__5.label"
+                },
+                {
+                    "value": "h6",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_size.options__6.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.posttitle_font_size.label"
+        },
+        {
+            "type": "select",
+            "id": "posttitle_font_weight",
+            "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.label",
+            "default": "500",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.options__1.label"
+                },
+                {
+                    "value": "400",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.options__2.label"
+                },
+                {
+                    "value": "500",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.options__3.label"
+                },
+                {
+                    "value": "600",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.options__4.label"
+                },
+                {
+                    "value": "700",
+                    "label": "t:sections.home-v3-hero.settings.posttitle_font_weight.options__5.label"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "posttitle_lineheight",
+            "label": "t:sections.home-v3-hero.settings.posttitle_lineheight.label",
+            "default": "1.5"
+        },
+        {
+            "type": "text",
+            "id": "posttitle_margin",
+            "label": "t:sections.home-v3-hero.settings.posttitle_margin.label",
+            "default": "15px 0px 0px 0px"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.desc_setting.content"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "description",
+            "label": "t:sections.home-v3-hero.settings.description.label",
+            "default": "Start from $5.99"
+        },
+        {
+            "type": "color",
+            "id": "desc_color",
+            "label": "t:sections.home-v3-hero.settings.desc_color.label",
+            "default": "#5c6c75"
+        },
+        {
+            "type": "select",
+            "id": "desc_txt_style",
+            "default": "none",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "t:sections.home-v3-hero.settings.desc_txt_style.options__1.label"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "t:sections.home-v3-hero.settings.desc_txt_style.options__2.label"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "t:sections.home-v3-hero.settings.desc_txt_style.options__3.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.desc_txt_style.label"
+        },
+        {
+            "type": "select",
+            "id": "desc_font_size",
+            "default": "h5",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__1.label"
+                },
+                {
+                    "value": "h2",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__2.label"
+                },
+                {
+                    "value": "h3",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__3.label"
+                },
+                {
+                    "value": "h4",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__4.label"
+                },
+                {
+                    "value": "h5",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__5.label"
+                },
+                {
+                    "value": "h6",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_size.options__6.label"
+                }
+            ],
+            "label": "t:sections.home-v3-hero.settings.desc_font_size.label"
+        },
+        {
+            "type": "select",
+            "id": "desc_font_weight",
+            "label": "t:sections.home-v3-hero.settings.desc_font_weight.label",
+            "default": "500",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_weight.options__1.label"
+                },
+                {
+                    "value": "400",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_weight.options__2.label"
+                },
+                {
+                    "value": "500",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_weight.options__3.label"
+                },
+                {
+                    "value": "600",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_weight.options__4.label"
+                },
+                {
+                    "value": "700",
+                    "label": "t:sections.home-v3-hero.settings.desc_font_weight.options__5.label"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "desc_lineheight",
+            "label": "t:sections.home-v3-hero.settings.desc_lineheight.label",
+            "default": "1.5"
+        },
+        {
+            "type": "text",
+            "id": "desc_margin",
+            "label": "t:sections.home-v3-hero.settings.desc_margin.label",
+            "default": "16px 0px 20px 0px"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.button_setting.content"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "t:sections.home-v3-hero.settings.button_text.label",
+            "default": "Get Best Deal"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "t:sections.home-v3-hero.settings.button_url.label"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "label": "t:sections.home-v3-hero.settings.btn_color.label",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "btn_hover_color",
+            "label": "t:sections.home-v3-hero.settings.btn_hover_color.label",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "btn_bg_color",
+            "label": "t:sections.home-v3-hero.settings.btn_bg_color.label"
+        },
+        {
+            "type": "color",
+            "id": "btn_bg_hover_color",
+            "label": "t:sections.home-v3-hero.settings.btn_bg_hover_color.label",
+            "default": "#099309"
+        },
+        {
+            "type": "color",
+            "id": "btn_border_color",
+            "label": "t:sections.home-v3-hero.settings.btn_border_color.label"
+        },
+        {
+            "type": "color",
+            "id": "btn_border_hover_color",
+            "label": "t:sections.home-v3-hero.settings.btn_border_hover_color.label",
+            "default": "#099309"
+        },
+        {
+            "type": "text",
+            "id": "btn_padding",
+            "label": "t:sections.home-v3-hero.settings.btn_padding.label",
+            "default": "10px 17px 10px 17px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "btn_margin",
+            "label": "t:sections.home-v3-hero.settings.btn_margin.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        },
+        {
+            "type": "range",
+            "id": "btn_border",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "t:sections.home-v3-hero.settings.btn_border.label",
+            "default": 1
+        },
+        {
+            "type": "text",
+            "id": "btn_border_radius",
+            "label": "t:sections.home-v3-hero.settings.btn_border_radius.label",
+            "default": "6px"
+        },
+        {
+            "type": "text",
+            "id": "btn_size_text",
+            "default": "14px",
+            "label": "t:sections.home-v3-hero.settings.btn_size_text.label"
+        },
+        {
+            "type": "select",
+            "id": "btn_style",
+            "label": "Button Style",
+            "default": "btn-fill",
+            "options": [
+                {
+                    "value": "btn-fill",
+                    "label": "t:sections.home-v3-hero.settings.btn_style.options__1.label"
+                },
+                {
+                    "value": "btn-outline",
+                    "label": "t:sections.home-v3-hero.settings.btn_style.options__2.label"
+                },
+                {
+                    "value": "btn-link",
+                    "label": "t:sections.home-v3-hero.settings.btn_style.options__3.label"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "t:sections.home-v3-hero.settings.section_setting.content"
+        },
+        {
+            "type": "text",
+            "id": "section_padding_all_sides",
+            "label": "t:sections.home-v3-hero.settings.section_padding_all_sides.label",
+            "default": "0px 0px 0px 0px",
+            "info": "Padding: Top Right Bottom Left"
+        },
+        {
+            "type": "text",
+            "id": "section_margin_all_sides",
+            "label": "t:sections.home-v3-hero.settings.section_margin_all_sides.label",
+            "default": "32px 0px 0px 0px",
+            "info": "Margin: Top Right Bottom Left"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "banner",
+            "name": "t:sections.home-v3-hero.blocks.banner.name",
+            "limit": 2,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.image.label",
+                    "info": "t:sections.home-v3-hero.blocks.banner.settings.image.info"
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.image_alt.label",
+                    "default": "Placeholder Image"
+                },
+                {
+                    "type": "text",
+                    "id": "img_width",
+                    "label": "t:sections.home-v3-hero.settings.img_width.label",
+                    "default": "424"
+                },
+                {
+                    "type": "text",
+                    "id": "img_height",
+                    "label": "t:sections.home-v3-hero.settings.img_height.label",
+                    "default": "268"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_setting.content"
+                },
+                {
+                    "type": "text",
+                    "id": "pretitle",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle.label",
+                    "default": "Welcome Again"
+                },
+                {
+                    "type": "color",
+                    "id": "pretitle_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_color.label",
+                    "default": "#5c6c75"
+                },
+                {
+                    "type": "select",
+                    "id": "pretitle_txt_style",
+                    "default": "none",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_txt_style.options__1.label"
+                        },
+                        {
+                            "value": "uppercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_txt_style.options__2.label"
+                        },
+                        {
+                            "value": "lowercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_txt_style.options__3.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_txt_style.label"
+                },
+                {
+                    "type": "select",
+                    "id": "pretitle_font_size",
+                    "default": "h5",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "pretitle_font_weight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.label",
+                    "default": "500",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "pretitle_lineheight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.pretitle_lineheight.label",
+                    "default": "1.5"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.home-v3-hero.blocks.banner.settings.heading_setting.content"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading.label",
+                    "default": "Banner"
+                },
+                {
+                    "type": "color",
+                    "id": "heading_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_txt_style",
+                    "default": "none",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_txt_style.options__1.label"
+                        },
+                        {
+                            "value": "uppercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_txt_style.options__2.label"
+                        },
+                        {
+                            "value": "lowercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_txt_style.options__3.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_txt_style.label"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_font_size",
+                    "default": "h3",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_font_weight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.label",
+                    "default": "700",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "heading_lineheight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_lineheight.label",
+                    "default": "1.2"
+                },
+                {
+                    "type": "text",
+                    "id": "heading_margin",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.heading_margin.label",
+                    "default": "0px 0px 0px 0px"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_setting.content"
+                },
+                {
+                    "type": "text",
+                    "id": "posttitle",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle.label",
+                    "default": "Another Subtitle"
+                },
+                {
+                    "type": "color",
+                    "id": "posttitle_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "select",
+                    "id": "posttitle_txt_style",
+                    "default": "none",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_txt_style.options__1.label"
+                        },
+                        {
+                            "value": "uppercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_txt_style.options__2.label"
+                        },
+                        {
+                            "value": "lowercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_txt_style.options__3.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_txt_style.label"
+                },
+                {
+                    "type": "select",
+                    "id": "posttitle_font_size",
+                    "default": "h5",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "posttitle_font_weight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.label",
+                    "default": "500",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "posttitle_lineheight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_lineheight.label",
+                    "default": "1.5"
+                },
+                {
+                    "type": "text",
+                    "id": "posttitle_margin",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.posttitle_margin.label",
+                    "default": "0px 0px 0px 0px"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.home-v3-hero.blocks.banner.settings.desc_setting.content"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "description",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.description.label",
+                    "default": "This is another description text."
+                },
+                {
+                    "type": "color",
+                    "id": "desc_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_color.label",
+                    "default": "#5c6c75"
+                },
+                {
+                    "type": "select",
+                    "id": "desc_txt_style",
+                    "default": "none",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_txt_style.options__1.label"
+                        },
+                        {
+                            "value": "uppercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_txt_style.options__2.label"
+                        },
+                        {
+                            "value": "lowercase",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_txt_style.options__3.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_txt_style.label"
+                },
+                {
+                    "type": "select",
+                    "id": "desc_font_size",
+                    "default": "h5",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__1.label"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__2.label"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__3.label"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__4.label"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__5.label"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.options__6.label"
+                        }
+                    ],
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_size.label"
+                },
+                {
+                    "type": "select",
+                    "id": "desc_font_weight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.label",
+                    "default": "500",
+                    "options": [
+                        {
+                            "value": "300",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.options__1.label"
+                        },
+                        {
+                            "value": "400",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.options__2.label"
+                        },
+                        {
+                            "value": "500",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.options__3.label"
+                        },
+                        {
+                            "value": "600",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.options__4.label"
+                        },
+                        {
+                            "value": "700",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_font_weight.options__5.label"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "desc_lineheight",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_lineheight.label",
+                    "default": "1.5"
+                },
+                {
+                    "type": "text",
+                    "id": "desc_margin",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.desc_margin.label",
+                    "default": "16px 0px 20px 0px"
+                },
+                {
+                    "type": "header",
+                    "content": "t:sections.home-v3-hero.blocks.banner.settings.button_setting.content"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.button_text.label",
+                    "default": "Shop Now"
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.button_url.label"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_color.label",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_hover_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_hover_color.label",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_bg_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_bg_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_bg_hover_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_bg_hover_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_border_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_border_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "color",
+                    "id": "btn_border_hover_color",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_border_hover_color.label",
+                    "default": "#001e2b"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_padding",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_padding.label",
+                    "default": "10px 17px 10px 17px",
+                    "info": "Padding: Top Right Bottom Left"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_margin",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_margin.label",
+                    "default": "0px 0px 0px 0px",
+                    "info": "Margin: Top Right Bottom Left"
+                },
+                {
+                    "type": "range",
+                    "id": "btn_border",
+                    "min": 1,
+                    "max": 10,
+                    "step": 1,
+                    "unit": "px",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_border.label",
+                    "default": 1
+                },
+                {
+                    "type": "text",
+                    "id": "btn_border_radius",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_border_radius.label",
+                    "default": "6px"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_size_text",
+                    "default": "14px",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_size_text.label"
+                },
+                {
+                    "type": "select",
+                    "id": "btn_style",
+                    "label": "Button Style",
+                    "default": "btn-fill",
+                    "options": [
+                        {
+                            "value": "btn-fill",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_style.options__1.label"
+                        },
+                        {
+                            "value": "btn-outline",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_style.options__2.label"
+                        },
+                        {
+                            "value": "btn-link",
+                            "label": "t:sections.home-v3-hero.blocks.banner.settings.btn_style.options__3.label"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "t:sections.home-v3-hero.presets.name",
+            "blocks": [
+                {
+                    "type": "banner",
+                    "settings": {
+                        "image": "",
+                        "image_alt": "Placeholder Image",
+                        "pretitle": "",
+                        "heading": "10% cashback on personal care",
+                        "posttitle": "",
+                        "description": "Max cashback: $12  Code: <strong>CARE12</strong>",
+                        "button_text": "Show Now",
+                        "button_url": "#"
+                    }
+                },
+                {
+                    "type": "banner",
+                    "settings": {
+                        "image": "",
+                        "image_alt": "Placeholder Image",
+                        "pretitle": "",
+                        "heading": "Say yes to season’s fresh",
+                        "posttitle": "",
+                        "description": "Refresh your day  the fruity way",
+                        "button_text": "Show Now",
+                        "button_url": "#"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

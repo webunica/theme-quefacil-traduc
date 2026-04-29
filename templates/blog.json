@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "featured_blog_WbahRi": {
+      "type": "blog-list",
+      "settings": {
+        "title": "FreshCart Blog",
+        "title_size": "h1",
+        "title_color": "#001e2b",
+        "heading_txt_style": "none",
+        "heading_font_weight": "600",
+        "heading_lineheight": "1.2",
+        "heading_mob_size_text": "20",
+        "heading_margin": "0px 0px 24px 0px",
+        "show_view_all": false,
+        "view_all_text": "View all recipes",
+        "view_all_url": "",
+        "view_all_color": "#0aad0a",
+        "blog": "featured",
+        "post_limit": 1,
+        "show_image": true,
+        "show_tag": false,
+        "tag_color": "#0aad0a",
+        "heading_color": "#5c6c75",
+        "heading_hover_color": "#0aad0a",
+        "heading_size": "h2",
+        "show_excerpt": true,
+        "excerpt_color": "#5c6c75",
+        "show_date": true,
+        "date_color": "#5c6c75",
+        "show_author": true,
+        "author_text": "Author",
+        "author_label_color": "#5c6c75",
+        "author_name_color": "#5c6c75",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "blog-archive",
+      "custom_css": [],
+      "settings": {
+        "columns": 3,
+        "show_image": true,
+        "image_height": "adapt",
+        "show_tag": true,
+        "tag_color": "#0aad0a",
+        "heading_color": "#5c6c75",
+        "heading_hover_color": "#0aad0a",
+        "heading_size": "h5",
+        "show_excerpt": true,
+        "excerpt_color": "#5c6c75",
+        "show_author": true,
+        "author_text": "Author",
+        "show_date": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 32,
+        "margin_bottom": 68
+      }
+    }
+  },
+  "order": [
+    "featured_blog_WbahRi",
+    "main"
+  ]
+}

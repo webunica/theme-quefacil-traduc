@@ -1,0 +1,17 @@
+.hero-banner__sale {
+  margin: 0;
+  max-width: fit-content;
+  display:inline-block;
+}
+
+.hero-banner__button {
+   max-width: fit-content;
+}
+
+.hero-banner__heading {
+  display: block;
+}
+
+.hero-banner__button {
+  display:inline-block;
+}

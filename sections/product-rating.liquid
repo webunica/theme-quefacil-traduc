@@ -1,0 +1,18 @@
+<!-- product-rating.liquid -->
+<div class="product-rating">
+  {% if product.metafields.judgeme.avg_rating > 0 %}
+    <div class="average-rating">
+      <span class="rating">{{ product.metafields.judgeme.avg_rating }}</span>
+      <div class="stars">
+        {% for i in (1..5) %}
+          {% if i <= product.metafields.judgeme.avg_rating %}
+            <span class="star-filled">★</span>
+          {% else %}
+            <span class="star-empty">☆</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="review-count">({{ product.metafields.judgeme.review_count }} reviews)</div>
+  {% endif %}
+</div>
