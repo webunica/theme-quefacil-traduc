@@ -324,7 +324,7 @@
         "heading_QJLNKp": {
           "type": "heading",
           "settings": {
-            "title": "One Stop Grocery Shop",
+            "title": "Para nuestro Hogar",
             "heading_color": "#001e2b",
             "h_txt_style": "none",
             "h_des_size_text": "h2",
@@ -337,7 +337,7 @@
         "paragraph_QbVpQf": {
           "type": "paragraph",
           "settings": {
-            "description_text": "Shopping for your furry friend? Find food,treats, and more in one easy spot.",
+            "description_text": "Encuentra artículos para nuestro Hogar",
             "des_color": "#5c6c75",
             "des_size_text": "17.5px",
             "des_font_weight": "500",
@@ -347,8 +347,8 @@
         "button_jLCqbw": {
           "type": "button",
           "settings": {
-            "button_text": "Obtén descuento al compartir",
-            "button_url": "https://freshcart77.myshopify.com/collections/shop",
+            "button_text": "Revisa la categoría Hogar",
+            "button_url": "shopify://collections/hogar",
             "btn_color": "#ffffff",
             "btn_bg_color": "#001e2b",
             "btn_hover_color": "#ffffff",
@@ -377,7 +377,7 @@
         "background_type": "color",
         "bgcolor": "#f0f3f2",
         "banner_bg_image": "shopify://shop_images/hogar-banner.jpg",
-        "banner_image": "shopify://shop_images/1729696212115_6.jpg",
+        "banner_image": "shopify://shop_images/hogar-banner-002.png",
         "image_url": "shopify://collections/hogar",
         "image_width": "512",
         "image_height": "160",
