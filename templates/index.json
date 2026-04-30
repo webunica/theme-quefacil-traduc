@@ -292,14 +292,14 @@
       "type": "products-block",
       "settings": {
         "layout_type": "container",
-        "title": "New Products",
+        "title": "Nuevos Productos",
         "heading_size": "h3",
         "title_color": "#001e2b",
-        "description_text": "New products with updated stocks",
+        "description_text": "Nuevos productos con stock actualizado",
         "font_weight": "500",
         "description_color": "#5c6c75",
         "show_view_all": true,
-        "view_all_text": "View All",
+        "view_all_text": "Ver todo",
         "view_all_color": "#0aad0a",
         "section_header_margin": "0px 0px 24px 0px",
         "collection": "fruits-vegetables",
@@ -347,7 +347,7 @@
         "button_jLCqbw": {
           "type": "button",
           "settings": {
-            "button_text": "Get Discount on Share",
+            "button_text": "Obtén descuento al compartir",
             "button_url": "https://freshcart77.myshopify.com/collections/shop",
             "btn_color": "#ffffff",
             "btn_bg_color": "#001e2b",
@@ -398,14 +398,14 @@
       "type": "products-block",
       "settings": {
         "layout_type": "container",
-        "title": "Special Offers of the View All Week!",
+        "title": "¡Ofertas especiales de la semana!",
         "heading_size": "h3",
         "title_color": "#001e2b",
-        "description_text": "Get exclusive ongoing offers, deals, and discount codes of shopping",
+        "description_text": "Obtén ofertas exclusivas, tratos y códigos de descuento",
         "font_weight": "500",
         "description_color": "#5c6c75",
         "show_view_all": true,
-        "view_all_text": "View All",
+        "view_all_text": "Ver todo",
         "view_all_color": "#0aad0a",
         "section_header_margin": "0px 0px 45px 0px",
         "collection": "biscuits-snacks-chocolates",
@@ -428,7 +428,7 @@
       "type": "sale-banner",
       "settings": {
         "layout_style": "container",
-        "sale_title": "Save an extra 15% on Authorship order",
+        "sale_title": "Ahorra un 15% extra en tu pedido",
         "sale_banner_url": "",
         "sale_title_size": "h5",
         "sale_title_color": "#21313c",
@@ -452,14 +452,14 @@
       "type": "products-block",
       "settings": {
         "layout_type": "container",
-        "title": "Bestsellers In Your Area",
+        "title": "Los más vendidos en tu zona",
         "heading_size": "h3",
         "title_color": "#001e2b",
-        "description_text": "Find the bestseller products in your area with discount.",
+        "description_text": "Encuentra los productos más vendidos en tu zona con descuento.",
         "font_weight": "500",
         "description_color": "#5c6c75",
         "show_view_all": true,
-        "view_all_text": "View all",
+        "view_all_text": "Ver todo",
         "view_all_color": "#0aad0a",
         "section_header_margin": "0px 0px 24px 0px",
         "collection": "biscuits-snacks-chocolates",
@@ -484,7 +484,7 @@
         "sub_title_bM9gLU": {
           "type": "sub_title",
           "settings": {
-            "pre_text": "$30 discount for your first order",
+            "pre_text": "$30 de descuento en tu primer pedido",
             "pre_color": "#ffffff",
             "pre_bg_color": "rgba(0,0,0,0)",
             "size_text": "14px",
@@ -499,7 +499,7 @@
         "heading_ki7eCk": {
           "type": "heading",
           "settings": {
-            "title": "Get top deals, latest trends, and more.",
+            "title": "Recibe las mejores ofertas, tendencias y más.",
             "heading_color": "#ffffff",
             "h_txt_style": "none",
             "h_des_size_text": "h2",
@@ -512,7 +512,7 @@
         "paragraph_BVf9YE": {
           "type": "paragraph",
           "settings": {
-            "description_text": "Join our email subscription now to get updates on promotions and coupons.",
+            "description_text": "Únete a nuestra suscripción por correo ahora para recibir actualizaciones sobre promociones y cupones.",
             "des_color": "#5c6c75",
             "des_size_text": "14",
             "des_font_weight": "500",

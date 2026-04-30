@@ -84,7 +84,6 @@
             value="{{ form.first_name }}"
           {% endif %}
           autocomplete="given-name"
-          placeholder="{{ 'customer.register.first_name' | t }}"
         >
         <label for="RegisterForm-FirstName">
           {{ 'customer.register.first_name' | t }}
@@ -99,7 +98,6 @@
             value="{{ form.last_name }}"
           {% endif %}
           autocomplete="family-name"
-          placeholder="{{ 'customer.register.last_name' | t }}"
         >
         <label for="RegisterForm-LastName">
           {{ 'customer.register.last_name' | t }}
@@ -121,7 +119,6 @@
             aria-invalid="true"
             aria-describedby="RegisterForm-email-error"
           {% endif %}
-          placeholder="{{ 'customer.register.email' | t }}"
         >
         <label for="RegisterForm-email">
           {{ 'customer.register.email' | t }}
@@ -146,7 +143,6 @@
             aria-invalid="true"
             aria-describedby="RegisterForm-password-error"
           {% endif %}
-          placeholder="{{ 'customer.register.password' | t }}"
         >
         <label for="RegisterForm-password">
           {{ 'customer.register.password' | t }}

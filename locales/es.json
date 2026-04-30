@@ -374,6 +374,11 @@
       "remove_all_items_confirmation": "¿Eliminar los {{ quantity }} artículos de tu carrito?",
       "remove_all": "Eliminar todo",
       "cancel": "Cancelar"
+    },
+    "all": {
+      "buttons": {
+        "shop_now": "Comprar ahora"
+      }
     }
   },
   "localization": {
