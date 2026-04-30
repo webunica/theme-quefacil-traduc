@@ -17,15 +17,15 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong>Categories</strong>",
-            "menu": ""
+            "heading": "",
+            "menu": "categor-as"
           }
         },
         "54539798-0390-4464-a68f-62f116b0b4b0": {
           "type": "link_list",
           "settings": {
-            "heading": "Categories",
-            "menu": ""
+            "heading": "",
+            "menu": "categor-a-2"
           }
         },
         "48888a41-2079-439a-964a-052b2199d8e1": {
