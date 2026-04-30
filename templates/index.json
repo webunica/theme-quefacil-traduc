@@ -487,7 +487,7 @@
           "type": "sub_title",
           "settings": {
             "pre_text": "$30 de descuento en tu primer pedido",
-            "pre_color": "#ffffff",
+            "pre_color": "#f1592c",
             "pre_bg_color": "rgba(0,0,0,0)",
             "size_text": "14px",
             "border_radius": "0px",
@@ -502,7 +502,7 @@
           "type": "heading",
           "settings": {
             "title": "Recibe las mejores ofertas, tendencias y más.",
-            "heading_color": "#ffffff",
+            "heading_color": "#036da8",
             "h_txt_style": "none",
             "h_des_size_text": "h2",
             "h_mob_size_text": "30",
@@ -531,6 +531,7 @@
         "layout_style": "container-fluid",
         "background_type": "image",
         "bgcolor": "",
+        "banner_image": "shopify://shop_images/boletin.png",
         "image_url": "",
         "image_width": "390",
         "image_height": "390",
