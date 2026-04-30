@@ -426,60 +426,6 @@
         "margin_bottom": 0
       }
     },
-    "sale_banner_YTRLxy": {
-      "type": "sale-banner",
-      "settings": {
-        "layout_style": "container",
-        "sale_title": "Ahorra un 15% extra en tu pedido",
-        "sale_banner_url": "",
-        "sale_title_size": "h5",
-        "sale_title_color": "#21313c",
-        "title_align": "center",
-        "sale_title_txt_style": "uppercase",
-        "sale_title_font_weight": "600",
-        "sale_title_lineheight": "1.2",
-        "sale_title_mob_size_text": "15",
-        "sale_title_margin": "3px 0px 2px 0px",
-        "sale_banner_border_radius": "50px",
-        "sale_banner_bg_color": "#ffc107",
-        "sale_banner_bg_hover_color": "#e6b627",
-        "sale_banner_border_color": "#ffc107",
-        "sale_banner_txt_hover_color": "#000000",
-        "banner_border_hover_color": "#ffc107",
-        "banner_padding": "8.8px 20px 8.8px 20px",
-        "banner_margin": "0px 0px 0px 0px"
-      }
-    },
-    "products_block_ahGhKp": {
-      "type": "products-block",
-      "settings": {
-        "layout_type": "container",
-        "title": "Los más vendidos en tu zona",
-        "heading_size": "h3",
-        "title_color": "#001e2b",
-        "description_text": "Encuentra los productos más vendidos en tu zona con descuento.",
-        "font_weight": "500",
-        "description_color": "#5c6c75",
-        "show_view_all": true,
-        "view_all_text": "Ver todo",
-        "view_all_color": "#0aad0a",
-        "section_header_margin": "0px 0px 24px 0px",
-        "collection": "biscuits-snacks-chocolates",
-        "products_to_show": 5,
-        "columns_desktop": 5,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": true,
-        "show_quick_add": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "margin_top": 80,
-        "margin_bottom": 36
-      }
-    },
     "banner_with_newsletter_9R3Yj3": {
       "type": "banner-with-newsletter",
       "blocks": {
@@ -559,8 +505,6 @@
     "products_block_yUE4LW",
     "banner_with_newsletter_qCUfwR",
     "products_block_hmxjz4",
-    "sale_banner_YTRLxy",
-    "products_block_ahGhKp",
     "banner_with_newsletter_9R3Yj3"
   ]
 }
