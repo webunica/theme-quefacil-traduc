@@ -17,7 +17,7 @@
         "brand_information_iB3L7p": {
           "type": "brand_information",
           "settings": {
-            "show_social": true
+            "show_social": false
           }
         },
         "footer-0": {
@@ -66,7 +66,7 @@
         "app_store_url": "https://www.apple.com/app-store/",
         "google_play_url": "https://pay.google.com",
         "footer_copyright_text": "",
-        "show_policy": false,
+        "show_policy": true,
         "margin_top": 0,
         "padding_top": 80,
         "padding_bottom": 64
