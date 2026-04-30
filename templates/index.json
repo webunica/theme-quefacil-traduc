@@ -185,40 +185,10 @@
             "collection": "vehiculo"
           }
         },
-        "featured_collection_bVPwwV": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "audio"
-          }
-        },
-        "featured_collection_Fk94FT": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "drones"
-          }
-        },
-        "featured_collection_yNTK4C": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "fotografias"
-          }
-        },
         "featured_collection_8N48qe": {
           "type": "featured_collection",
           "settings": {
             "collection": "bebe"
-          }
-        },
-        "featured_collection_yjirWn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "belleza"
-          }
-        },
-        "featured_collection_rfXXxx": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "camping"
           }
         },
         "featured_collection_qChAVg": {
@@ -227,10 +197,10 @@
             "collection": "cocina"
           }
         },
-        "featured_collection_Rif8te": {
+        "featured_collection_yjirWn": {
           "type": "featured_collection",
           "settings": {
-            "collection": "ferreteria"
+            "collection": "belleza"
           }
         },
         "featured_collection_4rfTyb": {
@@ -245,6 +215,36 @@
             "collection": "mascota"
           }
         },
+        "featured_collection_rfXXxx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "camping"
+          }
+        },
+        "featured_collection_Rif8te": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ferreteria"
+          }
+        },
+        "featured_collection_yNTK4C": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fotografias"
+          }
+        },
+        "featured_collection_Fk94FT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "drones"
+          }
+        },
+        "featured_collection_bVPwwV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "audio"
+          }
+        },
         "featured_collection_ytXAqi": {
           "type": "featured_collection",
           "settings": {
@@ -254,16 +254,16 @@
       },
       "block_order": [
         "featured_collection_XUWycd",
-        "featured_collection_bVPwwV",
-        "featured_collection_Fk94FT",
-        "featured_collection_yNTK4C",
         "featured_collection_8N48qe",
-        "featured_collection_yjirWn",
-        "featured_collection_rfXXxx",
         "featured_collection_qChAVg",
-        "featured_collection_Rif8te",
+        "featured_collection_yjirWn",
         "featured_collection_4rfTyb",
         "featured_collection_gVzjyB",
+        "featured_collection_rfXXxx",
+        "featured_collection_Rif8te",
+        "featured_collection_yNTK4C",
+        "featured_collection_Fk94FT",
+        "featured_collection_bVPwwV",
         "featured_collection_ytXAqi"
       ],
       "settings": {
