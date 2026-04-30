@@ -179,6 +179,12 @@
     "collection_showcase_standard_LU44EX": {
       "type": "collection-showcase-standard",
       "blocks": {
+        "featured_collection_XUWycd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vehiculo"
+          }
+        },
         "featured_collection_bVPwwV": {
           "type": "featured_collection",
           "settings": {
@@ -224,35 +230,30 @@
         "featured_collection_Rif8te": {
           "type": "featured_collection",
           "settings": {
-            "collection": "chicken-meat-fish"
+            "collection": "ferreteria"
           }
         },
         "featured_collection_4rfTyb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "baby-care"
+            "collection": "jugueteria"
           }
         },
         "featured_collection_gVzjyB": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cleaning-essentials"
+            "collection": "mascota"
           }
         },
         "featured_collection_ytXAqi": {
           "type": "featured_collection",
           "settings": {
-            "collection": "pet-care"
-          }
-        },
-        "featured_collection_XUWycd": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "atta-rice-dal-1"
+            "collection": "tecnologia"
           }
         }
       },
       "block_order": [
+        "featured_collection_XUWycd",
         "featured_collection_bVPwwV",
         "featured_collection_Fk94FT",
         "featured_collection_yNTK4C",
@@ -263,8 +264,7 @@
         "featured_collection_Rif8te",
         "featured_collection_4rfTyb",
         "featured_collection_gVzjyB",
-        "featured_collection_ytXAqi",
-        "featured_collection_XUWycd"
+        "featured_collection_ytXAqi"
       ],
       "settings": {
         "layout_type": "container",
