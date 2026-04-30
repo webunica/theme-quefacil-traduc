@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_iB3L7p": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "footer-0": {
           "type": "link_list",
           "settings": {
@@ -27,43 +33,12 @@
             "heading": "",
             "menu": "categor-a-2"
           }
-        },
-        "48888a41-2079-439a-964a-052b2199d8e1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "<strong>Get to know us</strong>",
-            "menu": ""
-          }
-        },
-        "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "<strong>For Consumers</strong>",
-            "menu": ""
-          }
-        },
-        "a8656b27-0ece-40a5-9d57-4d8623273680": {
-          "type": "link_list",
-          "settings": {
-            "heading": "<strong>Become a Shopper</strong>",
-            "menu": ""
-          }
-        },
-        "10a11161-1855-425d-93c3-0c0e6522820a": {
-          "type": "link_list",
-          "settings": {
-            "heading": "<strong>Freshcart programs</strong>",
-            "menu": ""
-          }
         }
       },
       "block_order": [
+        "brand_information_iB3L7p",
         "footer-0",
-        "54539798-0390-4464-a68f-62f116b0b4b0",
-        "48888a41-2079-439a-964a-052b2199d8e1",
-        "footer-1",
-        "a8656b27-0ece-40a5-9d57-4d8623273680",
-        "10a11161-1855-425d-93c3-0c0e6522820a"
+        "54539798-0390-4464-a68f-62f116b0b4b0"
       ],
       "settings": {
         "bg_color": "#f0f3f2",
