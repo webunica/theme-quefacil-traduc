@@ -485,6 +485,7 @@
       "blocks": {
         "sub_title_bM9gLU": {
           "type": "sub_title",
+          "disabled": true,
           "settings": {
             "pre_text": "$30 de descuento en tu primer pedido",
             "pre_color": "#f1592c",
