@@ -302,7 +302,7 @@
         "view_all_text": "Ver todo",
         "view_all_color": "#0aad0a",
         "section_header_margin": "0px 0px 24px 0px",
-        "collection": "fruits-vegetables",
+        "collection": "todos",
         "products_to_show": 10,
         "columns_desktop": 5,
         "image_ratio": "adapt",
