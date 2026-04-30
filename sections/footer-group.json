@@ -33,12 +33,20 @@
             "heading": "",
             "menu": "categor-a-2"
           }
+        },
+        "link_list_NGMFrj": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "customer-account-main-menu"
+          }
         }
       },
       "block_order": [
         "brand_information_iB3L7p",
         "footer-0",
-        "54539798-0390-4464-a68f-62f116b0b4b0"
+        "54539798-0390-4464-a68f-62f116b0b4b0",
+        "link_list_NGMFrj"
       ],
       "settings": {
         "bg_color": "#f0f3f2",
