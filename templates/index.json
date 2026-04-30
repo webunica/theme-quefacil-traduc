@@ -376,6 +376,7 @@
         "layout_style": "container",
         "background_type": "color",
         "bgcolor": "#f0f3f2",
+        "banner_bg_image": "shopify://shop_images/hogar-banner.jpg",
         "image_url": "https://freshcart77.myshopify.com/collections/shop",
         "image_width": "512",
         "image_height": "160",
