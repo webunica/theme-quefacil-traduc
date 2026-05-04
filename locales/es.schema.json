@@ -1717,6 +1717,9 @@
                     "label": "Imagen de columna",
                     "info": "Imagen mostrada en la columna."
                 },
+                "image_mobile": {
+                    "label": "Imagen móvil"
+                },
                 "image_alt": {
                     "label": "Texto alternativo de imagen"
                 },
@@ -2064,6 +2067,9 @@
                         "image": {
                             "label": "Imagen de banner",
                             "info": "Imagen mostrada en la columna."
+                        },
+                        "image_mobile": {
+                            "label": "Imagen móvil"
                         },
                         "image_alt": {
                             "label": "Texto alternativo de imagen"

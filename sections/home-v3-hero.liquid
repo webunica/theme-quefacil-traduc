@@ -31,14 +31,19 @@
         style="min-height:{{ section.settings.img_height }}px"
       >
         {% if section.settings.image %}
-          <img
-            src="{{ section.settings.image | image_url: width: section.settings.img_width, height: section.settings.img_height }}"
-            width="{{ section.settings.img_width }}"
-            height="{{ section.settings.img_height }}"
-            alt="{{ section.settings.image_alt | escape }}"
-            class="section-2-column-banner__column-image"
-            loading="lazy"
-          >
+          <picture>
+            {% if section.settings.image_mobile %}
+              <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: 768 }}">
+            {% endif %}
+            <img
+              src="{{ section.settings.image | image_url: width: section.settings.img_width, height: section.settings.img_height }}"
+              width="{{ section.settings.img_width }}"
+              height="{{ section.settings.img_height }}"
+              alt="{{ section.settings.image_alt | escape }}"
+              class="section-2-column-banner__column-image"
+              loading="lazy"
+            >
+          </picture>
         {% else %}
           <p style="width: 100%; height: {{ section.settings.img_height }}px; margin: 0;">
             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -214,14 +219,19 @@
           {% if block.type == 'banner' %}
             <div class="second-column-inner" style="min-height:{{ block.settings.img_height }}px">
               {% if block.settings.image %}
-                <img
-                  src="{{ block.settings.image | image_url: width: block.settings.img_width, height: block.settings.img_height }}"
-                  alt="{{ block.settings.image_alt | escape }}"
-                  class="section-2-column-banner__column-image"
-                  width="{{ block.settings.img_width }}"
-                  height="{{ block.settings.img_height }}"
-                  loading="lazy"
-                >
+                <picture>
+                  {% if block.settings.image_mobile %}
+                    <source media="(max-width: 767px)" srcset="{{ block.settings.image_mobile | image_url: width: 768 }}">
+                  {% endif %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: block.settings.img_width, height: block.settings.img_height }}"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    class="section-2-column-banner__column-image"
+                    width="{{ block.settings.img_width }}"
+                    height="{{ block.settings.img_height }}"
+                    loading="lazy"
+                  >
+                </picture>
               {% else %}
                 <p style="width: 100%; height: {{ block.settings.img_height }}px; margin: 0;">
                   {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -402,6 +412,11 @@
             "id": "image",
             "label": "t:sections.home-v3-hero.settings.image.label",
             "info": "t:sections.home-v3-hero.settings.image.info"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "t:sections.home-v3-hero.settings.image_mobile.label"
         },
         {
             "type": "text",
@@ -986,6 +1001,11 @@
                     "id": "image",
                     "label": "t:sections.home-v3-hero.blocks.banner.settings.image.label",
                     "info": "t:sections.home-v3-hero.blocks.banner.settings.image.info"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "t:sections.home-v3-hero.blocks.banner.settings.image_mobile.label"
                 },
                 {
                     "type": "text",
