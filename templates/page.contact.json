@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -11,9 +20,9 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Retailer Inquiries",
+        "heading": "Consultas",
         "heading_size": "h3",
-        "description": "This form is for retailer inquiries only. For all other customer or shopper support requests, please visit the links below this form.",
+        "description": "Este formulario es solo para consultas de minoristas. Para cualquier otra solicitud de asistencia al cliente o comprador, visite los enlaces que aparecen debajo de este formulario.",
         "desc_color": "#5c6c75",
         "padding_top": 36,
         "padding_bottom": 80
