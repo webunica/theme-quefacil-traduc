@@ -3808,9 +3808,8 @@ details-disclosure > details {
 }
  */
 .header__heading-link {
-  padding: 0;
+  padding: 0 20px 0 0;
   margin: 0;
-  //width: 211px;
 }
 
 .header__logo-search-wrapper {
