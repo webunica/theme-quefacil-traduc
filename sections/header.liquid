@@ -197,6 +197,23 @@
 
   .header-menus-wrap {
     background-color: {{ section.settings.main_menu_bg_color }};
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* Mobile menu drawer improvements */
+  .menu-drawer {
+    background-color: {{ section.settings.main_menu_bg_color }};
+  }
+  .menu-drawer__menu-item {
+    color: {{ section.settings.main_text_color }};
+  }
+  .menu-drawer__close-button {
+    color: {{ section.settings.main_text_color }};
+  }
+  .menu-drawer__menu-item:hover {
+    color: {{ section.settings.main_text_hover_color }};
+    background-color: {{ section.settings.dropdown_text_hover_bg_color }};
   }
 </style>
 
