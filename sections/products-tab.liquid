@@ -16,7 +16,7 @@
   <ul class="tabs-nav">
     <!-- Display the first tab as 'Product Info' with the product description -->
     <li>
-      <a href="#tab1" class="tab-link active" data-tab="tab1">Description</a>
+      <a href="#tab1" class="tab-link active" data-tab="tab1">{{ 'products.product.description' | t }}</a>
     </li>
 
     <!-- Display dynamic tabs -->
@@ -42,7 +42,7 @@
           {{
             block.settings.content
             | default: product.metafields.custom.more_information
-            | default: 'No content available'
+            | default: 'No hay contenido disponible'
           }}
         </p>
       </div>

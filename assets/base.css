@@ -2873,6 +2873,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 @media (min-width: 1024px) {
   .freshcart-search-desktop-only {
+    max-width: 67%;
+    margin-left: auto;
     margin-right: 20px;
   }
 }

@@ -1,0 +1,805 @@
+{%- style -%}
+  .shopify-plans-section {
+    padding: 60px 20px;
+    background-color: #f8faff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a;
+  }
+
+  .shopify-plans-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .shopify-plans-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shopify-plans-header h2 {
+    font-size: 2.5rem;
+    color: #001f3f;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .shopify-plans-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+
+  .shopify-plans-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    .shopify-plans-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .shopify-plans-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .plan-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid #eef2f7;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .plan-card.recommended {
+    border: 2px solid #7000ff;
+    transform: scale(1.05);
+    z-index: 1;
+  }
+
+  .plan-card.recommended:hover {
+    transform: scale(1.05) translateY(-10px);
+  }
+
+  .recommended-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #7000ff, #ff00ff);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(112, 0, 255, 0.3);
+  }
+
+  .plan-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #001f3f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .plan-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    min-height: 60px;
+  }
+
+  .plan-price-box {
+    margin-bottom: 30px;
+  }
+
+  .old-price {
+    display: block;
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+  }
+
+  .current-price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #7000ff;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .iva-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 5px;
+    font-weight: 400;
+  }
+
+  .plan-time {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #005af0;
+    margin-bottom: 25px;
+    display: block;
+  }
+
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex-grow: 1;
+  }
+
+  .feature-item {
+    border-bottom: 1px solid #f0f4f8;
+    margin-bottom: 0;
+  }
+
+  .feature-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.2s;
+  }
+
+  .feature-trigger:hover {
+    color: #005af0;
+  }
+
+  .feature-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    background: #e8f0fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #005af0;
+    flex-shrink: 0;
+  }
+
+  .plus-icon {
+    font-size: 1.2rem;
+    color: #999;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-item.active .plus-icon {
+    transform: rotate(45deg);
+    color: #7000ff;
+  }
+
+  .feature-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f9fbff;
+    padding: 0 15px;
+    border-radius: 8px;
+  }
+
+  .feature-item.active .feature-content {
+    max-height: 200px;
+    padding: 10px 15px 15px 15px;
+    margin-bottom: 10px;
+  }
+
+  .feature-detail-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .plan-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: #7000ff;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.2);
+  }
+
+  .btn-primary:hover {
+    background: #5a00cc;
+    box-shadow: 0 6px 20px rgba(112, 0, 255, 0.3);
+  }
+
+  .plan-card.recommended .btn-primary {
+    background: linear-gradient(135deg, #7000ff, #ff00ff);
+  }
+
+  .btn-whatsapp {
+    background: #fff;
+    color: #25d366;
+    border: 2px solid #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-whatsapp:hover {
+    background: #25d366;
+    color: #fff;
+  }
+
+  .whatsapp-icon {
+    width: 18px;
+    height: 18px;
+  }
+{%- endstyle -%}
+
+<section class="shopify-plans-section" id="shopify-plans">
+  <div class="shopify-plans-container">
+    <div class="shopify-plans-header">
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="shopify-plans-grid">
+      
+      <!-- PLAN 1: PRENDE -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plan Prende</h3>
+        <p class="plan-description">Ideal para mejorar una tienda Shopify existente o comenzar con una base profesional de rápida implementación.</p>
+        
+        <div class="plan-price-box">
+          <span class="old-price">$337.000 + IVA</span>
+          <div class="current-price">$320.000 <span class="iva-text">+ IVA</span></div>
+        </div>
+
+        <span class="plan-time">Entrega en 10 días hábiles</span>
+
+        <ul class="plan-features">
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Plantilla Premium de regalo
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Incluye una plantilla profesional para Shopify, seleccionada según el tipo de negocio, estilo visual y necesidades comerciales de la tienda.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Auditoría Visual y de UX
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Revisión de estructura visual, jerarquía de contenidos, botones, navegación, experiencia móvil y puntos de fricción que pueden afectar la conversión.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Mejora de navegación y menú
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Optimización del menú principal, categorías, colecciones y accesos rápidos para que el cliente encuentre fácilmente los productos.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Optimización de Ficha de Producto
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Mejora de la estructura de la página de producto, orden de la información, llamados a la acción, imágenes, beneficios y elementos de confianza.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Configuración de Apps esenciales
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Instalación o configuración básica de aplicaciones necesarias para mejorar la operación, conversión o experiencia del cliente.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Botón de WhatsApp flotante
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Implementación de botón directo a WhatsApp con mensaje inicial personalizado para facilitar consultas y aumentar oportunidades de venta.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Mejora de velocidad de carga
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Revisión básica de imágenes, scripts, apps y elementos visuales que pueden afectar el rendimiento inicial de la tienda.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Recuperación de carritos
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración básica del flujo de recuperación de carritos abandonados disponible en Shopify para ayudar a recuperar ventas perdidas.</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#" class="plan-btn btn-primary">Quiero mejorar mi tienda</a>
+        <a href="https://wa.me/56984410379" class="plan-btn btn-whatsapp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-2.32 0-4.519.903-6.16 2.544-3.4 3.4-3.4 8.92 0 12.319.903.903 1.97 1.557 3.129 1.924l-1.198 4.369 4.488-1.181c1.126.247 2.266.366 3.406.366 2.32 0 4.519-.903 6.16-2.544 3.401-3.399 3.401-8.919 0-12.318-1.641-1.641-3.84-2.544-6.16-2.544zm5.42 11.398c-.232.66-.913 1.21-1.63 1.488-.501.194-1.15.344-1.84.344-1.238 0-2.825-.494-4.712-2.381-1.887-1.887-2.381-3.474-2.381-4.712 0-.69.15-1.339.344-1.84.278-.717.828-1.398 1.488-1.63.21-.074.425-.112.633-.112.203 0 .401.036.574.113.18.083.336.216.444.385.244.383.541 1.31.586 1.411.045.101.075.204.075.309 0 .105-.03.208-.09.297-.06.089-.135.176-.225.266-.09.09-.18.18-.27.285-.101.116-.21.24-.086.454.124.214.551.905 1.185 1.539.634.634 1.325 1.061 1.539 1.185.214.124.338.015.454-.086.105-.09.195-.18.285-.27.09-.09.177-.165.266-.225.089-.06.192-.09.297-.09.105 0 .208.03.309.075.101.045 1.028.541 1.411.586.169.02.302.046.385.113.116.093.189.214.225.337.042.146.042.274.004.444z"/></svg>
+          Hablar con Webunica
+        </a>
+      </div>
+
+      <!-- PLAN 2: PROFESIONAL (RECOMMENDED) -->
+      <div class="plan-card recommended">
+        <div class="recommended-badge">Más Popular</div>
+        <h3 class="plan-name">Shopify Profesional</h3>
+        <p class="plan-description">Ideal para crear una tienda Shopify profesional desde cero, con configuración completa y productos iniciales.</p>
+        
+        <div class="plan-price-box">
+          <span class="old-price">$650.000 + IVA</span>
+          <div class="current-price">$580.000 <span class="iva-text">+ IVA</span></div>
+        </div>
+
+        <span class="plan-time">Entrega en 4 semanas</span>
+
+        <ul class="plan-features">
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Setup completo de Shopify
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración inicial de la tienda, moneda, país, datos comerciales, preferencias generales y estructura base del ecommerce.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Conexión de dominio propio
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración del dominio del cliente para que la tienda funcione correctamente con una URL profesional.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Diseño en Plantilla Premium
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Implementación de una plantilla premium adaptada a la identidad visual de la marca, rubro y objetivos comerciales.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Carga inicial de 70 productos
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Carga de hasta 70 productos con nombre, precio, descripción, imágenes, colecciones y variantes si corresponde.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Configuración de Webpay/Flow
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración inicial de medios de pago compatibles con Shopify, como Webpay, Flow u otras opciones disponibles según el proyecto.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Integración de Logística básica
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración de métodos de envío, tarifas básicas, zonas de despacho, retiro en tienda o condiciones logísticas iniciales.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Diseño Mobile-First 100%
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Ajuste visual y funcional para que la tienda se vea correctamente en celulares, tablets y computadores.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Capacitación de uso básica
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Capacitación para administrar productos, revisar pedidos, modificar contenidos básicos y operar la tienda desde el panel de Shopify.</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#" class="plan-btn btn-primary">Crear mi tienda Shopify</a>
+        <a href="https://wa.me/56984410379" class="plan-btn btn-whatsapp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-2.32 0-4.519.903-6.16 2.544-3.4 3.4-3.4 8.92 0 12.319.903.903 1.97 1.557 3.129 1.924l-1.198 4.369 4.488-1.181c1.126.247 2.266.366 3.406.366 2.32 0 4.519-.903 6.16-2.544 3.401-3.399 3.401-8.919 0-12.318-1.641-1.641-3.84-2.544-6.16-2.544zm5.42 11.398c-.232.66-.913 1.21-1.63 1.488-.501.194-1.15.344-1.84.344-1.238 0-2.825-.494-4.712-2.381-1.887-1.887-2.381-3.474-2.381-4.712 0-.69.15-1.339.344-1.84.278-.717.828-1.398 1.488-1.63.21-.074.425-.112.633-.112.203 0 .401.036.574.113.18.083.336.216.444.385.244.383.541 1.31.586 1.411.045.101.075.204.075.309 0 .105-.03.208-.09.297-.06.089-.135.176-.225.266-.09.09-.18.18-.27.285-.101.116-.21.24-.086.454.124.214.551.905 1.185 1.539.634.634 1.325 1.061 1.539 1.185.214.124.338.015.454-.086.105-.09.195-.18.285-.27.09-.09.177-.165.266-.225.089-.06.192-.09.297-.09.105 0 .208.03.309.075.101.045 1.028.541 1.411.586.169.02.302.046.385.113.116.093.189.214.225.337.042.146.042.274.004.444z"/></svg>
+          Hablar con Webunica
+        </a>
+      </div>
+
+      <!-- PLAN 3: FULL -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plan FULL</h3>
+        <p class="plan-description">Ideal para tiendas que necesitan una estructura más completa, mayor carga de productos y SEO inicial.</p>
+        
+        <div class="plan-price-box">
+          <span class="old-price">$980.000 + IVA</span>
+          <div class="current-price">$780.000 <span class="iva-text">+ IVA</span></div>
+        </div>
+
+        <span class="plan-time">Entrega en 6 semanas</span>
+
+        <ul class="plan-features">
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Todo lo del Plan Profesional
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Incluye todas las funcionalidades del plan anterior, como setup completo, dominio, diseño premium, pagos y logística.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Carga de hasta 120 productos
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Carga o migración inicial de hasta 120 productos con imágenes, precios, descripciones y variantes si aplica.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                SEO Técnico: Títulos y Metas
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración inicial de títulos SEO, metadescripciones, URLs amigables y optimización para indexación.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Integración Google Analytics 4
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración de Google Analytics 4 para medir tráfico, comportamiento de usuarios y eventos relevantes.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Diseño personalizado por secciones
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Personalización de secciones clave como home, banners, productos destacados y bloques de confianza.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Sistema de Reviews de clientes
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Instalación o configuración de un sistema de reseñas para productos, ayudando a aumentar confianza y conversión.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Formulario de Newsletter
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración de formulario de suscripción para captar correos de potenciales clientes.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Soporte prioritario 3 meses
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Soporte posterior a la entrega para resolver dudas, revisar funcionamiento y realizar ajustes menores.</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#" class="plan-btn btn-primary">Quiero una tienda completa</a>
+        <a href="https://wa.me/56984410379" class="plan-btn btn-whatsapp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-2.32 0-4.519.903-6.16 2.544-3.4 3.4-3.4 8.92 0 12.319.903.903 1.97 1.557 3.129 1.924l-1.198 4.369 4.488-1.181c1.126.247 2.266.366 3.406.366 2.32 0 4.519-.903 6.16-2.544 3.401-3.399 3.401-8.919 0-12.318-1.641-1.641-3.84-2.544-6.16-2.544zm5.42 11.398c-.232.66-.913 1.21-1.63 1.488-.501.194-1.15.344-1.84.344-1.238 0-2.825-.494-4.712-2.381-1.887-1.887-2.381-3.474-2.381-4.712 0-.69.15-1.339.344-1.84.278-.717.828-1.398 1.488-1.63.21-.074.425-.112.633-.112.203 0 .401.036.574.113.18.083.336.216.444.385.244.383.541 1.31.586 1.411.045.101.075.204.075.309 0 .105-.03.208-.09.297-.06.089-.135.176-.225.266-.09.09-.18.18-.27.285-.101.116-.21.24-.086.454.124.214.551.905 1.185 1.539.634.634 1.325 1.061 1.539 1.185.214.124.338.015.454-.086.105-.09.195-.18.285-.27.09-.09.177-.165.266-.225.089-.06.192-.09.297-.09.105 0 .208.03.309.075.101.045 1.028.541 1.411.586.169.02.302.046.385.113.116.093.189.214.225.337.042.146.042.274.004.444z"/></svg>
+          Hablar con Webunica
+        </a>
+      </div>
+
+      <!-- PLAN 4: ESCALA -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plan Escala</h3>
+        <p class="plan-description">Ideal para empresas que necesitan migración mayor, integración con ERP y automatización de marketing.</p>
+        
+        <div class="plan-price-box">
+          <div class="current-price">$1.200.000 <span class="iva-text">+ IVA</span></div>
+        </div>
+
+        <span class="plan-time">Entrega en 8 a 10 semanas</span>
+
+        <ul class="plan-features">
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Todo lo del Plan FULL
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Incluye todas las funcionalidades del Plan FULL, incluyendo diseño personalizado, SEO y soporte.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Migración de hasta 300 productos
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Migración o carga masiva desde tiendas anteriores, archivos Excel o CSV. Incluye organización y revisión de variantes.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Integración ERP: Bsale, Obuma...
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Configuración inicial de integración con ERP para sincronización de stock, ventas o documentos tributarios.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Email Marketing con Klaviyo
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Instalación y flujos básicos de Klaviyo: bienvenida, carrito abandonado y segmentación inicial.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Páginas de aterrizaje a medida
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Diseño de landing pages especiales enfocadas en conversión para campañas o productos destacados.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Optimización de velocidad avanzada
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Revisión profunda de rendimiento, análisis de apps y mejoras técnicas orientadas a carga móvil ultrarrápida.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Configuración Meta Pixel & API
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Instalación de Meta Pixel y Conversion API para mejorar la medición y efectividad de tus campañas pagas.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <button class="feature-trigger" aria-expanded="false">
+              <span class="feature-label">
+                <span class="check-icon">✓</span>
+                Consultoría estratégica 1 a 1
+              </span>
+              <span class="plus-icon">+</span>
+            </button>
+            <div class="feature-content">
+              <p class="feature-detail-text">Sesión estratégica para revisar objetivos, embudo de ventas y recomendaciones personalizadas para escalar.</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#" class="plan-btn btn-primary">Quiero escalar mi ecommerce</a>
+        <a href="https://wa.me/56984410379" class="plan-btn btn-whatsapp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-2.32 0-4.519.903-6.16 2.544-3.4 3.4-3.4 8.92 0 12.319.903.903 1.97 1.557 3.129 1.924l-1.198 4.369 4.488-1.181c1.126.247 2.266.366 3.406.366 2.32 0 4.519-.903 6.16-2.544 3.401-3.399 3.401-8.919 0-12.318-1.641-1.641-3.84-2.544-6.16-2.544zm5.42 11.398c-.232.66-.913 1.21-1.63 1.488-.501.194-1.15.344-1.84.344-1.238 0-2.825-.494-4.712-2.381-1.887-1.887-2.381-3.474-2.381-4.712 0-.69.15-1.339.344-1.84.278-.717.828-1.398 1.488-1.63.21-.074.425-.112.633-.112.203 0 .401.036.574.113.18.083.336.216.444.385.244.383.541 1.31.586 1.411.045.101.075.204.075.309 0 .105-.03.208-.09.297-.06.089-.135.176-.225.266-.09.09-.18.18-.27.285-.101.116-.21.24-.086.454.124.214.551.905 1.185 1.539.634.634 1.325 1.061 1.539 1.185.214.124.338.015.454-.086.105-.09.195-.18.285-.27.09-.09.177-.165.266-.225.089-.06.192-.09.297-.09.105 0 .208.03.309.075.101.045 1.028.541 1.411.586.169.02.302.046.385.113.116.093.189.214.225.337.042.146.042.274.004.444z"/></svg>
+          Hablar con Webunica
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const featureItems = document.querySelectorAll('.feature-item');
+    
+    featureItems.forEach(item => {
+      const trigger = item.querySelector('.feature-trigger');
+      
+      trigger.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Toggle active class
+        item.classList.toggle('active');
+        
+        // Update ARIA
+        trigger.setAttribute('aria-expanded', !isActive);
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shopify Plans Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Planes de Desarrollo Shopify en Chile"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Creamos tiendas Shopify profesionales en Chile, optimizadas para vender online, integrar medios de pago, mejorar la experiencia móvil y preparar tu ecommerce para campañas digitales. Elige el plan que mejor se adapta al estado actual de tu negocio."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shopify Plans Section"
+    }
+  ]
+}
+{% endschema %}
