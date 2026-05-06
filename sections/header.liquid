@@ -194,6 +194,10 @@
   .header__department-menu  .header__menu-item span {
     color: {{ section.settings.department_text_color }};
   }
+
+  .header-menus-wrap {
+    background-color: {{ section.settings.main_menu_bg_color }};
+  }
 </style>
 
 {%- style -%}
@@ -812,6 +816,12 @@
             "id": "menu",
             "default": "main-menu",
             "label": "t:sections.header.settings.menu.label"
+        },
+        {
+            "type": "color",
+            "id": "main_menu_bg_color",
+            "default": "#ffffff",
+            "label": "t:sections.header.settings.main_menu_bg_color.label"
         },
         {
             "type": "color",

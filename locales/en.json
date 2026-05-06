@@ -291,6 +291,9 @@
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
+      "main_menu_bg_color": {
+        "label": "Main menu background color"
+      },
       "department_menu": "Department Menu",
       "cart_count": {
         "one": "{{ count }} item",

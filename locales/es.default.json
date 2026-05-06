@@ -282,6 +282,9 @@
     "header": {
       "announcement": "Anuncio",
       "menu": "Menú",
+      "main_menu_bg_color": {
+        "label": "Color de fondo del menú principal"
+      },
       "department_menu": "Menú de departamentos",
       "cart_count": {
         "one": "{{ count }} artículo",
