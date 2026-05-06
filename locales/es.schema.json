@@ -1720,6 +1720,10 @@
                 "image_mobile": {
                     "label": "Imagen móvil"
                 },
+                "video": {
+                    "label": "Video MP4 (opcional)",
+                    "info": "Si se selecciona, el video reemplazará a la imagen."
+                },
                 "image_alt": {
                     "label": "Texto alternativo de imagen"
                 },
@@ -2070,6 +2074,10 @@
                         },
                         "image_mobile": {
                             "label": "Imagen móvil"
+                        },
+                        "video": {
+                            "label": "Video MP4 (opcional)",
+                            "info": "Si se selecciona, el video reemplazará a la imagen."
                         },
                         "image_alt": {
                             "label": "Texto alternativo de imagen"

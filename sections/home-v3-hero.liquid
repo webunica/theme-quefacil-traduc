@@ -30,7 +30,9 @@
         class="section-2-column-banner__column first-column stretched-link"
         style="min-height:{{ section.settings.img_height }}px"
       >
-        {% if section.settings.image %}
+        {% if section.settings.video != blank %}
+          {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'section-2-column-banner__column-image' }}
+        {% elsif section.settings.image %}
           <picture>
             {% if section.settings.image_mobile %}
               <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: 768 }}">
@@ -218,7 +220,9 @@
           -%}
           {% if block.type == 'banner' %}
             <div class="second-column-inner" style="min-height:{{ block.settings.img_height }}px">
-              {% if block.settings.image %}
+              {% if block.settings.video != blank %}
+                {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'section-2-column-banner__column-image' }}
+              {% elsif block.settings.image %}
                 <picture>
                   {% if block.settings.image_mobile %}
                     <source media="(max-width: 767px)" srcset="{{ block.settings.image_mobile | image_url: width: 768 }}">
@@ -417,6 +421,12 @@
             "type": "image_picker",
             "id": "image_mobile",
             "label": "t:sections.home-v3-hero.settings.image_mobile.label"
+        },
+        {
+            "type": "video",
+            "id": "video",
+            "label": "t:sections.home-v3-hero.settings.video.label",
+            "info": "t:sections.home-v3-hero.settings.video.info"
         },
         {
             "type": "text",
@@ -1006,6 +1016,12 @@
                     "type": "image_picker",
                     "id": "image_mobile",
                     "label": "t:sections.home-v3-hero.blocks.banner.settings.image_mobile.label"
+                },
+                {
+                    "type": "video",
+                    "id": "video",
+                    "label": "t:sections.home-v3-hero.settings.video.label",
+                    "info": "t:sections.home-v3-hero.settings.video.info"
                 },
                 {
                     "type": "text",
