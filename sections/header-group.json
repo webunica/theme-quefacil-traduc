@@ -46,7 +46,7 @@
         "menu": "main-menu",
         "main_menu_bg_color": "#04384e",
         "main_text_color": "#ffffff",
-        "main_text_hover_color": "#21313c",
+        "main_text_hover_color": "#ffcbb3",
         "dropdown_title_color": "#0aad0a",
         "dropdown_text_color": "#5c6c75",
         "dropdown_text_hover_color": "#21313c",
