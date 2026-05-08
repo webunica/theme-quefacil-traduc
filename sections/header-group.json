@@ -17,7 +17,7 @@
         "announcement_4LFNFD": {
           "type": "announcement",
           "settings": {
-            "text": "Ofertas de gran valor: ahorra más con cupones.",
+            "text": "Despacho incluído en todos los productos, despacho via Starken o Bluexpress!",
             "link": ""
           }
         }
@@ -29,7 +29,7 @@
         "layout_type": "container-fluid",
         "topbar_bg": "#f94713",
         "topbar_text_color": "#ffffff",
-        "show_social": false,
+        "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
@@ -40,17 +40,18 @@
         "layout_type": "container",
         "logo_position": "top-left",
         "menu_type_desktop": "mega",
-        "sticky_header_type": "none",
+        "sticky_header_type": "reduce-logo-size",
         "enable_wishlist": false,
         "show_line_separator": true,
         "menu": "main-menu",
-        "main_text_color": "#21313c",
+        "main_menu_bg_color": "#f94713",
+        "main_text_color": "#ffffff",
         "main_text_hover_color": "#21313c",
         "dropdown_title_color": "#0aad0a",
         "dropdown_text_color": "#5c6c75",
         "dropdown_text_hover_color": "#21313c",
         "dropdown_text_hover_bg_color": "#f0f3f2",
-        "dropdown_border_color": "#dfe2e1",
+        "dropdown_border_color": "#ec2809",
         "enable_department": true,
         "department_menu": "all-departments",
         "department_text_color": "#ffffff",
