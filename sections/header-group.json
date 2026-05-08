@@ -29,7 +29,7 @@
         "layout_type": "container-fluid",
         "topbar_bg": "#f94713",
         "topbar_text_color": "#ffffff",
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
