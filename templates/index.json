@@ -11,6 +11,7 @@
   "sections": {
     "sale_banner_dptxg3": {
       "type": "sale-banner",
+      "disabled": true,
       "name": "t:sections.sale-banner.presets.name",
       "settings": {
         "layout_style": "container",
