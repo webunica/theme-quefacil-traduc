@@ -41,7 +41,7 @@
         "logo_position": "top-left",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
-        "enable_wishlist": false,
+        "enable_wishlist": true,
         "show_line_separator": true,
         "menu": "main-menu",
         "main_menu_bg_color": "#f94713",
