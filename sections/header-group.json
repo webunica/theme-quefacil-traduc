@@ -42,7 +42,7 @@
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "enable_wishlist": true,
-        "show_line_separator": false,
+        "show_line_separator": true,
         "menu": "main-menu",
         "main_menu_bg_color": "#f94713",
         "main_text_color": "#ffffff",
