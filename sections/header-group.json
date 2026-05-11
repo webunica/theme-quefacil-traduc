@@ -69,7 +69,7 @@
         "icon_item_eahddB": {
           "type": "icon_item",
           "settings": {
-            "icon_type": "svg",
+            "icon_type": "image",
             "icon_image": "shopify://shop_images/favicon.png",
             "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M20.0002 36.6668C29.2049 36.6668 36.6668 29.2049 36.6668 20.0002C36.6668 10.7954 29.2049 3.3335 20.0002 3.3335C10.7954 3.3335 3.3335 10.7954 3.3335 20.0002C3.3335 29.2049 10.7954 36.6668 20.0002 36.6668Z\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M20 10V20L26.6667 23.3333\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
             "icon_color": "",
