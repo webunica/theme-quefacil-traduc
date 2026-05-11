@@ -38,8 +38,8 @@
       "type": "header",
       "settings": {
         "layout_type": "container",
-        "logo_position": "middle-center",
-        "menu_type_desktop": "mega",
+        "logo_position": "middle-left",
+        "menu_type_desktop": "dropdown",
         "sticky_header_type": "reduce-logo-size",
         "enable_wishlist": false,
         "show_line_separator": true,
