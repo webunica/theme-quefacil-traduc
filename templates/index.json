@@ -203,118 +203,6 @@
         "section_margin_all_sides": "0px 0px 0px 0px"
       }
     },
-    "collection_showcase_standard_LU44EX": {
-      "type": "collection-showcase-standard",
-      "blocks": {
-        "featured_collection_XUWycd": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "vehiculo"
-          }
-        },
-        "featured_collection_8N48qe": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bebe"
-          }
-        },
-        "featured_collection_qChAVg": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "cocina"
-          }
-        },
-        "featured_collection_yjirWn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "belleza"
-          }
-        },
-        "featured_collection_4rfTyb": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "jugueteria"
-          }
-        },
-        "featured_collection_gVzjyB": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "mascota"
-          }
-        },
-        "featured_collection_rfXXxx": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "camping"
-          }
-        },
-        "featured_collection_Rif8te": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "ferreteria"
-          }
-        },
-        "featured_collection_yNTK4C": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "fotografias"
-          }
-        },
-        "featured_collection_Fk94FT": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "drones"
-          }
-        },
-        "featured_collection_bVPwwV": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "audio"
-          }
-        },
-        "featured_collection_ytXAqi": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tecnologia"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_XUWycd",
-        "featured_collection_8N48qe",
-        "featured_collection_qChAVg",
-        "featured_collection_yjirWn",
-        "featured_collection_4rfTyb",
-        "featured_collection_gVzjyB",
-        "featured_collection_rfXXxx",
-        "featured_collection_Rif8te",
-        "featured_collection_yNTK4C",
-        "featured_collection_Fk94FT",
-        "featured_collection_bVPwwV",
-        "featured_collection_ytXAqi"
-      ],
-      "settings": {
-        "layout_type": "container",
-        "columns_desktop": 6,
-        "columns_mobile": "2",
-        "space_between": 24,
-        "items_alignment": "center",
-        "heading": "Categorías Populares",
-        "heading_size": "h3",
-        "heading_color": "#001e2b",
-        "heading_alignment": "left",
-        "header_margin": "0px 0px 24px 0px",
-        "rounded_radius": 50,
-        "title_size": "h6",
-        "title_lineheight": "1.5",
-        "title_color": "#001e2b",
-        "title_hover_color": "#0aad0a",
-        "list_margin": "0px 0px 0px 0px",
-        "list_padding": "0px 0px 24px 0px",
-        "section_margin_all_sides": "80px 0px 48px 0px",
-        "section_padding_all_sides": "0px 0px 0px 0px"
-      }
-    },
     "products_block_yUE4LW": {
       "type": "products-block",
       "settings": {
@@ -528,7 +416,6 @@
     "sale_banner_dptxg3",
     "main",
     "home_v3_hero_Y6NC7W",
-    "collection_showcase_standard_LU44EX",
     "products_block_yUE4LW",
     "banner_with_newsletter_qCUfwR",
     "products_block_hmxjz4",
