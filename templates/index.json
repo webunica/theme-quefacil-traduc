@@ -154,7 +154,7 @@
       "settings": {
         "layout_style": "container-fluid",
         "image": "shopify://shop_images/banner-2.webp",
-        "image_mobile": "shopify://shop_images/bg-mobile.jpg",
+        "image_mobile": "shopify://shop_images/banner-2.webp",
         "image_alt": "Audio embolbente",
         "img_width": "850",
         "img_height": "560",
