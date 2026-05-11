@@ -63,107 +63,20 @@
         "padding_bottom": 32
       }
     },
-    "icon_list_bz3RBP": {
-      "type": "icon-list",
-      "blocks": {
-        "icon_item_eahddB": {
-          "type": "icon_item",
-          "settings": {
-            "icon_type": "image",
-            "icon_image": "shopify://shop_images/favicon.png",
-            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M20.0002 36.6668C29.2049 36.6668 36.6668 29.2049 36.6668 20.0002C36.6668 10.7954 29.2049 3.3335 20.0002 3.3335C10.7954 3.3335 3.3335 10.7954 3.3335 20.0002C3.3335 29.2049 10.7954 36.6668 20.0002 36.6668Z\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M20 10V20L26.6667 23.3333\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
-            "icon_color": "",
-            "bg_color": "",
-            "content_margin": "0px 0px 0px 0px",
-            "content_padding": "0px 0px 0px 0px",
-            "heading_text": "Envíos a todo Chile",
-            "heading_color": "#001e2b",
-            "heading_size": "h5",
-            "heading_font_weight": "700",
-            "heading_lineheight": "1.5",
-            "heading_text_transform": "none",
-            "heading_letterspacing": "0",
-            "heading_margin": "15px 0px 10px 0px",
-            "heading_padding": "0px 0px 0px 0px",
-            "description_text": "Tenemos muchas opciones de envio",
-            "description_color": "#063854",
-            "description_size": "14",
-            "des_margin": "12px 0px 0px 0px",
-            "des_padding": "0px 0px 0px 0px"
-          }
-        },
-        "icon_item_QP7xzn": {
-          "type": "icon_item",
-          "settings": {
-            "icon_type": "svg",
-            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M20.0002 36.6668C29.2049 36.6668 36.6668 29.2049 36.6668 20.0002C36.6668 10.7954 29.2049 3.3335 20.0002 3.3335C10.7954 3.3335 3.3335 10.7954 3.3335 20.0002C3.3335 29.2049 10.7954 36.6668 20.0002 36.6668Z\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M20 10V20L26.6667 23.3333\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
-            "icon_color": "",
-            "bg_color": "",
-            "content_margin": "0px 0px 0px 0px",
-            "content_padding": "0px 0px 0px 0px",
-            "heading_text": "Heading",
-            "heading_color": "#001e2b",
-            "heading_size": "h5",
-            "heading_font_weight": "700",
-            "heading_lineheight": "1.5",
-            "heading_text_transform": "none",
-            "heading_letterspacing": "0",
-            "heading_margin": "15px 0px 10px 0px",
-            "heading_padding": "0px 0px 0px 0px",
-            "description_text": "Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.",
-            "description_color": "#5c6c75",
-            "description_size": "14",
-            "des_margin": "12px 0px 0px 0px",
-            "des_padding": "0px 0px 0px 0px"
-          }
-        },
-        "icon_item_KQJ7yH": {
-          "type": "icon_item",
-          "settings": {
-            "icon_type": "svg",
-            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M20.0002 36.6668C29.2049 36.6668 36.6668 29.2049 36.6668 20.0002C36.6668 10.7954 29.2049 3.3335 20.0002 3.3335C10.7954 3.3335 3.3335 10.7954 3.3335 20.0002C3.3335 29.2049 10.7954 36.6668 20.0002 36.6668Z\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M20 10V20L26.6667 23.3333\" stroke=\"#0AAD0A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
-            "icon_color": "",
-            "bg_color": "",
-            "content_margin": "0px 0px 0px 0px",
-            "content_padding": "0px 0px 0px 0px",
-            "heading_text": "Heading",
-            "heading_color": "#001e2b",
-            "heading_size": "h5",
-            "heading_font_weight": "700",
-            "heading_lineheight": "1.5",
-            "heading_text_transform": "none",
-            "heading_letterspacing": "0",
-            "heading_margin": "15px 0px 10px 0px",
-            "heading_padding": "0px 0px 0px 0px",
-            "description_text": "Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.",
-            "description_color": "#5c6c75",
-            "description_size": "14",
-            "des_margin": "12px 0px 0px 0px",
-            "des_padding": "0px 0px 0px 0px"
-          }
-        }
-      },
-      "block_order": [
-        "icon_item_eahddB",
-        "icon_item_QP7xzn",
-        "icon_item_KQJ7yH"
-      ],
-      "name": "t:sections.icon-list.presets.name",
+    "custom_liquid_Ck6DbP": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "layout_type": "container",
-        "items_alignment": "left",
-        "columns_desktop": 3,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "space_between": 24,
-        "icon_list_section_margin": "80px 0px 80px 0px",
-        "icon_list_section_padding": "0px 0px 0px 0px"
+        "custom_liquid": "",
+        "color_scheme": "accent-2",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "top_bar_GzzXJF",
     "header",
-    "icon_list_bz3RBP"
+    "custom_liquid_Ck6DbP"
   ]
 }
