@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -52,21 +61,22 @@
         },
         "fakeviewer_GxrKY9": {
           "type": "fakeviewer",
+          "disabled": true,
           "settings": {
             "fake_view_min": 12,
             "fake_view_max": 120,
             "fake_view_duration": 3,
             "fake_view_text_prefix": "Actualmente hay",
-            "fake_view_text_suffix": " personas viendo este producto"
+            "fake_view_text_suffix": "personas viendo este producto"
           }
         },
-        "collapsible-row-0": {
+        "collapsible_tab_cg6dj8": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Ingredientes",
+            "heading": "Datos Tecnicos",
             "heading_size": "15",
-            "icon": "dairy",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, tellus iaculis urna bibendum in lacus, integer. Id imperdiet vitae varius sed magnis eu nisi nunc sit. Vel, varius habitant ornare ac rhoncus. Consequat risus facilisis ante ipsum netus risus adipiscing sagittis sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+            "icon": "check_mark",
+            "content": "",
             "page": ""
           }
         },
@@ -96,7 +106,7 @@
             "heading": "Envío y Devoluciones",
             "heading_size": "15",
             "icon": "truck",
-            "content": "<p><strong>Dry Goods</strong>: Store in a cool, dry place away from direct sunlight and moisture. Seal the packaging tightly after each use to preserve freshness.</p><p><strong>Perishables</strong>: Refrigerate immediately upon receiving to maintain optimal freshness. Follow the specific storage temperature guidelines mentioned on the packaging.</p><p><strong>Frozen Items</strong>: Keep frozen until ready to use. Follow the thawing instructions on the package for best results.</p><p></p><p>All products come with a \"Best Before\" or \"Use By\" date printed on the packaging. Please consume before this date to ensure the best quality.</p><p>For fresh or refrigerated items, use within [number of days] of opening.</p>",
+            "content": "",
             "page": ""
           }
         },
@@ -134,7 +144,7 @@
         "quantity_selector",
         "buy_buttons",
         "fakeviewer_GxrKY9",
-        "collapsible-row-0",
+        "collapsible_tab_cg6dj8",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
@@ -172,8 +182,8 @@
         "tab_mqwb4k"
       ],
       "settings": {
-        "margin_top": 96,
-        "margin_bottom": 60,
+        "section_margin_top": 96,
+        "section_margin_bottom": 60,
         "title_color": "#5c6c75",
         "active_title_color": "#0aad0a",
         "active_border_color": "#0aad0a",
