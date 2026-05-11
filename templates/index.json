@@ -155,6 +155,7 @@
         "layout_style": "container-fluid",
         "image": "shopify://shop_images/banner-2.webp",
         "image_mobile": "shopify://shop_images/bg-mobile.jpg",
+        "video": "shopify://files/videos/mp_video.mp4",
         "image_alt": "Audio embolbente",
         "img_width": "850",
         "img_height": "560",
