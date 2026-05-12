@@ -56,7 +56,7 @@
             "title": "SuperMarket For Fresh Grocery",
             "description": "Introduced a new model for online grocery shopping and convenient home delivery.",
             "button_text": "Shop Now",
-            "button_url": ""
+            "button_url": "shopify://collections/audio"
           }
         },
         "slide_DX3zYm": {
@@ -69,7 +69,7 @@
             "title": "Productos seleccionados para ti",
             "description": "Encuentra novedades, promociones y productos favoritos en un solo lugar.",
             "button_text": "Ver ofertas",
-            "button_url": ""
+            "button_url": "shopify://collections/belleza"
           }
         }
       },
