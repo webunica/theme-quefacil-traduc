@@ -546,6 +546,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".button--primary {background-color: #21313C; border: 1px solid #21313C;}"
+    ]
   }
 }
