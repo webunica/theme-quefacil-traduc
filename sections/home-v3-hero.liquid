@@ -27,25 +27,18 @@
     <div class="section-2-column-banner__columns hero-column {{ section.type }}">
       <!-- First Column: Single Banner -->
       <div
-        class="section-2-column-banner__column first-column"
+        class="section-2-column-banner__column first-column stretched-link"
         style="min-height:{{ section.settings.img_height }}px"
       >
-        {% if section.settings.video != blank %}
-          {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'section-2-column-banner__column-image' }}
-        {% elsif section.settings.image %}
-          <picture>
-            {% if section.settings.image_mobile %}
-              <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: 768 }}">
-            {% endif %}
-            <img
-              src="{{ section.settings.image | image_url: width: section.settings.img_width, height: section.settings.img_height }}"
-              width="{{ section.settings.img_width }}"
-              height="{{ section.settings.img_height }}"
-              alt="{{ section.settings.image_alt | escape }}"
-              class="section-2-column-banner__column-image"
-              loading="lazy"
-            >
-          </picture>
+        {% if section.settings.image %}
+          <img
+            src="{{ section.settings.image | image_url: width: section.settings.img_width, height: section.settings.img_height }}"
+            width="{{ section.settings.img_width }}"
+            height="{{ section.settings.img_height }}"
+            alt="{{ section.settings.image_alt | escape }}"
+            class="section-2-column-banner__column-image"
+            loading="lazy"
+          >
         {% else %}
           <p style="width: 100%; height: {{ section.settings.img_height }}px; margin: 0;">
             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -125,8 +118,6 @@
               <style>
                 .button.freshcart-home-v3-column-1-button {
                   width: fit-content;
-                  position: relative;
-                  z-index: 5;
                 }
 
                 .button.freshcart-home-v3-column-1-button a {
@@ -136,9 +127,19 @@
                   line-height: 1.2;
                   display: block;
                   transition: 0.3s ease-in-out;
-                  position: relative;
+                  position: static;
                   width: fit-content;
-                  z-index: 10;
+                }
+
+                .button.freshcart-home-v3-column-1-button a:before {
+                  position: absolute;
+                  top: 0;
+                  right:0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  content: "";
+                  display: block;
                 }
 
                 {%- if section.settings.btn_style != 'btn-link' -%}
@@ -186,7 +187,7 @@
                 {%- endif -%}
               </style>
               <a
-                class="button__link stretched-link"
+                class="button__link"
                 href="{{ section.settings.button_url }}"
               >
                 {{ section.settings.button_text }}
@@ -197,7 +198,7 @@
       </div>
 
       <!-- Second Column: Multiple Banners -->
-      <div class="section-2-column-banner__column second-column">
+      <div class="section-2-column-banner__column second-column stretched-link">
         {% for block in section.blocks %}
           {%- liquid
             assign btn_size_text = block.settings.btn_size_text
@@ -212,22 +213,15 @@
           -%}
           {% if block.type == 'banner' %}
             <div class="second-column-inner" style="min-height:{{ block.settings.img_height }}px">
-              {% if block.settings.video != blank %}
-                {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'section-2-column-banner__column-image' }}
-              {% elsif block.settings.image %}
-                <picture>
-                  {% if block.settings.image_mobile %}
-                    <source media="(max-width: 767px)" srcset="{{ block.settings.image_mobile | image_url: width: 768 }}">
-                  {% endif %}
-                  <img
-                    src="{{ block.settings.image | image_url: width: block.settings.img_width, height: block.settings.img_height }}"
-                    alt="{{ block.settings.image_alt | escape }}"
-                    class="section-2-column-banner__column-image"
-                    width="{{ block.settings.img_width }}"
-                    height="{{ block.settings.img_height }}"
-                    loading="lazy"
-                  >
-                </picture>
+              {% if block.settings.image %}
+                <img
+                  src="{{ block.settings.image | image_url: width: block.settings.img_width, height: block.settings.img_height }}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  class="section-2-column-banner__column-image"
+                  width="{{ block.settings.img_width }}"
+                  height="{{ block.settings.img_height }}"
+                  loading="lazy"
+                >
               {% else %}
                 <p style="width: 100%; height: {{ block.settings.img_height }}px; margin: 0;">
                   {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -294,8 +288,6 @@
                     <style>
                       .freshcart-home-v3-column-2-button.button__{{ block.id }} {
                         width: fit-content;
-                        position: relative;
-                        z-index: 5;
                       }
 
                       .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
@@ -305,9 +297,19 @@
                         line-height: 1.2;
                         display: block;
                         transition: 0.3s ease-in-out;
-                        position: relative;
+                        position: static;
                         width: fit-content;
-                        z-index: 10;
+                      }
+
+                      .freshcart-home-v3-column-2-button.button__{{ block.id }} a:before {
+                        position: absolute;
+                        top: 0;
+                        right:0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                        content: "";
+                        display: block;
                       }
 
                       {%- if block.settings.btn_style != 'btn-link' -%}
@@ -355,7 +357,7 @@
                       {%- endif -%}
                     </style>
                     <a
-                      class="button__link stretched-link"
+                      class="button__link"
                       href="{{ block.settings.button_url }}"
                     >
                       {{ block.settings.button_text }}
@@ -400,17 +402,6 @@
             "id": "image",
             "label": "t:sections.home-v3-hero.settings.image.label",
             "info": "t:sections.home-v3-hero.settings.image.info"
-        },
-        {
-            "type": "image_picker",
-            "id": "image_mobile",
-            "label": "t:sections.home-v3-hero.settings.image_mobile.label"
-        },
-        {
-            "type": "video",
-            "id": "video",
-            "label": "t:sections.home-v3-hero.settings.video.label",
-            "info": "t:sections.home-v3-hero.settings.video.info"
         },
         {
             "type": "text",
@@ -868,7 +859,7 @@
             "type": "text",
             "id": "button_text",
             "label": "t:sections.home-v3-hero.settings.button_text.label",
-            "default": "t:sections.all.buttons.shop_now"
+            "default": "Get Best Deal"
         },
         {
             "type": "url",
@@ -995,17 +986,6 @@
                     "id": "image",
                     "label": "t:sections.home-v3-hero.blocks.banner.settings.image.label",
                     "info": "t:sections.home-v3-hero.blocks.banner.settings.image.info"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "image_mobile",
-                    "label": "t:sections.home-v3-hero.blocks.banner.settings.image_mobile.label"
-                },
-                {
-                    "type": "video",
-                    "id": "video",
-                    "label": "t:sections.home-v3-hero.settings.video.label",
-                    "info": "t:sections.home-v3-hero.settings.video.info"
                 },
                 {
                     "type": "text",
@@ -1459,7 +1439,7 @@
                     "type": "text",
                     "id": "button_text",
                     "label": "t:sections.home-v3-hero.blocks.banner.settings.button_text.label",
-                    "default": "t:sections.all.buttons.shop_now"
+                    "default": "Shop Now"
                 },
                 {
                     "type": "url",
@@ -1574,7 +1554,7 @@
                         "heading": "10% cashback on personal care",
                         "posttitle": "",
                         "description": "Max cashback: $12  Code: <strong>CARE12</strong>",
-                        "button_text": "t:sections.all.buttons.shop_now",
+                        "button_text": "Show Now",
                         "button_url": "#"
                     }
                 },
@@ -1587,7 +1567,7 @@
                         "heading": "Say yes to season’s fresh",
                         "posttitle": "",
                         "description": "Refresh your day  the fruity way",
-                        "button_text": "t:sections.all.buttons.shop_now",
+                        "button_text": "Show Now",
                         "button_url": "#"
                     }
                 }
