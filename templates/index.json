@@ -409,7 +409,7 @@
         "section_margin_all_sides": "0px 0px 0px 0px",
         "section_padding_mobile_all_sides": "0px 0px 0px 0px",
         "section_margin_mobile_all_sides": "0px 0px 0px 0px",
-        "container_padding": "50px 64px 0px 64px",
+        "container_padding": "50px 64px 64px 64px",
         "container_mobile_padding": "30px 15px 15px 15px",
         "newsletter_enable": true
       }
