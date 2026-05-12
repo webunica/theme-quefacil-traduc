@@ -186,7 +186,7 @@
         "desc_lineheight": "1.5",
         "desc_margin": "16px 0px 20px 0px",
         "button_text": "Revisa Catálogo",
-        "button_url": "shopify://products/botas-pvc-regalo-capa-impermeable-t-41",
+        "button_url": "shopify://collections/audio",
         "btn_color": "#ffffff",
         "btn_hover_color": "#ffffff",
         "btn_bg_color": "#016daa",
@@ -206,7 +206,7 @@
     "products_block_yUE4LW": {
       "type": "products-block",
       "custom_css": [
-        ".button--primary {background-color: #21313C; border: 1px solid #21313C;}"
+        ".button--primary {background-color: #21313c; border: 1px solid #21313c;}"
       ],
       "settings": {
         "layout_type": "container",
