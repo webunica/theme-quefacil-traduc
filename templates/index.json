@@ -43,6 +43,95 @@
         "padding_bottom": 28
       }
     },
+    "qf_hero_slider_BApn4C": {
+      "type": "qf-hero-slider",
+      "blocks": {
+        "slide_Djk9Xn": {
+          "type": "slide",
+          "settings": {
+            "image_alt": "Banner promocional",
+            "pretitle": "Super Value Deals",
+            "title": "SuperMarket For Fresh Grocery",
+            "description": "Introduced a new model for online grocery shopping and convenient home delivery.",
+            "button_text": "Shop Now",
+            "button_url": ""
+          }
+        },
+        "slide_DX3zYm": {
+          "type": "slide",
+          "settings": {
+            "image_alt": "Banner promocional",
+            "pretitle": "Ofertas destacadas",
+            "title": "Productos seleccionados para ti",
+            "description": "Encuentra novedades, promociones y productos favoritos en un solo lugar.",
+            "button_text": "Ver ofertas",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_Djk9Xn",
+        "slide_DX3zYm"
+      ],
+      "name": "QF Hero Slider",
+      "settings": {
+        "full_width": false,
+        "side_padding": 48,
+        "side_padding_mobile": 16,
+        "section_margin": "0px 0 0 0",
+        "section_padding": "0 0 0 0",
+        "section_margin_mobile": "20px 0 0 0",
+        "section_padding_mobile": "0 0 0 0",
+        "color_scheme": "",
+        "use_custom_colors": true,
+        "fallback_bg": "#0aad0a",
+        "pretitle_color": "#ffffff",
+        "title_color": "#ffffff",
+        "description_color": "#ffffff",
+        "desktop_height": 420,
+        "mobile_height": 420,
+        "border_radius": 8,
+        "image_position_desktop": "center center",
+        "image_position_mobile": "center center",
+        "overlay_opacity": 15,
+        "content_align": "left",
+        "content_width": 520,
+        "content_padding": "56px",
+        "content_padding_mobile": "32px 24px",
+        "pretitle_size": 14,
+        "pretitle_weight": "700",
+        "pretitle_transform": "none",
+        "title_size": 44,
+        "title_size_mobile": 34,
+        "title_weight": "700",
+        "title_transform": "none",
+        "description_size": 16,
+        "description_size_mobile": 15,
+        "description_weight": "400",
+        "button_padding": "12px 22px",
+        "button_radius": 6,
+        "button_bg": "#001e2b",
+        "button_color": "#ffffff",
+        "button_border": "#001e2b",
+        "button_bg_hover": "#0aad0a",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#0aad0a",
+        "button_font_size": 14,
+        "show_arrows": true,
+        "show_dots": true,
+        "enable_autoplay": false,
+        "autoplay_speed": 5000,
+        "arrow_size": 44,
+        "arrow_offset": 20,
+        "arrow_bg": "#ffffff",
+        "arrow_color": "#001e2b",
+        "arrow_border": "#ffffff",
+        "arrow_bg_hover": "#001e2b",
+        "arrow_color_hover": "#ffffff",
+        "arrow_border_hover": "#001e2b",
+        "dots_bottom": 20
+      }
+    },
     "products_block_yUE4LW": {
       "type": "products-block",
       "custom_css": [
@@ -261,6 +350,7 @@
   "order": [
     "sale_banner_dptxg3",
     "main",
+    "qf_hero_slider_BApn4C",
     "products_block_yUE4LW",
     "banner_with_newsletter_qCUfwR",
     "products_block_hmxjz4",
