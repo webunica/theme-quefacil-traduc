@@ -45,6 +45,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
+    "color_breadcrumbs": "#21313c",
     "card_image_padding": 2,
     "text_alignment": "left",
     "card_color_scheme": "background-1",
@@ -270,8 +271,8 @@
           "background": "#ffffff",
           "background_gradient": "",
           "text": "#001e2b",
-          "primary_color": "#0aad0a",
-          "primary_hover": "#099309",
+          "primary_color": "#db3030",
+          "primary_hover": "#db3030",
           "dark_color": "#001e2b",
           "secondary_text_color": "#5c6c75",
           "border_color": "#dfe2e1",
@@ -280,12 +281,12 @@
           "gray_500": "#889397",
           "gray_600": "#dfe2e1",
           "gray_800": "#21313c",
-          "primary_button": "#0aad0a",
+          "primary_button": "#21313c",
           "warning": "#ffc107",
-          "button": "#0aad0a",
+          "button": "#21313c",
           "button_label": "#ffffff",
-          "secondary_button_label": "#0aad0a",
-          "shadow": "#0aad0a"
+          "secondary_button_label": "#21313c",
+          "shadow": "#db3030"
         }
       },
       "scheme-53be600d-f399-4247-8ace-a1ac13c133c9": {
@@ -547,7 +548,9 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".button--primary {background-color: #21313C; border: 1px solid #21313C;}"
+      ".button--primary {background-color: #21313c; border: 1px solid #21313c;}",
+      ".freshcart-product-view .product-view.active,.freshcart-product-view .product-view:not(.active):hover,.freshcart-product-view .product-view:not(.active):focus {border: 1px solid #21313c; background-color: #21313c; color: var(--wp--preset--color--background);}",
+      "a {color: #21313c; text-decoration: none;}"
     ]
   }
 }
