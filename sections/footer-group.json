@@ -48,6 +48,11 @@
         "54539798-0390-4464-a68f-62f116b0b4b0",
         "link_list_NGMFrj"
       ],
+      "custom_css": [
+        ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #21313C !important;}",
+        ".footer__copyright a,.copyright__content a {color: #21313C !important; text-decoration: none;}",
+        ".footer__copyright a:hover,.copyright__content a:hover {color: #0B2F4A !important; text-decoration: underline;}"
+      ],
       "settings": {
         "bg_color": "#ffccb4",
         "heading_color": "#001e2b",
