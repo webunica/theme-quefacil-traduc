@@ -367,7 +367,7 @@
           "type": "heading",
           "settings": {
             "title": "Recibe las mejores ofertas, tendencias y más.",
-            "heading_color": "#036da8",
+            "heading_color": "#dfe2e1",
             "h_txt_style": "none",
             "h_des_size_text": "h2",
             "h_mob_size_text": "30",
@@ -380,7 +380,7 @@
           "type": "paragraph",
           "settings": {
             "description_text": "Únete a nuestra suscripción por correo ahora para recibir actualizaciones sobre promociones y cupones.",
-            "des_color": "#5c6c75",
+            "des_color": "#dfe2e1",
             "des_size_text": "14",
             "des_font_weight": "500",
             "des_lineheight": "1.5"
