@@ -27,7 +27,7 @@
     <div class="section-2-column-banner__columns hero-column {{ section.type }}">
       <!-- First Column: Single Banner -->
       <div
-        class="section-2-column-banner__column first-column stretched-link"
+        class="section-2-column-banner__column first-column"
         style="min-height:{{ section.settings.img_height }}px"
       >
         {% if section.settings.video != blank %}
@@ -138,17 +138,6 @@
                   width: fit-content;
                 }
 
-                .button.freshcart-home-v3-column-1-button a:before {
-                  position: absolute;
-                  top: 0;
-                  right:0;
-                  bottom: 0;
-                  left: 0;
-                  z-index: 1;
-                  content: "";
-                  display: block;
-                }
-
                 {%- if section.settings.btn_style != 'btn-link' -%}
                   .button.freshcart-home-v3-column-1-button a {
                     padding: {{ section.settings.btn_padding }};
@@ -194,7 +183,7 @@
                 {%- endif -%}
               </style>
               <a
-                class="button__link"
+                class="button__link stretched-link"
                 href="{{ section.settings.button_url }}"
               >
                 {{ section.settings.button_text }}
@@ -205,7 +194,7 @@
       </div>
 
       <!-- Second Column: Multiple Banners -->
-      <div class="section-2-column-banner__column second-column stretched-link">
+      <div class="section-2-column-banner__column second-column">
         {% for block in section.blocks %}
           {%- liquid
             assign btn_size_text = block.settings.btn_size_text
@@ -315,17 +304,6 @@
                         width: fit-content;
                       }
 
-                      .freshcart-home-v3-column-2-button.button__{{ block.id }} a:before {
-                        position: absolute;
-                        top: 0;
-                        right:0;
-                        bottom: 0;
-                        left: 0;
-                        z-index: 1;
-                        content: "";
-                        display: block;
-                      }
-
                       {%- if block.settings.btn_style != 'btn-link' -%}
                         .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
                           padding: {{ block.settings.btn_padding }};
@@ -371,7 +349,7 @@
                       {%- endif -%}
                     </style>
                     <a
-                      class="button__link"
+                      class="button__link stretched-link"
                       href="{{ block.settings.button_url }}"
                     >
                       {{ block.settings.button_text }}
