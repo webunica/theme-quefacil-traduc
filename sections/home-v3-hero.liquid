@@ -125,6 +125,8 @@
               <style>
                 .button.freshcart-home-v3-column-1-button {
                   width: fit-content;
+                  position: relative;
+                  z-index: 5;
                 }
 
                 .button.freshcart-home-v3-column-1-button a {
@@ -134,8 +136,9 @@
                   line-height: 1.2;
                   display: block;
                   transition: 0.3s ease-in-out;
-                  position: static;
+                  position: relative;
                   width: fit-content;
+                  z-index: 10;
                 }
 
                 {%- if section.settings.btn_style != 'btn-link' -%}
@@ -291,6 +294,8 @@
                     <style>
                       .freshcart-home-v3-column-2-button.button__{{ block.id }} {
                         width: fit-content;
+                        position: relative;
+                        z-index: 5;
                       }
 
                       .freshcart-home-v3-column-2-button.button__{{ block.id }} a {
@@ -300,8 +305,9 @@
                         line-height: 1.2;
                         display: block;
                         transition: 0.3s ease-in-out;
-                        position: static;
+                        position: relative;
                         width: fit-content;
+                        z-index: 10;
                       }
 
                       {%- if block.settings.btn_style != 'btn-link' -%}
