@@ -11,16 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "custom_liquid_xMEVkQ": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "top_bar_GzzXJF": {
       "type": "top-bar",
       "blocks": {
@@ -75,7 +65,6 @@
     }
   },
   "order": [
-    "custom_liquid_xMEVkQ",
     "top_bar_GzzXJF",
     "header"
   ]
