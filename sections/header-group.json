@@ -54,7 +54,7 @@
         "dropdown_border_color": "#ec2809",
         "enable_department": true,
         "department_menu": "all-departments",
-        "department_text_color": "#dfe2e1",
+        "department_text_color": "#ffcbb3",
         "department_bg_color": "#21313c",
         "enable_country_selector": false,
         "enable_language_selector": false,
