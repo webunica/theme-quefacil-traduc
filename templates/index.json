@@ -207,6 +207,7 @@
         "paragraph_QbVpQf",
         "button_jLCqbw"
       ],
+      "disabled": true,
       "custom_css": [
         ".banner-with-newsletter {align-items: center; justify-content: space-between;}",
         ".banner-with-newsletter__content {flex: 1;}"
