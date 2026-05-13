@@ -551,6 +551,10 @@
         "free_shipping_discount_label": "Envío Incluído",
         "free_total_label": "Incluído",
         "free_shipping_total_label": "Incluído"
+      },
+      "shipping": {
+        "free_rate_label": "Envío Incluído",
+        "split_shipping_option_free": "Envío Incluído"
       }
     }
   }
