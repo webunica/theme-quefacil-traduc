@@ -49,9 +49,9 @@
         "link_list_NGMFrj"
       ],
       "custom_css": [
-        ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #21313C !important;}",
-        ".footer__copyright a,.copyright__content a {color: #21313C !important; text-decoration: none;}",
-        ".footer__copyright a:hover,.copyright__content a:hover {color: #0B2F4A !important; text-decoration: underline;}"
+        ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #21313c !important;}",
+        ".footer__copyright a,.copyright__content a {color: #21313c !important; text-decoration: none;}",
+        ".footer__copyright a:hover,.copyright__content a:hover {color: #0b2f4a !important; text-decoration: underline;}"
       ],
       "settings": {
         "bg_color": "#ffccb4",
@@ -68,9 +68,9 @@
         "download-buttons_enable": true,
         "download_buttons_text": "Paga con",
         "app_store_button": "shopify://shop_images/fintoc.svg",
-        "app_store_url": "https://www.apple.com/app-store/",
+        "app_store_url": "",
         "google_play_button": "shopify://shop_images/Screenshot_1.png",
-        "google_play_url": "https://pay.google.com",
+        "google_play_url": "",
         "footer_copyright_text": "",
         "show_policy": true,
         "margin_top": 0,
