@@ -249,6 +249,7 @@
     },
     "products_block_hmxjz4": {
       "type": "products-block",
+      "disabled": true,
       "settings": {
         "layout_type": "container",
         "title": "¡Ofertas especiales de la semana!",
