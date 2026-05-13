@@ -65,7 +65,7 @@
       ],
       "name": "QF Hero Slider",
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "side_padding": 48,
         "side_padding_mobile": 16,
         "section_margin": "0px 0 0 0",
