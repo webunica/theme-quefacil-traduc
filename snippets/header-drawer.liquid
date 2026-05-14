@@ -16,7 +16,7 @@
         {% render 'icon-close' %}
       </span>
     </summary>
-    <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
+    <div id="menu-drawer" class="gradient menu-drawer motion-reduce" style="background-color: #FFCBB3; color: #001E2B;">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
@@ -24,10 +24,11 @@
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}" open>
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        style="color: #001E2B;"
                       >
                         {{ link.title | escape }}
                         {% render 'icon-arrow' %}
@@ -54,14 +55,16 @@
                                     {% if childlink.current %}
                                       aria-current="page"
                                     {% endif %}
+                                    style="color: #001E2B;"
                                   >
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}" open>
                                     <summary
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                      style="color: #001E2B;"
                                     >
                                       {{ childlink.title | escape }}
                                       {% render 'icon-arrow' %}
@@ -92,6 +95,7 @@
                                               {% if grandchildlink.current %}
                                                 aria-current="page"
                                               {% endif %}
+                                              style="color: #001E2B;"
                                             >
                                               {{ grandchildlink.title | escape }}
                                             </a>
@@ -115,6 +119,7 @@
                       {% if link.current %}
                         aria-current="page"
                       {% endif %}
+                      style="color: #001E2B;"
                     >
                       {{ link.title | escape }}
                     </a>
