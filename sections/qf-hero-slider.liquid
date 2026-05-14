@@ -1,4 +1,14 @@
 {%- style -%}
+  {%- if section.settings.title_font -%}
+    {{ section.settings.title_font | font_face: font_display: 'swap' }}
+  {%- endif -%}
+  {%- if section.settings.pretitle_font -%}
+    {{ section.settings.pretitle_font | font_face: font_display: 'swap' }}
+  {%- endif -%}
+  {%- if section.settings.description_font -%}
+    {{ section.settings.description_font | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
   .qf-hero-slider-{{ section.id }} {
     width: 100%;
     margin: {{ section.settings.section_margin }};
@@ -98,7 +108,7 @@
         {% when 'right' %}right
       {% endcase %};
     max-width: {{ section.settings.content_width }}px;
-    padding: {{ section.settings.content_padding }};
+    padding: {{ section.settings.content_padding_y }}px {{ section.settings.content_padding_x }}px;
     margin:
       {% case section.settings.content_align %}
         {% when 'left' %}0 auto 0 0
@@ -111,7 +121,13 @@
     margin: 0 0 10px;
     color: {% if section.settings.use_custom_colors %}{{ section.settings.pretitle_color }}{% else %}currentColor{% endif %};
     font-size: {{ section.settings.pretitle_size }}px;
+    {%- if section.settings.pretitle_font -%}
+    font-family: {{ section.settings.pretitle_font.family }}, {{ section.settings.pretitle_font.fallback_families }};
+    font-weight: {{ section.settings.pretitle_font.weight }};
+    font-style: {{ section.settings.pretitle_font.style }};
+    {%- else -%}
     font-weight: {{ section.settings.pretitle_weight }};
+    {%- endif -%}
     line-height: 1.2;
     text-transform: {{ section.settings.pretitle_transform }};
   }
@@ -121,7 +137,13 @@
     color: {% if section.settings.use_custom_colors %}{{ section.settings.title_color }}{% else %}currentColor{% endif %};
     font-size: {{ section.settings.title_size }}px;
     line-height: 1.05;
+    {%- if section.settings.title_font -%}
+    font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }};
+    font-weight: {{ section.settings.title_font.weight }};
+    font-style: {{ section.settings.title_font.style }};
+    {%- else -%}
     font-weight: {{ section.settings.title_weight }};
+    {%- endif -%}
     letter-spacing: -0.04em;
     text-transform: {{ section.settings.title_transform }};
   }
@@ -131,7 +153,13 @@
     color: {% if section.settings.use_custom_colors %}{{ section.settings.description_color }}{% else %}currentColor{% endif %};
     font-size: {{ section.settings.description_size }}px;
     line-height: 1.5;
+    {%- if section.settings.description_font -%}
+    font-family: {{ section.settings.description_font.family }}, {{ section.settings.description_font.fallback_families }};
+    font-weight: {{ section.settings.description_font.weight }};
+    font-style: {{ section.settings.description_font.style }};
+    {%- else -%}
     font-weight: {{ section.settings.description_weight }};
+    {%- endif -%}
   }
 
   .qf-hero-slider-{{ section.id }} .qf-hero-slider__button {
@@ -240,7 +268,7 @@
     .qf-hero-slider-{{ section.id }} .qf-hero-slider__content {
       min-height: {{ section.settings.mobile_height }}px;
       max-width: 100%;
-      padding: {{ section.settings.content_padding_mobile }};
+      padding: {{ section.settings.content_padding_y_mobile }}px {{ section.settings.content_padding_x_mobile }}px;
     }
 
     .qf-hero-slider-{{ section.id }} .qf-hero-slider__image--desktop.has-mobile {
@@ -672,16 +700,66 @@
       "default": 520
     },
     {
-      "type": "text",
-      "id": "content_padding",
-      "label": "Padding contenido desktop",
-      "default": "56px"
+      "type": "range",
+      "id": "content_padding_y",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding vertical desktop",
+      "default": 56
     },
     {
-      "type": "text",
-      "id": "content_padding_mobile",
-      "label": "Padding contenido mobile",
-      "default": "32px 24px"
+      "type": "range",
+      "id": "content_padding_x",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding horizontal desktop",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "content_padding_y_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding vertical mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "content_padding_x_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding horizontal mobile",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Tipografía y Fuentes"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Fuente del título",
+      "default": "work_sans_n6"
+    },
+    {
+      "type": "font_picker",
+      "id": "pretitle_font",
+      "label": "Fuente del pretítulo",
+      "default": "work_sans_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "description_font",
+      "label": "Fuente de la descripción",
+      "default": "work_sans_n4"
     },
     {
       "type": "range",
