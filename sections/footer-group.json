@@ -55,8 +55,8 @@
       ],
       "settings": {
         "bg_color": "#ffccb4",
-        "heading_color": "#001e2b",
-        "text_color": "#5c6c75",
+        "heading_color": "#04384e",
+        "text_color": "#04384e",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails!",
         "enable_follow_on_shop": false,
