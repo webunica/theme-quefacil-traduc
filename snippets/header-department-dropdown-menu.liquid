@@ -17,7 +17,7 @@
       <li>
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-DepartmentMenu-{{ forloop.index }}">
+            <details id="Details-DepartmentMenu-{{ forloop.index }}" open>
               <summary
                 id="DepartmentMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
@@ -51,7 +51,7 @@
                         {{ childlink.title | escape }}
                       </a>
                     {%- else -%}
-                      <details id="Details-DepartmentSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                      <details id="Details-DepartmentSubMenu-{{ link.handle }}-{{ childlink.handle }}" open>
                         <summary
                           id="DepartmentMenu-{{ link.handle }}-{{ childlink.handle }}"
                           class="header__menu-item link link--text list-menu__item focus-inset caption-large"
