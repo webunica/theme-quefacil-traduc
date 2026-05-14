@@ -49,7 +49,7 @@
         "main_text_hover_color": "#f7a709",
         "dropdown_title_color": "#21313c",
         "dropdown_text_color": "#04384e",
-        "dropdown_text_hover_color": "#04384e",
+        "dropdown_text_hover_color": "#f7a709",
         "dropdown_text_hover_bg_color": "rgba(0,0,0,0)",
         "dropdown_border_color": "#04384e",
         "enable_department": true,
