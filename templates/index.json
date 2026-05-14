@@ -53,7 +53,7 @@
             "image_mobile": "shopify://shop_images/portada_2.png",
             "image_alt": "Banner promocional",
             "pretitle": "",
-            "title": "Bienvenido a Quefacil Tienda Descubre todo lo que necesitas en un solo lugar.",
+            "title": "<em><strong>Bienvenido a Quefacil Tienda </strong></em>",
             "description": "",
             "button_text": "",
             "button_url": "shopify://collections/audio"
