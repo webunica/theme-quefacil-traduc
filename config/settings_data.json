@@ -105,7 +105,7 @@
     "cart_type": "drawer",
     "show_vendor": true,
     "show_cart_note": true,
-    "cart_drawer_collection": "todos",
+    "cart_drawer_collection": "ferreteria",
     "collection_card_style": "standard",
     "collection_card_image_padding": 0,
     "collection_card_text_alignment": "right",
