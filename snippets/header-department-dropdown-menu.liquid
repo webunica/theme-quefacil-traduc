@@ -7,6 +7,9 @@
 
 {%- assign menu_name = section.settings.department_menu -%}
 {%- assign menu = linklists[menu_name] -%}
+{%- if menu == blank and section.settings.department_menu.links != blank -%}
+  {%- assign menu = section.settings.department_menu -%}
+{%- endif -%}
 
 <nav class="header__department-menu">
   <ul class="list-menu list-menu--inline" role="list">
