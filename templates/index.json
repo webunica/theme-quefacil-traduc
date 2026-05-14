@@ -72,7 +72,7 @@
         "section_padding": "0 0 0 0",
         "section_margin_mobile": "20px 0 0 0",
         "section_padding_mobile": "0 0 0 0",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "use_custom_colors": true,
         "fallback_bg": "#fff",
         "pretitle_color": "#ffffff",
