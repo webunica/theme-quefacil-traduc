@@ -55,7 +55,7 @@
         "enable_department": true,
         "department_menu": "all-departments",
         "department_text_color": "#04384e",
-        "department_bg_color": "#db3030",
+        "department_bg_color": "#ffffff",
         "enable_country_selector": false,
         "enable_language_selector": false,
         "margin_bottom": 32,
