@@ -49,9 +49,9 @@
         "54539798-0390-4464-a68f-62f116b0b4b0"
       ],
       "custom_css": [
-        ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #04384E !important;}",
-        ".footer__copyright a,.copyright__content a {color: #04384E !important; text-decoration: none;}",
-        ".footer__copyright a:hover,.copyright__content a:hover {color: #0b2f4a !important; text-decoration: underline;}"
+        ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #04384e !important;}",
+        ".footer__copyright a,.copyright__content a {color: #04384e !important; text-decoration: none;}",
+        ".footer__copyright a:hover,.copyright__content a:hover {color: #04384e !important; text-decoration: underline;}"
       ],
       "settings": {
         "bg_color": "#ffccb4",
