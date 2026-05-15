@@ -548,7 +548,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".button--primary {background-color: #21313c; border: 1px solid #21313c;}",
+      ".button--primary {background-color: #ff5505; border: 1px solid #ff5505;}",
       ".freshcart-product-view .product-view.active,.freshcart-product-view .product-view:not(.active):hover,.freshcart-product-view .product-view:not(.active):focus {border: 1px solid #21313c; background-color: #21313c; color: var(--wp--preset--color--background);}",
       "a {color: #21313c; text-decoration: none;}"
     ]
