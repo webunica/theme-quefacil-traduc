@@ -131,6 +131,7 @@
         },
         "product_tag_NPrik4": {
           "type": "product_tag",
+          "disabled": true,
           "settings": {
             "enable_product_tag": true,
             "tag": "Etiquetas"
