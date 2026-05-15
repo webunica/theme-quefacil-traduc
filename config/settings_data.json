@@ -52,7 +52,7 @@
     "card_border_thickness": 1,
     "card_corner_radius": 6,
     "card_border_color": "#dfe2e1",
-    "card_border_hover_color": "#db3030",
+    "card_border_hover_color": "#04384e",
     "badge_position": "top right",
     "badge_corner_radius": 6,
     "blog_card_image_padding": 0,
