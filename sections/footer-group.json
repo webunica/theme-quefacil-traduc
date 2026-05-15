@@ -20,6 +20,13 @@
             "show_social": false
           }
         },
+        "link_list_NGMFrj": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "t-rminos-y-condiciones"
+          }
+        },
         "footer-0": {
           "type": "link_list",
           "settings": {
@@ -33,20 +40,13 @@
             "heading": "",
             "menu": "categor-a-2"
           }
-        },
-        "link_list_NGMFrj": {
-          "type": "link_list",
-          "settings": {
-            "heading": "",
-            "menu": "t-rminos-y-condiciones"
-          }
         }
       },
       "block_order": [
         "brand_information_iB3L7p",
+        "link_list_NGMFrj",
         "footer-0",
-        "54539798-0390-4464-a68f-62f116b0b4b0",
-        "link_list_NGMFrj"
+        "54539798-0390-4464-a68f-62f116b0b4b0"
       ],
       "custom_css": [
         ".footer__copyright,.copyright__content {font-size: 12px !important; font-weight: 500; letter-spacing: 0; line-height: 18px; color: #21313c !important;}",
@@ -54,7 +54,7 @@
         ".footer__copyright a:hover,.copyright__content a:hover {color: #0b2f4a !important; text-decoration: underline;}"
       ],
       "settings": {
-        "bg_color": "#0aad0a",
+        "bg_color": "#ffccb4",
         "heading_color": "#04384e",
         "text_color": "#04384e",
         "newsletter_enable": false,
