@@ -56,7 +56,7 @@
             "title": "Bienvenidos a Quefacil - Tienda",
             "description": "Te llevamos el producto a tu hogar!",
             "button_text": "Ver Catálogo",
-            "button_url": "shopify://collections/audio"
+            "button_url": "shopify://collections"
           }
         }
       },
