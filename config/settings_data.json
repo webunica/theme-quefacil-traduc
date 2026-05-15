@@ -55,6 +55,8 @@
     "card_border_hover_color": "#04384e",
     "badge_position": "top right",
     "badge_corner_radius": 6,
+    "sale_bg": "#ff5505",
+    "sold_bg": "#ff5505",
     "blog_card_image_padding": 0,
     "blog_card_text_alignment": "left",
     "blog_card_color_scheme": "background-1",
