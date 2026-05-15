@@ -184,9 +184,9 @@
       "settings": {
         "section_margin_top": 96,
         "section_margin_bottom": 60,
-        "title_color": "#5c6c75",
-        "active_title_color": "#0aad0a",
-        "active_border_color": "#0aad0a",
+        "title_color": "#04384e",
+        "active_title_color": "#04384e",
+        "active_border_color": "#04384e",
         "desc_color": "#5c6c75"
       }
     },
