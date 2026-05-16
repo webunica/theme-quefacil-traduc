@@ -252,6 +252,7 @@
     },
     "products_block_hmxjz4": {
       "type": "products-block",
+      "disabled": true,
       "settings": {
         "layout_type": "container",
         "title": "¡Ofertas especiales de la semana!",
@@ -341,8 +342,8 @@
         "height_section": "438px",
         "height_section_mobile": "300px",
         "content_max_width": 760,
-        "content_align": "center",
-        "align": "left",
+        "content_align": "flex-start",
+        "align": "right",
         "section_padding_all_sides": "0px 0px 0px 0px",
         "section_margin_all_sides": "0px 0px 0px 0px",
         "section_padding_mobile_all_sides": "0px 0px 0px 0px",
