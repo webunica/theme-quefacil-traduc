@@ -45,6 +45,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
+    "enable_breadcrumb": false,
     "color_breadcrumbs": "#21313c",
     "card_image_padding": 2,
     "text_alignment": "left",
