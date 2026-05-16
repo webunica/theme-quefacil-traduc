@@ -106,7 +106,7 @@
     "predictive_search_show_price": true,
     "currency_code_enabled": false,
     "cart_type": "drawer",
-    "show_vendor": true,
+    "show_vendor": false,
     "show_cart_note": true,
     "cart_drawer_collection": "ferreteria",
     "collection_card_style": "standard",
