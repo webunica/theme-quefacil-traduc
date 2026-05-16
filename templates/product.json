@@ -205,7 +205,7 @@
       "settings": {
         "heading": "Productos relacionados",
         "heading_size": "h3",
-        "heading_font_weight": "300",
+        "heading_font_weight": "700",
         "heading_color": "#04384e",
         "products_to_show": 4,
         "columns_desktop": 4,
