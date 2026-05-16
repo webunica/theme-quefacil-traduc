@@ -25,6 +25,7 @@
         },
         "brand_information_iB3L7p": {
           "type": "brand_information",
+          "disabled": true,
           "settings": {
             "show_social": false
           }
