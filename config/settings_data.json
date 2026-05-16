@@ -160,9 +160,9 @@
           "text": "#04384e",
           "primary_color": "#ff5505",
           "primary_hover": "#ff5505",
-          "dark_color": "#001e2b",
+          "dark_color": "#04384e",
           "secondary_text_color": "#04384e",
-          "border_color": "#04384e",
+          "border_color": "#dfe2e1",
           "gray_100": "#f0f3f2",
           "gray_200": "#ecf0ef",
           "gray_500": "#889397",
@@ -172,7 +172,7 @@
           "warning": "#ff5505",
           "button": "#04384e",
           "button_label": "#ffffff",
-          "secondary_button_label": "#001e2b",
+          "secondary_button_label": "#04384e",
           "shadow": "#001e2b"
         }
       },
