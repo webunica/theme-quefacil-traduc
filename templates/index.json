@@ -129,9 +129,7 @@
     },
     "products_block_yUE4LW": {
       "type": "products-block",
-      "custom_css": [
-        ".button--primary {background-color: #04384e; border: 1px solid #04384e;}"
-      ],
+      "custom_css": [],
       "settings": {
         "layout_type": "container",
         "title": "Nuevos Productos",
