@@ -140,7 +140,7 @@
         "description_color": "#5c6c75",
         "show_view_all": true,
         "view_all_text": "Ver todo",
-        "view_all_color": "#04384e",
+        "view_all_color": "#ff5505",
         "section_header_margin": "0px 0px 24px 0px",
         "collection": "nuevos",
         "products_to_show": 10,
