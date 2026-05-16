@@ -190,7 +190,7 @@
         "section_margin_bottom": 60,
         "title_color": "#04384e",
         "active_title_color": "#04384e",
-        "active_border_color": "#04384e",
+        "active_border_color": "#ff5505",
         "desc_color": "#5c6c75"
       }
     },
