@@ -26,7 +26,7 @@
         "brand_information_iB3L7p": {
           "type": "brand_information",
           "settings": {
-            "show_social": true
+            "show_social": false
           }
         },
         "link_list_NGMFrj": {
