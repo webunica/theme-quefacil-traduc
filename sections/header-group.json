@@ -52,7 +52,7 @@
         "dropdown_text_hover_color": "#ff5505",
         "dropdown_text_hover_bg_color": "rgba(0,0,0,0)",
         "dropdown_border_color": "#04384e",
-        "enable_department": false,
+        "enable_department": true,
         "department_menu": "all-department",
         "department_text_color": "#04384e",
         "department_bg_color": "#dfe2e1",
