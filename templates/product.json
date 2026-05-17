@@ -37,6 +37,12 @@
           "type": "price",
           "settings": {}
         },
+        "share_Vf3Rdy": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir"
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -144,6 +150,7 @@
         "37c29246-80e0-4c31-b282-ec6e2e25fcd4",
         "caption",
         "price",
+        "share_Vf3Rdy",
         "description",
         "variant_picker",
         "quantity_selector",
