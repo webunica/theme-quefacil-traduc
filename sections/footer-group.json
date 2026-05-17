@@ -73,7 +73,7 @@
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": false,
+        "payment_enable": true,
         "payment_text": "Payment Partners",
         "download-buttons_enable": false,
         "download_buttons_text": "Paga con",
