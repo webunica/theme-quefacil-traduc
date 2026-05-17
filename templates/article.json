@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -8,7 +17,7 @@
           "settings": {
             "title_color": "#5c6c75",
             "blog_show_tags": true,
-            "tag_color": "#0aad0a",
+            "tag_color": "#FF5505",
             "blog_show_date": true,
             "blog_show_author": true,
             "author_text": "Author"
