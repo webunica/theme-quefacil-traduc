@@ -75,7 +75,7 @@
         "enable_language_selector": false,
         "payment_enable": true,
         "payment_text": "Payment Partners",
-        "download-buttons_enable": false,
+        "download-buttons_enable": true,
         "download_buttons_text": "Paga con",
         "app_store_button": "shopify://shop_images/fintoc.svg",
         "app_store_url": "",
