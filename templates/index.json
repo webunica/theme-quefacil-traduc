@@ -89,7 +89,7 @@
         "content_padding_y": 56,
         "content_padding_x": 100,
         "content_padding_y_mobile": 12,
-        "content_padding_x_mobile": 24,
+        "content_padding_x_mobile": 80,
         "title_font": "covered_by_your_grace_n4",
         "pretitle_font": "caveat_n4",
         "description_font": "caveat_n4",
