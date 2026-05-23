@@ -99,7 +99,7 @@
         "title_size": 50,
         "title_size_mobile": 24,
         "title_weight": "700",
-        "title_transform": "uppercase",
+        "title_transform": "none",
         "description_size": 27,
         "description_size_mobile": 19,
         "description_weight": "400",
