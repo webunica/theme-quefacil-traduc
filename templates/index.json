@@ -84,7 +84,7 @@
         "image_position_desktop": "center center",
         "image_position_mobile": "center center",
         "overlay_opacity": 15,
-        "content_align": "left",
+        "content_align": "center",
         "content_width": 520,
         "content_padding_y": 56,
         "content_padding_x": 100,
