@@ -64,7 +64,7 @@
         ".footer__copyright a:hover,.copyright__content a:hover {color: #04384e !important; text-decoration: underline;}"
       ],
       "settings": {
-        "bg_color": "#c9efbc",
+        "bg_color": "#f0f3f2",
         "heading_color": "#04384e",
         "text_color": "#04384e",
         "newsletter_enable": false,
