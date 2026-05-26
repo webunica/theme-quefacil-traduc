@@ -82,7 +82,7 @@
         "google_play_button": "shopify://shop_images/Screenshot_1.png",
         "google_play_url": "",
         "footer_copyright_text": "",
-        "show_policy": true,
+        "show_policy": false,
         "margin_top": 0,
         "padding_top": 32,
         "padding_bottom": 12
