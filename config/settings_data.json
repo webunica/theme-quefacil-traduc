@@ -554,7 +554,7 @@
   "platform_customizations": {
     "custom_css": [
       ".button--primary {background-color: #04384e; border: 1px solid #04384e;}",
-      ".freshcart-product-view .product-view.active,.freshcart-product-view .product-view:not(.active):hover,.freshcart-product-view .product-view:not(.active):focus {border: 1px solid #04384e; background-color: #04384e; color: var(--wp--preset--color--background);}",
+      ".freshcart-product-view .product-view.active,.freshcart-product-view .product-view:not(.active):hover, background-color hover: #04384.freshcart-product-view .product-view:not(.active):focus {border: 1px solid #04384e; background-color: #04384e; color: var(--wp--preset--color--background);}",
       "a {color: #04384e; text-decoration: none;}"
     ]
   }
