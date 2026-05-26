@@ -1,11 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "product-grid": {
       "type": "product-collection-grid",
       "settings": {
         "banner_bg": "#f0f3f2",
-        "banner_text_color": "#5c6c75",
-        "section_padding": "40px 40px 40px 40px",
+        "banner_text_color": "#04384e",
+        "section_padding": "10px 0px 10px 40px",
         "products_per_page": 16,
         "columns_desktop": 4,
         "enable_viewcolumn": true,
