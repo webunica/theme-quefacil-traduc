@@ -24,7 +24,7 @@
     "h0_font_lineheight": "1.2",
     "h0_letter_spacing": "0.48",
     "animations_reveal_on_scroll": true,
-    "animations_hover_elements": "3d-lift",
+    "animations_hover_elements": "default",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 15,
     "buttons_radius": 6,
