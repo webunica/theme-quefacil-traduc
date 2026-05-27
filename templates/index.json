@@ -77,7 +77,7 @@
         "fallback_bg": "#fff",
         "pretitle_color": "#04384e",
         "title_color": "#77f11a",
-        "description_color": "#04384e",
+        "description_color": "#ffffff",
         "desktop_height": 500,
         "mobile_height": 280,
         "border_radius": 0,
