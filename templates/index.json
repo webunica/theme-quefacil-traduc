@@ -79,7 +79,7 @@
         "title_color": "#77f11a",
         "description_color": "#051446",
         "desktop_height": 500,
-        "mobile_height": 380,
+        "mobile_height": 280,
         "border_radius": 0,
         "image_position_desktop": "center center",
         "image_position_mobile": "center center",
