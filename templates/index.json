@@ -51,10 +51,10 @@
           "settings": {
             "image_desktop": "shopify://shop_images/portada_7.png",
             "image_mobile": "shopify://shop_images/portada_7.png",
-            "image_alt": "Banner promocional",
+            "image_alt": "quefacil-tienda.cl",
             "pretitle": "Bienvenido",
-            "title": "www.quefacil-tienda.cl",
-            "description": "",
+            "title": "Quefacil-tienda.cl",
+            "description": "quefacil-tienda.cl",
             "button_text": "",
             "button_url": "shopify://collections"
           }
@@ -101,7 +101,7 @@
         "title_weight": "700",
         "title_transform": "none",
         "description_size": 27,
-        "description_size_mobile": 18,
+        "description_size_mobile": 20,
         "description_weight": "500",
         "button_padding": "12px 22px",
         "button_radius": 8,
