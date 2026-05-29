@@ -49,7 +49,7 @@
         "slide_Djk9Xn": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/88425649490813779181779820163845.png",
+            "image_desktop": "shopify://shop_images/portada_7.png",
             "image_mobile": "shopify://shop_images/portada_7.png",
             "image_alt": "Banner promocional",
             "pretitle": "Bienvenidos a",
@@ -91,7 +91,7 @@
         "content_padding_y_mobile": 0,
         "content_padding_x_mobile": 20,
         "title_font": "covered_by_your_grace_n4",
-        "pretitle_font": "caveat_n4",
+        "pretitle_font": "barlow_n4",
         "description_font": "caveat_n4",
         "pretitle_size": 28,
         "pretitle_weight": "700",
