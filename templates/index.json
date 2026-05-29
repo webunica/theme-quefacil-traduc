@@ -52,9 +52,9 @@
             "image_desktop": "shopify://shop_images/portada_7.png",
             "image_mobile": "shopify://shop_images/portada_7.png",
             "image_alt": "quefacil-tienda.cl",
-            "pretitle": "Bienvenido",
-            "title": "Quefacil-tienda.cl",
-            "description": "quefacil-tienda.cl",
+            "pretitle": "",
+            "title": "Quefacil-tienda",
+            "description": "",
             "button_text": "",
             "button_url": "shopify://collections"
           }
