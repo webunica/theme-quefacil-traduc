@@ -76,7 +76,7 @@
         "use_custom_colors": true,
         "fallback_bg": "#ffffff",
         "pretitle_color": "#ec8520",
-        "title_color": "#1a6af1",
+        "title_color": "#ffffff",
         "description_color": "#e8e9ed",
         "desktop_height": 720,
         "mobile_height": 280,
