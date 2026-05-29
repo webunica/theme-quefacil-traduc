@@ -87,7 +87,7 @@
         "content_align": "left",
         "content_width": 720,
         "content_padding_y": 0,
-        "content_padding_x": 0,
+        "content_padding_x": 120,
         "content_padding_y_mobile": 0,
         "content_padding_x_mobile": 20,
         "title_font": "covered_by_your_grace_n4",
