@@ -86,7 +86,7 @@
         "overlay_opacity": 15,
         "content_align": "left",
         "content_width": 720,
-        "content_padding_y": 0,
+        "content_padding_y": 72,
         "content_padding_x": 120,
         "content_padding_y_mobile": 0,
         "content_padding_x_mobile": 20,
