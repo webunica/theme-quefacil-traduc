@@ -26,7 +26,7 @@
         "announcement_4LFNFD"
       ],
       "settings": {
-        "layout_type": "container",
+        "layout_type": "container-fluid",
         "topbar_bg": "#04384e",
         "topbar_text_color": "#ffffff",
         "show_social": false,
