@@ -41,7 +41,7 @@
         "logo_position": "middle-left",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
-        "enable_wishlist": false,
+        "enable_wishlist": true,
         "show_line_separator": true,
         "menu": "main-menu",
         "main_menu_bg_color": "#ffffff",
