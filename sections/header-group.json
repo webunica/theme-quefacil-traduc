@@ -38,7 +38,7 @@
       "type": "header",
       "settings": {
         "layout_type": "container-fluid",
-        "logo_position": "middle-left",
+        "logo_position": "top-left",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "enable_wishlist": false,
