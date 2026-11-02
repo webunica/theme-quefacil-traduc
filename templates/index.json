@@ -160,6 +160,7 @@
     },
     "products_block_yUE4LW": {
       "type": "products-block",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "layout_type": "container",
