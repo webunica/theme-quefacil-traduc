@@ -97,7 +97,6 @@
         "slide_BMYTHn",
         "slide_zJnpmw"
       ],
-      "disabled": true,
       "name": "QF Hero Slider",
       "settings": {
         "full_width": false,
@@ -138,7 +137,7 @@
         "description_size": 13,
         "description_size_mobile": 12,
         "description_weight": "400",
-        "button_padding": "12px 22px",
+        "button_padding": "13px 22px",
         "button_radius": 6,
         "button_bg": "#FF5505",
         "button_color": "#ffffff",
@@ -151,14 +150,14 @@
         "show_dots": true,
         "enable_autoplay": true,
         "autoplay_speed": 5000,
-        "arrow_size": 44,
-        "arrow_offset": 20,
+        "arrow_size": 32,
+        "arrow_offset": 12,
         "arrow_bg": "#ffffff",
-        "arrow_color": "#001e2b",
+        "arrow_color": "#FF5505",
         "arrow_border": "#ffffff",
-        "arrow_bg_hover": "#001e2b",
+        "arrow_bg_hover": "#FF5505",
         "arrow_color_hover": "#ffffff",
-        "arrow_border_hover": "#001e2b",
+        "arrow_border_hover": "#FF5505",
         "dots_bottom": 20
       }
     }
