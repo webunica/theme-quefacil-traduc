@@ -97,6 +97,7 @@
         "slide_BMYTHn",
         "slide_zJnpmw"
       ],
+      "disabled": true,
       "name": "QF Hero Slider",
       "settings": {
         "full_width": false,
@@ -107,8 +108,8 @@
         "section_margin_mobile": "20px 0 0 0",
         "section_padding_mobile": "0 0 0 0",
         "color_scheme": "background-1",
-        "use_custom_colors": true,
-        "fallback_bg": "#0aad0a",
+        "use_custom_colors": false,
+        "fallback_bg": "#FFFFFF",
         "pretitle_color": "#ffffff",
         "title_color": "#ffffff",
         "description_color": "#ffffff",
