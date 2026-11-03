@@ -160,11 +160,10 @@
     },
     "products_block_TTqQzD": {
       "type": "products-block",
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "layout_type": "container",
-        "title": "Hogar",
+        "title": "Juguetería",
         "heading_size": "h3",
         "title_color": "#04384e",
         "description_text": "",
