@@ -143,7 +143,7 @@
         "view_all_color": "#ff5505",
         "section_header_margin": "0px 0px 24px 0px",
         "collection": "especial-navidad",
-        "products_to_show": 10,
+        "products_to_show": 5,
         "columns_desktop": 5,
         "image_ratio": "adapt",
         "show_secondary_image": false,
