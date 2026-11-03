@@ -62,10 +62,109 @@
         "padding_top": 16,
         "padding_bottom": 32
       }
+    },
+    "qf_hero_slider_m7zzJe": {
+      "type": "qf-hero-slider",
+      "blocks": {
+        "slide_BMYTHn": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/guirnalda-de-luces-navide-as-con-panel-solar.png",
+            "image_mobile": "shopify://shop_images/guirnalda-de-luces-navide-as-con-panel-solar.png",
+            "image_alt": "Banner promocional",
+            "pretitle": "Super Value Deals",
+            "title": "Especial Navideño",
+            "description": "Conoce los artículos navideños que tenemos para ti",
+            "button_text": "Visita sección",
+            "button_url": "shopify://collections/especial-navidad"
+          }
+        },
+        "slide_zJnpmw": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/banner-001.png",
+            "image_mobile": "shopify://shop_images/banner-001.png",
+            "image_alt": "Banner promocional",
+            "pretitle": "Ofertas destacadas",
+            "title": "Productos seleccionados para ti",
+            "description": "Encuentra novedades, promociones y productos favoritos en un solo lugar.",
+            "button_text": "Ver ofertas",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_BMYTHn",
+        "slide_zJnpmw"
+      ],
+      "name": "QF Hero Slider",
+      "settings": {
+        "full_width": false,
+        "side_padding": 48,
+        "side_padding_mobile": 16,
+        "section_margin": "32px 0 0 0",
+        "section_padding": "0 0 0 0",
+        "section_margin_mobile": "20px 0 0 0",
+        "section_padding_mobile": "0 0 0 0",
+        "color_scheme": "background-1",
+        "use_custom_colors": true,
+        "fallback_bg": "#0aad0a",
+        "pretitle_color": "#ffffff",
+        "title_color": "#ffffff",
+        "description_color": "#ffffff",
+        "desktop_height": 420,
+        "mobile_height": 420,
+        "border_radius": 8,
+        "image_position_desktop": "center center",
+        "image_position_mobile": "center center",
+        "overlay_opacity": 15,
+        "content_align": "left",
+        "content_width": 520,
+        "content_padding_y": 56,
+        "content_padding_x": 56,
+        "content_padding_y_mobile": 32,
+        "content_padding_x_mobile": 24,
+        "title_font": "work_sans_n6",
+        "pretitle_font": "work_sans_n4",
+        "description_font": "work_sans_n4",
+        "pretitle_size": 14,
+        "pretitle_weight": "700",
+        "pretitle_transform": "none",
+        "title_size": 44,
+        "title_size_mobile": 34,
+        "title_weight": "700",
+        "title_transform": "none",
+        "description_size": 16,
+        "description_size_mobile": 15,
+        "description_weight": "400",
+        "button_padding": "12px 22px",
+        "button_radius": 6,
+        "button_bg": "#001e2b",
+        "button_color": "#ffffff",
+        "button_border": "#001e2b",
+        "button_bg_hover": "#0aad0a",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#0aad0a",
+        "button_font_size": 14,
+        "show_arrows": true,
+        "show_dots": true,
+        "enable_autoplay": true,
+        "autoplay_speed": 5000,
+        "arrow_size": 44,
+        "arrow_offset": 20,
+        "arrow_bg": "#ffffff",
+        "arrow_color": "#001e2b",
+        "arrow_border": "#ffffff",
+        "arrow_bg_hover": "#001e2b",
+        "arrow_color_hover": "#ffffff",
+        "arrow_border_hover": "#001e2b",
+        "dots_bottom": 20
+      }
     }
   },
   "order": [
     "top_bar_GzzXJF",
-    "header"
+    "header",
+    "qf_hero_slider_m7zzJe"
   ]
 }
