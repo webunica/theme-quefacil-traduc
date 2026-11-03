@@ -315,7 +315,6 @@
     },
     "products_block_hmxjz4": {
       "type": "products-block",
-      "disabled": true,
       "settings": {
         "layout_type": "container",
         "title": "¡Ofertas especiales de la semana!",
@@ -328,7 +327,7 @@
         "view_all_text": "Ver todo",
         "view_all_color": "#04384e",
         "section_header_margin": "0px 0px 45px 0px",
-        "collection": "ofertas",
+        "collection": "especial-navidad",
         "products_to_show": 5,
         "columns_desktop": 5,
         "image_ratio": "adapt",
