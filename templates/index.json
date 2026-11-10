@@ -207,7 +207,7 @@
         "collection": "jugueteria",
         "products_to_show": 5,
         "columns_desktop": 5,
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": true,
